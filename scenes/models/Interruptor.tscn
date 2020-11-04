@@ -1,0 +1,88 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/colored_transparent.png" type="Texture" id=1]
+[ext_resource path="res://scenes/models/Interruptor.gd" type="Script" id=2]
+[ext_resource path="res://assets/explosion.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 92, 88 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 92, 0, 92, 88 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 184, 0, 92, 88 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 276, 0, 92, 88 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 368, 0, 92, 88 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 460, 0, 92, 88 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 552, 0, 92, 88 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 644, 0, 92, 88 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 736, 0, 92, 88 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 10.2795, 9.95291 )
+
+[node name="Interruptor" type="Area2D"]
+pause_mode = 1
+collision_layer = 7
+collision_mask = 31
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 3.46478, 2.99231 )
+scale = Vector2( 1.36471, 1.35204 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( -1.60296, 186.334, 19.2045, 17.623 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+pause_mode = 1
+visible = false
+position = Vector2( 2, 5.25 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 10 )
+frame = 1
+speed_scale = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 3.3073, 2.83482 )
+shape = SubResource( 11 )
+[connection signal="area_entered" from="." to="." method="_on_Interruptor_area_entered"]
