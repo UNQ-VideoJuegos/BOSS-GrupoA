@@ -85,7 +85,7 @@ scale = Vector2( 1.5, 1.5 )
 
 [node name="Floor7" parent="floor" instance=ExtResource( 5 )]
 position = Vector2( 1333.87, 1134.92 )
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 2, 1.5 )
 
 [node name="Floor6" parent="floor" instance=ExtResource( 5 )]
 position = Vector2( 1435.27, 1135.13 )
@@ -541,14 +541,14 @@ position = Vector2( 1239.69, 816.952 )
 scale = Vector2( 9, 13 )
 
 [node name="TransporterVehicle" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1643.12, 1103.66 )
+position = Vector2( 1654.62, 1097.66 )
 scale = Vector2( 3, 3 )
 next_scene = ExtResource( 12 )
 
 [node name="doors" type="Node2D" parent="."]
 
 [node name="DoorFinal" parent="doors" instance=ExtResource( 1 )]
-position = Vector2( 1543.1, 1051.74 )
+position = Vector2( 1553.1, 1050.24 )
 scale = Vector2( 3, 4 )
 
 [node name="Interruptor" parent="doors" instance=ExtResource( 3 )]
@@ -580,23 +580,23 @@ position = Vector2( 1194.67, 887.32 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Door1" parent="doors" instance=ExtResource( 1 )]
-position = Vector2( 1284.86, 424.267 )
+position = Vector2( 1281.36, 424.267 )
 scale = Vector2( 3, 4 )
 
 [node name="Door2" parent="doors" instance=ExtResource( 1 )]
-position = Vector2( 1220.75, 1052.43 )
+position = Vector2( 1213.25, 1050.93 )
 scale = Vector2( 3, 4 )
 
 [node name="Door3" parent="doors" instance=ExtResource( 1 )]
-position = Vector2( 1286.21, 1052.92 )
+position = Vector2( 1294.21, 1049.92 )
 scale = Vector2( 3, 4 )
 
 [node name="Door4" parent="doors" instance=ExtResource( 1 )]
-position = Vector2( 1466.81, 1052.03 )
+position = Vector2( 1466.31, 1052.53 )
 scale = Vector2( 3, 4 )
 
 [node name="Door5" parent="doors" instance=ExtResource( 1 )]
-position = Vector2( 1376.91, 1051.12 )
+position = Vector2( 1382.41, 1051.62 )
 scale = Vector2( 3, 4 )
 
 [node name="Door6" parent="doors" instance=ExtResource( 1 )]

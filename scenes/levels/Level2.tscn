@@ -59,7 +59,7 @@ position = Vector2( -0.561218, 1.12247 )
 script = ExtResource( 6 )
 
 [node name="Floor" parent="." instance=ExtResource( 5 )]
-position = Vector2( 968.561, 134.878 )
+position = Vector2( 967.502, 131.7 )
 scale = Vector2( 1, 2.5 )
 
 [node name="Floor2" parent="." instance=ExtResource( 5 )]
@@ -91,7 +91,7 @@ pause_mode = 1
 position = Vector2( 446.667, 293.882 )
 
 [node name="Door" parent="." instance=ExtResource( 1 )]
-position = Vector2( 872.561, 30.8775 )
+position = Vector2( 896.561, 30.8775 )
 scale = Vector2( 3, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 3 )]
@@ -103,7 +103,7 @@ tile_set = SubResource( 1 )
 format = 1
 
 [node name="TransportVehicle" parent="." instance=ExtResource( 8 )]
-position = Vector2( 976.561, 78.8775 )
+position = Vector2( 1000.56, 78.8775 )
 scale = Vector2( 3, 3 )
 next_scene = ExtResource( 9 )
 

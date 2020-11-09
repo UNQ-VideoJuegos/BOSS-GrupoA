@@ -60,11 +60,11 @@ position = Vector2( 960, 520 )
 scale = Vector2( 1, 2.6 )
 
 [node name="Door" parent="." instance=ExtResource( 4 )]
-position = Vector2( 819.117, 412.562 )
+position = Vector2( 848, 417.5 )
 scale = Vector2( 4, 4 )
 
 [node name="Door2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 817.711, 98.7892 )
+position = Vector2( 848, 104 )
 scale = Vector2( 4, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 5 )]
@@ -76,7 +76,7 @@ position = Vector2( 963.654, 145.715 )
 scale = Vector2( 1.46148, 1.53358 )
 
 [node name="TransportVehicle" parent="." instance=ExtResource( 7 )]
-position = Vector2( 947.214, 465.324 )
+position = Vector2( 976, 464 )
 scale = Vector2( 3, 3 )
 next_scene = ExtResource( 8 )
 
