@@ -13,5 +13,12 @@ func _on_Interruptor_area_entered(area):
 		$Sprite.hide()
 		$AnimatedSprite.show()
 		$AnimatedSprite.play()
-		yield(get_tree().create_timer(.5), "timeout")
-		queue_free()
+		yield(get_tree().create_timer(.5), "timeout")		
+		$AnimatedSprite.stop()
+		$AnimatedSprite.hide()
+		$AnimatedSprite.frame = 0
+		$RespawnTimer.start()
+
+
+func _on_RespawnTimer_timeout():
+	$Sprite.show()

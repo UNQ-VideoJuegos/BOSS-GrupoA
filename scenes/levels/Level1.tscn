@@ -32,20 +32,32 @@ pause_mode = 1
 position = Vector2( 670.25, 103.821 )
 
 [node name="Floor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 177.433, 568.862 )
-scale = Vector2( 3.05506, 2.61704 )
+position = Vector2( 64, 568 )
+scale = Vector2( 1.05188, 2.61704 )
+
+[node name="Floor5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 184, 568 )
+scale = Vector2( 1.05188, 2.61704 )
+
+[node name="Floor6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 304, 568 )
+scale = Vector2( 1.05188, 2.61704 )
 
 [node name="Floor2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 909.131, 223.444 )
-scale = Vector2( -2.08555, 5.24815 )
+position = Vector2( 960.561, 204.071 )
+scale = Vector2( 1, 2.6 )
+
+[node name="Floor7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 856, 520 )
+scale = Vector2( 1, 2.6 )
 
 [node name="Floor3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 110.432, 180.471 )
-scale = Vector2( 1.8293, 2.82954 )
+position = Vector2( 56, 120 )
+scale = Vector2( 1, 2.6 )
 
 [node name="Floor4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 916.055, 508.401 )
-scale = Vector2( 1.8074, 2.61704 )
+position = Vector2( 960, 520 )
+scale = Vector2( 1, 2.6 )
 
 [node name="Door" parent="." instance=ExtResource( 4 )]
 position = Vector2( 819.117, 412.562 )
@@ -70,11 +82,23 @@ next_scene = ExtResource( 8 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 pause_mode = 1
-position = Vector2( 190.675, 459.721 )
+position = Vector2( 16, 504 )
 
 [node name="Lava" parent="." instance=ExtResource( 9 )]
-position = Vector2( 690.304, 590.705 )
-scale = Vector2( 47.9596, 13.5966 )
+position = Vector2( 408, 576 )
+scale = Vector2( 9.77754, 13.5966 )
+
+[node name="Lava2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 584, 576 )
+scale = Vector2( 9.77754, 13.5966 )
+
+[node name="Lava3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 760, 576 )
+scale = Vector2( 9.77754, 13.5966 )
+
+[node name="Lava4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 936, 576 )
+scale = Vector2( 9.77754, 13.5966 )
 
 [node name="muro invisible" parent="." instance=ExtResource( 10 )]
 

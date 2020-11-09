@@ -474,11 +474,71 @@ position = Vector2( 1712.18, 1003.16 )
 
 [node name="Lava" parent="." instance=ExtResource( 11 )]
 position = Vector2( 658.089, 516.772 )
-scale = Vector2( 90, 5 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava6" parent="." instance=ExtResource( 11 )]
+position = Vector2( 514.195, 517.961 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava7" parent="." instance=ExtResource( 11 )]
+position = Vector2( 357.22, 517.961 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava8" parent="." instance=ExtResource( 11 )]
+position = Vector2( 205.001, 517.961 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava9" parent="." instance=ExtResource( 11 )]
+position = Vector2( 79, 518 )
+scale = Vector2( 9, 13 )
 
 [node name="Lava2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 811.497, 516.772 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 966.094, 516.772 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1126.64, 517.961 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava5" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1199.18, 516.772 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava10" parent="." instance=ExtResource( 11 )]
 position = Vector2( 780.074, 817.659 )
-scale = Vector2( 90, 5 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava14" parent="." instance=ExtResource( 11 )]
+position = Vector2( 620.975, 818.366 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava15" parent="." instance=ExtResource( 11 )]
+position = Vector2( 463.29, 819.073 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava16" parent="." instance=ExtResource( 11 )]
+position = Vector2( 301.363, 819.073 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava17" parent="." instance=ExtResource( 11 )]
+position = Vector2( 205.903, 820.487 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava11" parent="." instance=ExtResource( 11 )]
+position = Vector2( 922.91, 817.659 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava12" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1079.89, 816.952 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava13" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1239.69, 816.952 )
+scale = Vector2( 9, 13 )
 
 [node name="TransporterVehicle" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1643.12, 1103.66 )

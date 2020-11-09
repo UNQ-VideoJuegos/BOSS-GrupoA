@@ -59,20 +59,20 @@ position = Vector2( -0.561218, 1.12247 )
 script = ExtResource( 6 )
 
 [node name="Floor" parent="." instance=ExtResource( 5 )]
-position = Vector2( 938.351, 121.821 )
-scale = Vector2( 1.5, 1.5 )
+position = Vector2( 968.561, 134.878 )
+scale = Vector2( 1, 2.5 )
 
 [node name="Floor2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 87.6121, 551.441 )
-scale = Vector2( 1.5, 1.5 )
+position = Vector2( 64.5612, 566.877 )
+scale = Vector2( 1, 2.6 )
 
 [node name="Floor3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 32.0841, 134.879 )
-scale = Vector2( 0.537619, 1.5 )
+position = Vector2( 56.5612, 150.878 )
+scale = Vector2( 1, 2.6 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 pause_mode = 1
-position = Vector2( 48.0268, 493.112 )
+position = Vector2( 48.5612, 510.878 )
 
 [node name="Platform" parent="." instance=ExtResource( 4 )]
 pause_mode = 1
@@ -91,7 +91,7 @@ pause_mode = 1
 position = Vector2( 446.667, 293.882 )
 
 [node name="Door" parent="." instance=ExtResource( 1 )]
-position = Vector2( 871.865, 39.4986 )
+position = Vector2( 872.561, 30.8775 )
 scale = Vector2( 3, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 3 )]
@@ -103,31 +103,41 @@ tile_set = SubResource( 1 )
 format = 1
 
 [node name="TransportVehicle" parent="." instance=ExtResource( 8 )]
-position = Vector2( 975.436, 89.4158 )
+position = Vector2( 976.561, 78.8775 )
 scale = Vector2( 3, 3 )
 next_scene = ExtResource( 9 )
 
 [node name="Lava" parent="." instance=ExtResource( 10 )]
-position = Vector2( 648.709, 565.854 )
-scale = Vector2( 68.0157, 7.98363 )
+position = Vector2( 256.561, 558.877 )
+scale = Vector2( 9.778, 13 )
+
+[node name="Lava6" parent="." instance=ExtResource( 10 )]
+position = Vector2( 192.561, 558.877 )
+scale = Vector2( 9.778, 13 )
+
+[node name="Lava2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 432.561, 558.877 )
+scale = Vector2( 9.778, 13 )
+
+[node name="Lava3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 608.561, 558.877 )
+scale = Vector2( 9.778, 13 )
+
+[node name="Lava4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 784.561, 558.877 )
+scale = Vector2( 9.778, 13 )
+
+[node name="Lava5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 960.561, 558.877 )
+scale = Vector2( 9.778, 13 )
 
 [node name="wall_peaks" parent="." instance=ExtResource( 11 )]
 position = Vector2( 431.677, 13.8705 )
 scale = Vector2( 2.287, -1.61138 )
 
-[node name="wall_peaks2" parent="." instance=ExtResource( 11 )]
-position = Vector2( 934.443, 213.475 )
-rotation = 1.56896
-scale = Vector2( 2.287, -1.61138 )
-
 [node name="Turret" parent="." instance=ExtResource( 12 )]
 position = Vector2( 431.6, 39.3937 )
 rotation = 3.13397
-
-[node name="Turret2" parent="." instance=ExtResource( 12 )]
-position = Vector2( 906.834, 198.43 )
-rotation = 4.66077
-detect_radius = 150
 
 [node name="muro invisible" parent="." instance=ExtResource( 13 )]
 position = Vector2( -5.21881, 275.767 )

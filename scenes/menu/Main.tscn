@@ -43,34 +43,30 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 size = 70
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=20]
+[sub_resource type="DynamicFont" id=4]
 size = 40
 font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 20
-font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 20
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 70
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=7]
 size = 20
 font_data = ExtResource( 5 )
 
+[sub_resource type="DynamicFont" id=7]
+size = 70
+font_data = ExtResource( 4 )
+
 [sub_resource type="DynamicFont" id=8]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=9]
 size = 70
 outline_color = Color( 0.968627, 0.980392, 0.980392, 1 )
 font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=9]
-size = 20
-font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 20
@@ -81,13 +77,13 @@ size = 20
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=12]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=13]
 size = 70
 outline_color = Color( 0.968627, 0.980392, 0.980392, 1 )
 font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=13]
-size = 20
-font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=14]
 size = 20
@@ -98,19 +94,23 @@ size = 20
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=16]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=17]
 size = 70
 outline_color = Color( 0.968627, 0.980392, 0.980392, 1 )
 font_data = ExtResource( 12 )
 
-[sub_resource type="DynamicFont" id=17]
+[sub_resource type="DynamicFont" id=18]
 size = 20
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=18]
+[sub_resource type="DynamicFont" id=19]
 size = 70
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=19]
+[sub_resource type="DynamicFont" id=20]
 size = 20
 font_data = ExtResource( 5 )
 
@@ -132,12 +132,12 @@ __meta__ = {
 
 [node name="GameName" type="Label" parent="WelcomeHUD"]
 modulate = Color( 0.67451, 0.27451, 0.137255, 1 )
-margin_left = 380.0
-margin_top = 104.615
-margin_right = 705.0
-margin_bottom = 189.615
+margin_left = 329.0
+margin_top = 107.615
+margin_right = 736.0
+margin_bottom = 192.615
 custom_fonts/font = SubResource( 3 )
-text = "Minion 3"
+text = "Boss Final"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -148,7 +148,7 @@ margin_left = 184.0
 margin_top = 395.258
 margin_right = 889.0
 margin_bottom = 548.258
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 4 )
 text = "w-a-s-d  -> MOVE
 click -> fire!
 shift -> dash!"
@@ -163,7 +163,7 @@ margin_left = 451.0
 margin_top = 249.624
 margin_right = 588.0
 margin_bottom = 293.624
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Start Game"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -174,7 +174,7 @@ margin_left = 451.031
 margin_top = 309.624
 margin_right = 588.031
 margin_bottom = 353.624
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "Options"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -193,7 +193,7 @@ margin_left = 366.507
 margin_top = 150.0
 margin_right = 679.507
 margin_bottom = 235.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Options"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -205,7 +205,7 @@ margin_left = 451.031
 margin_top = 455.828
 margin_right = 588.031
 margin_bottom = 499.828
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -217,7 +217,7 @@ margin_left = 451.0
 margin_top = 287.0
 margin_right = 588.0
 margin_bottom = 331.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "Difficulty"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -229,7 +229,7 @@ margin_left = 451.0
 margin_top = 343.353
 margin_right = 588.0
 margin_bottom = 387.353
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "Audio"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -241,7 +241,7 @@ margin_left = 451.0
 margin_top = 399.567
 margin_right = 588.0
 margin_bottom = 443.567
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "Key Map"
 __meta__ = {
 "_edit_use_anchors_": false,
@@ -261,7 +261,7 @@ margin_left = 312.535
 margin_top = 149.364
 margin_right = 728.535
 margin_bottom = 234.364
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Difficulty"
 __meta__ = {
@@ -274,7 +274,7 @@ margin_left = 451.871
 margin_top = 269.175
 margin_right = 588.871
 margin_bottom = 313.175
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0.952941, 0.913725, 0.0588235, 1 )
 text = "Easy"
 __meta__ = {
@@ -287,7 +287,7 @@ margin_left = 451.463
 margin_top = 330.874
 margin_right = 588.463
 margin_bottom = 374.874
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.168627, 0.698039, 0.278431, 1 )
 text = "Normal"
 __meta__ = {
@@ -300,7 +300,7 @@ margin_left = 451.077
 margin_top = 393.175
 margin_right = 588.077
 margin_bottom = 437.175
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0.65098, 0.12549, 0.12549, 1 )
 text = "Hard"
 __meta__ = {
@@ -317,7 +317,7 @@ margin_left = 405.0
 margin_top = 151.0
 margin_right = 634.0
 margin_bottom = 236.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Audio"
 __meta__ = {
@@ -330,7 +330,7 @@ margin_left = 451.871
 margin_top = 269.175
 margin_right = 588.871
 margin_bottom = 313.175
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 text = "Diamond"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -342,7 +342,7 @@ margin_left = 451.463
 margin_top = 330.874
 margin_right = 593.463
 margin_bottom = 374.874
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 text = "Background"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -354,7 +354,7 @@ margin_left = 454.206
 margin_top = 393.035
 margin_right = 591.206
 margin_bottom = 437.035
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 16 )
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -370,7 +370,7 @@ margin_left = 405.0
 margin_top = 151.0
 margin_right = 698.0
 margin_bottom = 236.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Key Map"
 __meta__ = {
@@ -386,7 +386,7 @@ margin_top = 273.488
 margin_right = 861.055
 margin_bottom = 640.488
 rect_scale = Vector2( 0.4, 0.4 )
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "pause: escape
 reload: r
@@ -403,7 +403,7 @@ margin_left = 455.395
 margin_top = 419.198
 margin_right = 592.395
 margin_bottom = 463.198
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 18 )
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -424,7 +424,7 @@ margin_left = 320.0
 margin_top = 220.0
 margin_right = 178.208
 margin_bottom = 305.0
-custom_fonts/font = SubResource( 18 )
+custom_fonts/font = SubResource( 19 )
 custom_colors/font_color = Color( 0.992157, 0.988235, 0.988235, 1 )
 text = "game over"
 uppercase = true
@@ -438,7 +438,7 @@ margin_left = 494.45
 margin_top = 343.353
 margin_right = 574.45
 margin_bottom = 387.353
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
 text = "Menu"
 __meta__ = {
 "_edit_use_anchors_": false

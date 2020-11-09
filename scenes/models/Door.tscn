@@ -35,8 +35,12 @@ region_rect = Rect2( 239.867, 66.7895, 12.0753, 18.0504 )
 position = Vector2( 22.9181, 14.0566 )
 shape = SubResource( 1 )
 
-[node name="DoorTimer" type="Timer" parent="Door"]
+[node name="DoorOpenTimer" type="Timer" parent="Door"]
 wait_time = 0.5
+one_shot = true
+
+[node name="DoorCloseTimer" type="Timer" parent="Door"]
+wait_time = 2.5
 one_shot = true
 
 [node name="Roof" type="StaticBody2D" parent="."]
@@ -69,4 +73,5 @@ region_rect = Rect2( 187.911, 173.237, 2.05618, 11.8996 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Roof2"]
 position = Vector2( 43.6429, 9.57083 )
 shape = SubResource( 3 )
-[connection signal="timeout" from="Door/DoorTimer" to="Door" method="_on_DoorTimer_timeout"]
+[connection signal="timeout" from="Door/DoorOpenTimer" to="Door" method="_on_DoorTimer_timeout"]
+[connection signal="timeout" from="Door/DoorCloseTimer" to="Door" method="_on_DoorCloseTimer_timeout"]
