@@ -8,12 +8,12 @@ extents = Vector2( 5.64676, 5.82873 )
 
 [node name="Bullet" type="Area2D"]
 collision_layer = 4
-collision_mask = 25
+collision_mask = 61
 script = ExtResource( 1 )
 speed = 750
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 378.621, 72.6825, 6.64334, 6.64333 )

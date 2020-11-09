@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/models/level objects/turret.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/models/main character/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/models/level objects/wall_peaks.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/models/level objects/Chaser.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 528.992, 10 )
@@ -49,6 +50,7 @@ shape = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 406.999, 425.863 )
+gun_cooldown = 0.2
 
 [node name="Turret" parent="." instance=ExtResource( 1 )]
 position = Vector2( 216.066, 369.933 )
@@ -65,3 +67,6 @@ rotation = 1.5708
 [node name="wall_peaks2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 756.067, 542.378 )
 rotation = 1.5708
+
+[node name="Chaser" parent="." instance=ExtResource( 4 )]
+position = Vector2( 75.5099, 521.019 )

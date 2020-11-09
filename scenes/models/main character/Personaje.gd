@@ -8,8 +8,8 @@ export  var speed = 300.0
 export  var jump_force = 400.0
 export  var gravity = 800.0
 export (PackedScene) var Bullet # recordar inicializar en el inspector
-export (float) var gun_cooldown = 0.2
-export (int) var dash_impulse = 60
+export (float) var gun_cooldown = 0.1
+export (int) var dash_impulse = 40
 export (float) var dash_cooldown = 2
 export (float) var max_health = 100
 
@@ -48,7 +48,7 @@ func _physics_process(delta):
 	var is_jump_interrupted = Input.is_action_just_released("jump") and velocity.y < 0.0
 	var direction = control()
 	direction.y = jump()
-	if Input.is_action_just_pressed("click"):
+	if Input.is_action_pressed("click"):
 		shoot()
 	if Input.is_action_just_pressed("dash"): 
 		direction = dash()
@@ -129,15 +129,15 @@ func damage(amount):
 		effects_animation.queue("flash")
 
 func kill(): # COMENTAR PARA EVITAR MORIR CONSTANTEMENTE DE SER NECESARIO
-	$GamerOverSound.play()
-	$GunTimer.stop()
-	$Camera2D.current = false
-	$CollisionShape2D.set_deferred("disable",true)
-	hide() # no es la mejor solucion porque se puede seguir usando el personaje
-	yield(get_tree().create_timer(1.0), "timeout")
-	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn")
-	queue_free()
-	
+#	$GamerOverSound.play()
+#	$GunTimer.stop()
+#	$Camera2D.current = false
+#	$CollisionShape2D.set_deferred("disable",true)
+#	hide()
+#	yield(get_tree().create_timer(1.0), "timeout")
+#	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn")
+#	queue_free()
+	pass
 
 func _set_health(value):
 	var prev_health = health
@@ -152,3 +152,14 @@ func _on_invulnerabilityTimer_timeout():
 
 func _on_Player_killed():
 	kill()
+
+
+func _on_DashEffectTimer_timeout():
+	if !can_dash:
+		var effect = preload("res://scenes/models/main character/DashEffect.tscn").instance()
+		get_parent().add_child(effect)
+		effect.position = position
+		effect.texture = $AnimatedSprite.frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
+		effect.flip_h =$AnimatedSprite.flip_h
+
+

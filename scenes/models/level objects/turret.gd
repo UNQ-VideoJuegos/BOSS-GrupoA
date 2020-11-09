@@ -48,5 +48,20 @@ func _on_StaticBody2D_body_exited(body):
 
 
 func _on_GunTimer_timeout():
-	
 	can_shoot = true
+
+
+func _on_Turret_area_entered(area):
+	$GunTimer.stop()
+	yield(get_tree().create_timer(3.0),"timeout")
+	$GunTimer.start()
+
+
+func _on_Area2D_area_entered(area):
+	$Sprite.modulate = Color.green # solo de prueba, no es final
+	$GunTimer.stop()
+	yield(get_tree().create_timer(3.0),"timeout")
+	$Sprite.modulate = Color.white
+	$GunTimer.start()
+	
+	

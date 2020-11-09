@@ -109,7 +109,6 @@ tracks/1/keys = {
 collision_layer = 2
 script = ExtResource( 1 )
 Bullet = ExtResource( 3 )
-dash_impulse = 40
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2.5, 2.5 )
@@ -146,7 +145,12 @@ stream = ExtResource( 2 )
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
+
+[node name="DashEffectTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
 [connection signal="killed" from="." to="." method="_on_Player_killed"]
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
 [connection signal="timeout" from="invulnerabilityTimer" to="." method="_on_invulnerabilityTimer_timeout"]
+[connection signal="timeout" from="DashEffectTimer" to="." method="_on_DashEffectTimer_timeout"]
