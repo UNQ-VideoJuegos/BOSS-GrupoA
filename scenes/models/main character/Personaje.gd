@@ -174,14 +174,14 @@ func _on_Player_killed():
 
 
 func _on_DashEffectTimer_timeout():
-		var dash_effect = dash_object.instance()
-
-		dash_effect.texture = $AnimatedSprite.frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
-		dash_effect.position = position
-		dash_effect.flip_h =$AnimatedSprite.flip_h
-		#dash_effect.modulate = modulate
-		#dash_effect.transform = $AnimatedSprite.transform
-		get_parent().add_child(dash_effect)
+#		var dash_effect = dash_object.instance()
+#
+#		dash_effect.texture = $AnimatedSprite.frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
+#		dash_effect.position = position
+#		dash_effect.flip_h =$AnimatedSprite.flip_h
+#		#dash_effect.modulate = modulate
+#		#dash_effect.transform = $AnimatedSprite.transform
+#		get_parent().add_child(dash_effect)
 		
 		pass
 
