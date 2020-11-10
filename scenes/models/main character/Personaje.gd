@@ -9,9 +9,14 @@ export  var jump_force = 400.0
 export  var gravity = 800.0
 export (PackedScene) var Bullet # recordar inicializar en el inspector
 export (float) var gun_cooldown = 0.1
-export (int) var dash_impulse = 40
+
 export (float) var dash_cooldown = 2
 export (float) var max_health = 100
+
+export(PackedScene) var dash_object
+export (int) var dash_impulse = 40
+export var dash_length = 0.2
+
 
 onready var health = max_health setget _set_health
 onready var invulnerability_timer = $invulnerabilityTimer
@@ -30,18 +35,7 @@ func _ready():
 	modulate = Color.orange
 	$AnimatedSprite.play("idle")
 
-func shoot():
-	if can_shoot:
-		can_shoot = false
-		$GunTimer.start()
-		_shoot_bullet()
 
-func _shoot_bullet(): 
-	var dir = Vector2(1,0).rotated($GunPosition.global_rotation)
-	var b = Bullet.instance()
-	owner.add_child(b)
-	b.start($GunPosition.global_position,dir)
-	
 func _physics_process(delta):
 	$GunPosition.look_at(get_global_mouse_position())
 	
@@ -52,6 +46,7 @@ func _physics_process(delta):
 		shoot()
 	if Input.is_action_just_pressed("dash"): 
 		direction = dash()
+		velocity = move_and_slide(direction,FLOOR_NORMAL)
 	velocity = calculate_move(velocity,direction,is_jump_interrupted)
 	
 	if velocity.x != 0 and is_on_floor():
@@ -89,12 +84,35 @@ func control():
 		$AnimatedSprite.flip_h = false
 	return dir
 
+func shoot():
+	if can_shoot:
+		can_shoot = false
+		$GunTimer.start()
+		_shoot_bullet()
+
+func _shoot_bullet(): 
+	var dir = Vector2(1,0).rotated($GunPosition.global_rotation)
+	var b = Bullet.instance()
+	owner.add_child(b)
+	b.start($GunPosition.global_position,dir)
+	
+
 func dash():
 	var dir = Vector2.ZERO
 	if can_dash:
 		can_dash = false
 		$DashTimer.start()
+		#$DashEffectTimer.start()
 		dir = dash_direction.normalized() * dash_impulse
+		
+		var dash_effect = dash_object.instance()
+		dash_effect.texture = $AnimatedSprite.frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
+		dash_effect.position = global_position
+		dash_effect.flip_h =$AnimatedSprite.flip_h
+		dash_effect.modulate = modulate
+		dash_effect.transform = $AnimatedSprite.global_transform
+		get_parent().add_child(dash_effect)
+		
 	return dir
 
 func calculate_move(linear_velocity, direction,is_jump_interrupted):
@@ -130,15 +148,15 @@ func damage(amount):
 		effects_animation.queue("flash")
 
 func kill(): # COMENTAR PARA EVITAR MORIR CONSTANTEMENTE DE SER NECESARIO
-	$GamerOverSound.play()
-	$GunTimer.stop()
-	$Camera2D.current = false
-	$CollisionShape2D.set_deferred("disable",true)
-	hide()
-	yield(get_tree().create_timer(1.0), "timeout")
-	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn")
-	queue_free()
-#	pass
+#	$GamerOverSound.play()
+#	$GunTimer.stop()
+#	$Camera2D.current = false
+#	$CollisionShape2D.set_deferred("disable",true)
+#	hide()
+#	yield(get_tree().create_timer(1.0), "timeout")
+#	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn")
+#	queue_free()
+	pass
 
 func _set_health(value):
 	var prev_health = health
@@ -156,11 +174,14 @@ func _on_Player_killed():
 
 
 func _on_DashEffectTimer_timeout():
-	if !can_dash:
-		var effect = preload("res://scenes/models/main character/DashEffect.tscn").instance()
-		get_parent().add_child(effect)
-		effect.position = position
-		effect.texture = $AnimatedSprite.frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
-		effect.flip_h =$AnimatedSprite.flip_h
+		var dash_effect = dash_object.instance()
 
+		dash_effect.texture = $AnimatedSprite.frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
+		dash_effect.position = position
+		dash_effect.flip_h =$AnimatedSprite.flip_h
+		#dash_effect.modulate = modulate
+		#dash_effect.transform = $AnimatedSprite.transform
+		get_parent().add_child(dash_effect)
+		
+		pass
 

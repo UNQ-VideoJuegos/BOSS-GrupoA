@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/models/main character/Personaje.gd" type="Script" id=1]
 [ext_resource path="res://sounds/error_003.wav" type="AudioStream" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/tiles/industrial.v2.png" type="Texture" id=4]
 [ext_resource path="res://sounds/Mario_Jumping-Mike_Koenig.wav" type="AudioStream" id=5]
 [ext_resource path="res://scenes/models/HealthDisplay.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/models/main character/DashEffect.tscn" type="PackedScene" id=7]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 4 )
@@ -110,6 +111,7 @@ tracks/1/keys = {
 collision_layer = 2
 script = ExtResource( 1 )
 Bullet = ExtResource( 3 )
+dash_object = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2.5, 2.5 )
@@ -148,8 +150,8 @@ stream = ExtResource( 2 )
 stream = ExtResource( 5 )
 
 [node name="DashEffectTimer" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
+wait_time = 0.2
+one_shot = true
 
 [node name="HealthDisplay" parent="." instance=ExtResource( 6 )]
 [connection signal="killed" from="." to="." method="_on_Player_killed"]
