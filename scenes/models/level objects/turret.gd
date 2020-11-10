@@ -54,10 +54,8 @@ func _on_GunTimer_timeout():
 
 func _on_Area2D_area_entered(area):
 	if area.name == "Bullet":
-		$Sprite.modulate = Color.green # solo de prueba, no es final
+		$Sprite.modulate = Color.red # solo de prueba, no es final
 		$GunTimer.stop()
 		yield(get_tree().create_timer(3.0),"timeout")
 		$Sprite.modulate = Color.white
 		$GunTimer.start()
-	
-	

@@ -5,6 +5,7 @@
 [ext_resource path="res://assets/explosion.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=2]
+radius = 15.4809
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 79.3645
@@ -419,7 +420,6 @@ self_modulate = Color( 0.219608, 0.121569, 0.898039, 1 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

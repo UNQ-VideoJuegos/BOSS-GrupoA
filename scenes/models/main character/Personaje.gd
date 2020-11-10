@@ -102,7 +102,6 @@ func dash():
 	if can_dash:
 		can_dash = false
 		$DashTimer.start()
-		#$DashEffectTimer.start()
 		dir = dash_direction.normalized() * dash_impulse
 		
 		var dash_effect = dash_object.instance()
@@ -148,14 +147,14 @@ func damage(amount):
 		effects_animation.queue("flash")
 
 func kill(): # COMENTAR PARA EVITAR MORIR CONSTANTEMENTE DE SER NECESARIO
-#	$GamerOverSound.play()
-#	$GunTimer.stop()
-#	$Camera2D.current = false
-#	$CollisionShape2D.set_deferred("disable",true)
-#	hide()
-#	yield(get_tree().create_timer(1.0), "timeout")
-#	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn")
-#	queue_free()
+	$GamerOverSound.play()
+	$GunTimer.stop()
+	$Camera2D.current = false
+	$CollisionShape2D.set_deferred("disable",true)
+	hide()
+	yield(get_tree().create_timer(1.0), "timeout")
+	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn")
+	queue_free()
 	pass
 
 func _set_health(value):
@@ -171,17 +170,3 @@ func _on_invulnerabilityTimer_timeout():
 
 func _on_Player_killed():
 	kill()
-
-
-func _on_DashEffectTimer_timeout():
-#		var dash_effect = dash_object.instance()
-#
-#		dash_effect.texture = $AnimatedSprite.frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
-#		dash_effect.position = position
-#		dash_effect.flip_h =$AnimatedSprite.flip_h
-#		#dash_effect.modulate = modulate
-#		#dash_effect.transform = $AnimatedSprite.transform
-#		get_parent().add_child(dash_effect)
-		
-		pass
-

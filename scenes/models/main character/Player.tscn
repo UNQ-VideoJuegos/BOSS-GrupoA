@@ -149,13 +149,8 @@ stream = ExtResource( 2 )
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
 
-[node name="DashEffectTimer" type="Timer" parent="."]
-wait_time = 0.2
-one_shot = true
-
 [node name="HealthDisplay" parent="." instance=ExtResource( 6 )]
 [connection signal="killed" from="." to="." method="_on_Player_killed"]
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
 [connection signal="timeout" from="invulnerabilityTimer" to="." method="_on_invulnerabilityTimer_timeout"]
-[connection signal="timeout" from="DashEffectTimer" to="." method="_on_DashEffectTimer_timeout"]
