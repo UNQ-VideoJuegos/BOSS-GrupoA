@@ -125,19 +125,20 @@ func damage(amount):
 	if invulnerability_timer.is_stopped():
 		invulnerability_timer.start()
 		_set_health(health - amount)
+		$HealthDisplay.update_healthbar(health - amount)
 		effects_animation.play("damage")
 		effects_animation.queue("flash")
 
 func kill(): # COMENTAR PARA EVITAR MORIR CONSTANTEMENTE DE SER NECESARIO
-#	$GamerOverSound.play()
-#	$GunTimer.stop()
-#	$Camera2D.current = false
-#	$CollisionShape2D.set_deferred("disable",true)
-#	hide()
-#	yield(get_tree().create_timer(1.0), "timeout")
-#	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn")
-#	queue_free()
-	pass
+	$GamerOverSound.play()
+	$GunTimer.stop()
+	$Camera2D.current = false
+	$CollisionShape2D.set_deferred("disable",true)
+	hide()
+	yield(get_tree().create_timer(1.0), "timeout")
+	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn")
+	queue_free()
+#	pass
 
 func _set_health(value):
 	var prev_health = health

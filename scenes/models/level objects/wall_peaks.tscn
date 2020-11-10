@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/tiles/industrial.v2.png" type="Texture" id=1]
 [ext_resource path="res://scenes/models/level objects/peak.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.54196, 1.54211 )
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -35,7 +35,7 @@ region_enabled = true
 region_rect = Rect2( 192.903, 45.0479, 15.0359, 2.95578 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/peak"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="peak2" type="Area2D" parent="Node2D"]
 position = Vector2( -7.23633, -6.15274 )
@@ -51,7 +51,7 @@ region_enabled = true
 region_rect = Rect2( 192.903, 45.0479, 15.0359, 2.95578 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/peak2"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="peak3" type="Area2D" parent="Node2D"]
 position = Vector2( 7.85173, -6.15274 )
@@ -67,7 +67,7 @@ region_enabled = true
 region_rect = Rect2( 192.903, 45.0479, 15.0359, 2.95578 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/peak3"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="peak4" type="Area2D" parent="Node2D"]
 position = Vector2( 22.9398, -6.15274 )
@@ -83,7 +83,7 @@ region_enabled = true
 region_rect = Rect2( 192.903, 45.0479, 15.0359, 2.95578 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/peak4"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="peak5" type="Area2D" parent="Node2D"]
 position = Vector2( -22.3244, 6.54647 )
@@ -100,7 +100,7 @@ region_enabled = true
 region_rect = Rect2( 192.903, 45.0479, 15.0359, 2.95578 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/peak5"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="peak6" type="Area2D" parent="Node2D"]
 position = Vector2( -7.23633, 6.54647 )
@@ -117,7 +117,7 @@ region_enabled = true
 region_rect = Rect2( 192.903, 45.0479, 15.0359, 2.95578 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/peak6"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="peak7" type="Area2D" parent="Node2D"]
 position = Vector2( 7.85173, 6.54647 )
@@ -134,7 +134,7 @@ region_enabled = true
 region_rect = Rect2( 192.903, 45.0479, 15.0359, 2.95578 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/peak7"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="peak8" type="Area2D" parent="Node2D"]
 position = Vector2( 22.9398, 6.54647 )
@@ -151,7 +151,7 @@ region_enabled = true
 region_rect = Rect2( 192.903, 45.0479, 15.0359, 2.95578 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/peak8"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
