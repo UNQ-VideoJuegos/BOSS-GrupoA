@@ -1,8 +1,9 @@
-[gd_scene load_steps=82 format=2]
+[gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://scenes/models/level objects/Chaser.gd" type="Script" id=1]
 [ext_resource path="res://assets/tiles/industrial.v2.png" type="Texture" id=2]
 [ext_resource path="res://assets/explosion.png" type="Texture" id=3]
+[ext_resource path="res://scenes/models/HealthDisplay.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 15.4809
@@ -428,5 +429,7 @@ shape = SubResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 78 )
 animation = "explosion"
+
+[node name="HealthDisplay" parent="." instance=ExtResource( 4 )]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 [connection signal="body_entered" from="Detection area" to="." method="_on_Detection_area_body_entered"]

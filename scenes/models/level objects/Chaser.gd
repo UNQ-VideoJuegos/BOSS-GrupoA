@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export var speed = 250
 export var chaser_damage = 25
-export var life = 50
+export var max_health = 50
 
 var target = null
 var velocity= Vector2.ZERO
@@ -20,7 +20,7 @@ func _process(delta):
 	else:
 		velocity = Vector2.ZERO
 	velocity = move_and_slide(velocity)
-	if life <= 0:
+	if max_health <= 0:
 		boom()
 
 
@@ -50,6 +50,7 @@ func _on_Detection_area_body_entered(body):
 func _on_Hitbox_area_entered(area):
 	if area.name == "Bullet":
 		$Sprite.modulate = Color.red # solo de prueba, no es final
-		life -= area.damage
+		max_health -= area.damage
+		$HealthDisplay.update_healthbar(max_health)
 		yield(get_tree().create_timer(2.0),"timeout")
 		$Sprite.modulate = Color.white
