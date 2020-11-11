@@ -4,8 +4,9 @@ extends Node2D
 func _ready():
 	Global.actual_scene = "res://scenes/levels/Level1.tscn"
 	
-	$Interruptor2.connect("triggered", $Door, "_on_Interruptor_triggered") 
-	$Interruptor.connect("triggered", $Door2, "_on_Interruptor_triggered") 
+	$Interruptor2.connect("triggered", $Door, "_on_Interruptor_triggered")
+	$Interruptor3.connect("triggered", $Door2, "_on_Interruptor_triggered")
+	$Interruptor.connect("triggered", $Interruptor3, "_on_Interruptor_triggered") 
 
 func _process(delta):
 	if Input.is_action_just_pressed("pause"):

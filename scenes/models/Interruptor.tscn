@@ -89,5 +89,15 @@ shape = SubResource( 11 )
 [node name="RespawnTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="MoveDownTimer" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
+[node name="MoveUpTimer" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
 [connection signal="area_entered" from="." to="." method="_on_Interruptor_area_entered"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_RespawnTimer_timeout"]
+[connection signal="timeout" from="MoveDownTimer" to="." method="_on_MoveDownTimer_timeout"]
+[connection signal="timeout" from="MoveUpTimer" to="." method="_on_MoveUpTimer_timeout"]
