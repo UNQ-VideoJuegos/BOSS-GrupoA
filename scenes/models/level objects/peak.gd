@@ -7,3 +7,6 @@ func _on_peak_body_entered(body):
 		body.damage(damage)
 	elif body.is_in_group("plataform"):
 		body.destroy()
+	elif body.is_in_group("Chaser"):
+		body.boom()
+	

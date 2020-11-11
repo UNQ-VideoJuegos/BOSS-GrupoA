@@ -36,8 +36,8 @@ func respawn():
 	position = originalPosition
 	
 func destroy():
-	queue_free()
-	
+	#queue_free()
+	respawn()
 	
 func _on_VisibilityNotifier2D_screen_exited():
 	$PlatformRespawn.start()
