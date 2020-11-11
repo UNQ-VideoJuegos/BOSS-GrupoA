@@ -1,7 +1,7 @@
 extends Area2D
 
 export (PackedScene) var Bullet
-export (float) var cool_down = 1
+export (float) var cool_down = 0.5
 export (int) var detect_radius
 
 var target = null
@@ -51,11 +51,13 @@ func _on_GunTimer_timeout():
 	can_shoot = true
 
 
-
-func _on_Area2D_area_entered(area):
+func _on_hitbox_area_entered(area):
 	if area.name == "Bullet":
 		$Sprite.modulate = Color.red # solo de prueba, no es final
+		can_shoot = false
 		$GunTimer.stop()
-		yield(get_tree().create_timer(5.0),"timeout")
+		yield(get_tree().create_timer(3.0),"timeout")
 		$Sprite.modulate = Color.white
+		can_shoot = true
 		$GunTimer.start()
+		

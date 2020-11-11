@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/models/main character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/models/Platform.tscn" type="PackedScene" id=2]
@@ -11,33 +11,97 @@
 [ext_resource path="res://scenes/models/Lava.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/models/level objects/muro invisible.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/levels/Tutorial.gd" type="Script" id=11]
+[ext_resource path="res://scenes/models/level objects/wall_peaks.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/models/level objects/turret.tscn" type="PackedScene" id=13]
 
 [sub_resource type="DynamicFont" id=1]
+size = 20
 font_data = ExtResource( 6 )
 
 [node name="Tutorial" type="Node2D"]
 pause_mode = 2
 script = ExtResource( 11 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-pause_mode = 1
-position = Vector2( 49.3354, 489.713 )
+[node name="textos" type="Node2D" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="textos"]
 modulate = Color( 0.67451, 0.27451, 0.137255, 1 )
-margin_left = 90.9786
-margin_top = 412.336
-margin_right = 353.979
-margin_bottom = 458.336
+margin_left = 5.16711
+margin_top = 304.955
+margin_right = 268.167
+margin_bottom = 357.955
 custom_fonts/font = SubResource( 1 )
-text = "pulsa 2 veces espacio para realizar un doble salto"
+text = "pulsa 2 veces espacio saltar mas alto"
 align = 1
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label2" type="Label" parent="textos"]
+modulate = Color( 0.67451, 0.27451, 0.137255, 1 )
+margin_left = 610.978
+margin_top = 3.83099
+margin_right = 873.978
+margin_bottom = 56.831
+custom_fonts/font = SubResource( 1 )
+text = "click para disparar al interruptor"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="textos"]
+modulate = Color( 0.67451, 0.27451, 0.137255, 1 )
+margin_left = 777.503
+margin_top = 328.297
+margin_right = 1040.5
+margin_bottom = 381.297
+custom_fonts/font = SubResource( 1 )
+text = "cuidad con los pinches!"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="textos"]
+modulate = Color( 0.67451, 0.27451, 0.137255, 1 )
+margin_left = 1159.27
+margin_top = 357.663
+margin_right = 1422.27
+margin_bottom = 410.663
+custom_fonts/font = SubResource( 1 )
+text = "algunas plataformas te ayudan a subir"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="textos"]
+modulate = Color( 0.67451, 0.27451, 0.137255, 1 )
+margin_left = 1171.61
+margin_top = 187.292
+margin_right = 1608.61
+margin_bottom = 240.292
+custom_fonts/font = SubResource( 1 )
+text = "dispara a las torretas  para desactivarlas temporalmente"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+pause_mode = 1
+position = Vector2( 1099.65, 188.301 )
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+offset = Vector2( 0, -200 )
+current = true
+smoothing_enabled = true
 
 [node name="pisos" type="Node2D" parent="."]
 
@@ -53,90 +117,221 @@ scale = Vector2( 1.05188, 2.61704 )
 position = Vector2( 304, 568 )
 scale = Vector2( 1.05188, 2.61704 )
 
+[node name="Floor8" parent="pisos" instance=ExtResource( 3 )]
+position = Vector2( 424.407, 568 )
+scale = Vector2( 1.05188, 2.61704 )
+
+[node name="Floor9" parent="pisos" instance=ExtResource( 3 )]
+position = Vector2( 544.407, 568 )
+scale = Vector2( 1.05188, 2.61704 )
+
+[node name="Floor10" parent="pisos" instance=ExtResource( 3 )]
+position = Vector2( 664.407, 568 )
+scale = Vector2( 1.05188, 2.61704 )
+
+[node name="Floor11" parent="pisos" instance=ExtResource( 3 )]
+position = Vector2( 782.144, 568 )
+scale = Vector2( 1.05188, 2.61704 )
+
+[node name="Floor12" parent="pisos" instance=ExtResource( 3 )]
+position = Vector2( 902.144, 568 )
+scale = Vector2( 1.05188, 2.61704 )
+
+[node name="Floor13" parent="pisos" instance=ExtResource( 3 )]
+position = Vector2( 1022.14, 568 )
+scale = Vector2( 1.05188, 2.61704 )
+
+[node name="Floor15" parent="pisos" instance=ExtResource( 3 )]
+position = Vector2( 1150.94, 570.378 )
+scale = Vector2( 1.05188, 2.61704 )
+
+[node name="Floor16" parent="pisos" instance=ExtResource( 3 )]
+position = Vector2( 1270.94, 570.378 )
+scale = Vector2( 1.05188, 2.61704 )
+
+[node name="Floor17" parent="pisos" instance=ExtResource( 3 )]
+position = Vector2( 1390.94, 570.378 )
+scale = Vector2( 1.05188, 2.61704 )
+
+[node name="Floor18" parent="pisos" instance=ExtResource( 3 )]
+position = Vector2( 1511.34, 570.378 )
+scale = Vector2( 1.05188, 2.61704 )
+
+[node name="Floor19" parent="pisos" instance=ExtResource( 3 )]
+position = Vector2( 1631.34, 570.378 )
+scale = Vector2( 1.05188, 2.61704 )
+
+[node name="Floor20" parent="pisos" instance=ExtResource( 3 )]
+position = Vector2( 1751.34, 570.378 )
+scale = Vector2( 1.05188, 2.61704 )
+
+[node name="Floor21" parent="pisos" instance=ExtResource( 3 )]
+position = Vector2( 1869.08, 570.378 )
+scale = Vector2( 1.05188, 2.61704 )
+
+[node name="Floor22" parent="pisos" instance=ExtResource( 3 )]
+position = Vector2( 1989.08, 570.378 )
+scale = Vector2( 1.05188, 2.61704 )
+
+[node name="Floor23" parent="pisos" instance=ExtResource( 3 )]
+position = Vector2( 2109.08, 570.378 )
+scale = Vector2( 1.05188, 2.61704 )
+
 [node name="Floor2" parent="pisos" instance=ExtResource( 3 )]
-position = Vector2( 960.561, 204.071 )
+position = Vector2( 1676.75, 204.071 )
 scale = Vector2( 1, 2.6 )
 
 [node name="Floor7" parent="pisos" instance=ExtResource( 3 )]
-position = Vector2( 856, 520 )
+position = Vector2( 908.604, 257.348 )
 scale = Vector2( 1, 2.6 )
 
 [node name="Floor3" parent="pisos" instance=ExtResource( 3 )]
-position = Vector2( 56, 120 )
+position = Vector2( 2255.76, 569.992 )
 scale = Vector2( 1, 2.6 )
 
 [node name="Floor4" parent="pisos" instance=ExtResource( 3 )]
-position = Vector2( 960, 520 )
+position = Vector2( 1012.6, 257.348 )
+scale = Vector2( 1, 2.6 )
+
+[node name="Floor14" parent="pisos" instance=ExtResource( 3 )]
+position = Vector2( 1130.2, 257.348 )
 scale = Vector2( 1, 2.6 )
 
 [node name="plataformas" type="Node2D" parent="."]
 
 [node name="Platform" parent="plataformas" instance=ExtResource( 2 )]
 pause_mode = 1
-position = Vector2( 719.815, 413.95 )
+position = Vector2( 617.337, 331.777 )
 
 [node name="Platform2" parent="plataformas" instance=ExtResource( 2 )]
 pause_mode = 1
-position = Vector2( 418.468, 402.759 )
-
-[node name="Platform3" parent="plataformas" instance=ExtResource( 2 )]
-pause_mode = 1
-position = Vector2( 472.804, 190.889 )
+position = Vector2( 280.816, 395.988 )
 
 [node name="Platform4" parent="plataformas" instance=ExtResource( 2 )]
 pause_mode = 1
-position = Vector2( 670.25, 103.821 )
+position = Vector2( 1283.3, 487.515 )
+SPEED = -8000
 
 [node name="muros invisibles" type="Node2D" parent="."]
 
 [node name="muro invisible" parent="muros invisibles" instance=ExtResource( 10 )]
 
+[node name="muro invisible5" parent="muros invisibles" instance=ExtResource( 10 )]
+position = Vector2( 2176.4, 257.699 )
+
 [node name="muro invisible2" parent="muros invisibles" instance=ExtResource( 10 )]
-position = Vector2( 1028.13, 270.352 )
+position = Vector2( 2331.71, 260.826 )
 
 [node name="muro invisible3" parent="muros invisibles" instance=ExtResource( 10 )]
 position = Vector2( 261.79, -25.0945 )
 rotation = 1.5708
 
 [node name="muro invisible4" parent="muros invisibles" instance=ExtResource( 10 )]
-position = Vector2( 764.996, -25.0945 )
+position = Vector2( 781.996, -25.0945 )
+rotation = 1.5708
+
+[node name="muro invisible6" parent="muros invisibles" instance=ExtResource( 10 )]
+position = Vector2( 1350.21, -25.0945 )
 rotation = 1.5708
 
 [node name="lava" type="Node2D" parent="."]
 
 [node name="Lava" parent="lava" instance=ExtResource( 9 )]
-position = Vector2( 412.238, 1067.59 )
+position = Vector2( 2412.24, 563.59 )
 scale = Vector2( 9.77754, 13.5966 )
 
 [node name="Lava2" parent="lava" instance=ExtResource( 9 )]
-position = Vector2( 588.238, 1067.59 )
+position = Vector2( 2588.24, 563.59 )
 scale = Vector2( 9.77754, 13.5966 )
 
 [node name="Lava3" parent="lava" instance=ExtResource( 9 )]
-position = Vector2( 764.238, 1067.59 )
+position = Vector2( 2764.24, 563.59 )
 scale = Vector2( 9.77754, 13.5966 )
 
 [node name="Lava4" parent="lava" instance=ExtResource( 9 )]
-position = Vector2( 940.238, 1067.59 )
+position = Vector2( 2940.24, 563.59 )
 scale = Vector2( 9.77754, 13.5966 )
 
-[node name="Door" parent="." instance=ExtResource( 4 )]
-position = Vector2( 848, 417.5 )
+[node name="puertas" type="Node2D" parent="."]
+
+[node name="Door" parent="puertas" instance=ExtResource( 4 )]
+position = Vector2( 900.604, 154.848 )
 scale = Vector2( 4, 4 )
 
-[node name="Door2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 848, 104 )
+[node name="Door2" parent="puertas" instance=ExtResource( 4 )]
+position = Vector2( 1564.19, 104 )
 scale = Vector2( 4, 4 )
 
-[node name="Interruptor" parent="." instance=ExtResource( 5 )]
-position = Vector2( 32.0659, 55.7285 )
+[node name="interruptores" type="Node2D" parent="."]
+
+[node name="Interruptor" parent="interruptores" instance=ExtResource( 5 )]
+position = Vector2( 947.895, 160.802 )
 scale = Vector2( 1.46148, 1.53358 )
 
-[node name="Interruptor2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 963.654, 145.715 )
+[node name="Interruptor2" parent="interruptores" instance=ExtResource( 5 )]
+position = Vector2( 1601.56, 60.2998 )
 scale = Vector2( 1.46148, 1.53358 )
+
+[node name="pinchos" type="Node2D" parent="."]
+
+[node name="wall_peaks" parent="pinchos" instance=ExtResource( 12 )]
+position = Vector2( 1015.62, 496.414 )
+rotation = 1.5708
+
+[node name="wall_peaks2" parent="pinchos" instance=ExtResource( 12 )]
+position = Vector2( 1015.62, 432.775 )
+rotation = 1.5708
+
+[node name="wall_peaks3" parent="pinchos" instance=ExtResource( 12 )]
+position = Vector2( 1015.62, 372.671 )
+rotation = 1.5708
+
+[node name="wall_peaks4" parent="pinchos" instance=ExtResource( 12 )]
+position = Vector2( 1065.62, 116.263 )
+rotation = 1.57079
+
+[node name="wall_peaks5" parent="pinchos" instance=ExtResource( 12 )]
+position = Vector2( 1065.62, 50.1309 )
+rotation = 1.5708
+
+[node name="wall_peaks6" parent="pinchos" instance=ExtResource( 12 )]
+position = Vector2( 1065.62, -13.5087 )
+rotation = 1.5708
+
+[node name="wall_peaks7" parent="pinchos" instance=ExtResource( 12 )]
+position = Vector2( 1731.82, 502.771 )
+rotation = 1.5708
+
+[node name="wall_peaks8" parent="pinchos" instance=ExtResource( 12 )]
+position = Vector2( 1731.82, 439.132 )
+rotation = 1.5708
+
+[node name="wall_peaks9" parent="pinchos" instance=ExtResource( 12 )]
+position = Vector2( 1731.82, 379.028 )
+rotation = 1.5708
+
+[node name="wall_peaks10" parent="pinchos" instance=ExtResource( 12 )]
+position = Vector2( 1731.82, 315.388 )
+rotation = 1.5708
+
+[node name="wall_peaks11" parent="pinchos" instance=ExtResource( 12 )]
+position = Vector2( 1731.82, 268.326 )
+rotation = 1.5708
+
+[node name="wall_peaks12" parent="pinchos" instance=ExtResource( 12 )]
+position = Vector2( 1731.82, 64.3173 )
+rotation = 1.5708
+
+[node name="wall_peaks13" parent="pinchos" instance=ExtResource( 12 )]
+position = Vector2( 1731.82, 17.2555 )
+rotation = 1.5708
 
 [node name="TransportVehicle" parent="." instance=ExtResource( 7 )]
-position = Vector2( 976, 464 )
+visible = false
+position = Vector2( 2468.47, -103.818 )
 scale = Vector2( 3, 3 )
 next_scene = ExtResource( 8 )
+
+[node name="Turret" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1408.97, 36.8132 )
+rotation = 3.26346

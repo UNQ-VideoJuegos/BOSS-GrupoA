@@ -21,10 +21,10 @@ func _process(delta):
 		velocity = Vector2.ZERO
 	velocity = move_and_slide(velocity)
 	if life <= 0:
-		_boom()
+		boom()
 
 
-func _boom():
+func boom():
 	speed = 0
 	$AnimatedSprite.show()
 	$AnimatedSprite.play()

@@ -37,7 +37,7 @@ func respawn():
 	position = originalPosition
 	
 func destroy():
-	queue_free()
+	respawn()
 	
 func hideTrap():
 	$trap.hide()
