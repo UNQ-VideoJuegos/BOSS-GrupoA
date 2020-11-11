@@ -8,9 +8,3 @@ func _ready():
 	$Interruptor3.connect("triggered", $Door2, "_on_Interruptor_triggered")
 	$Interruptor.connect("triggered", $Interruptor3, "_on_Interruptor_triggered") 
 
-func _process(delta):
-	if Input.is_action_just_pressed("pause"):
-		if get_tree().paused == true:
-			get_tree().paused = false
-		else:
-			get_tree().paused = true

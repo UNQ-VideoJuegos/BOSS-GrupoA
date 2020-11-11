@@ -155,7 +155,7 @@ func kill(): # COMENTAR PARA EVITAR MORIR CONSTANTEMENTE DE SER NECESARIO
 	yield(get_tree().create_timer(1.0), "timeout")
 	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn")
 	queue_free()
-	pass
+	
 
 func _set_health(value):
 	var prev_health = health

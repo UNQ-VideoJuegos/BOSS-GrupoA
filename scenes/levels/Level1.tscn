@@ -18,16 +18,16 @@
 pause_mode = 2
 script = ExtResource( 6 )
 
+[node name="PlatformTrap" parent="." instance=ExtResource( 13 )]
+position = Vector2( 488.558, 311.832 )
+
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 pause_mode = 1
-position = Vector2( 719.815, 413.95 )
+position = Vector2( 718.246, 221.439 )
 
 [node name="Platform2" parent="." instance=ExtResource( 2 )]
 pause_mode = 1
-position = Vector2( 367.701, 379.473 )
-
-[node name="PlatformTrap" parent="." instance=ExtResource( 13 )]
-position = Vector2( 562.643, 222.067 )
+position = Vector2( 295.966, 399.632 )
 
 [node name="Floor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 64, 568 )
@@ -127,5 +127,8 @@ rotation = -1.56526
 [node name="wall_peaks" parent="." instance=ExtResource( 12 )]
 position = Vector2( 28.4932, 131.127 )
 
+[node name="wall_peaks3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 61.0201, 131.127 )
+
 [node name="wall_peaks2" parent="." instance=ExtResource( 12 )]
-position = Vector2( 27.7294, 7.72025 )
+position = Vector2( 50.3568, 7.72025 )
