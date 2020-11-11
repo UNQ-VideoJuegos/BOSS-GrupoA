@@ -4,12 +4,15 @@ signal triggered
 
 const SPEED = 50
 
+export var isMovingInterruptor = false
+
 var movingDown = false
 var movingUp = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if (isMovingInterruptor):
+		hide()
 
 func _physics_process(delta):
 	if (movingDown):
@@ -22,6 +25,7 @@ func _physics_process(delta):
 
 func _on_Interruptor_area_entered(area):
 	if (area.get_name() == "Bullet"):
+		$CollisionShape2D.disabled = true
 		emit_signal('triggered') 
 		$Sprite.hide()
 		$AnimatedSprite.show()
@@ -33,10 +37,12 @@ func _on_Interruptor_area_entered(area):
 		$RespawnTimer.start()
 
 func _on_Interruptor_triggered():
+	show()
 	$MoveDownTimer.start()
 	
 func _on_RespawnTimer_timeout():
 	$Sprite.show()
+	$CollisionShape2D.disabled = false
 
 
 func _on_MoveDownTimer_timeout():
