@@ -30,7 +30,7 @@ func _boom():
 	$AnimatedSprite.play()
 	yield(get_tree().create_timer(0.5), "timeout")
 	queue_free()
-	
+
 
 func _boom_damage():
 	if target != null:
