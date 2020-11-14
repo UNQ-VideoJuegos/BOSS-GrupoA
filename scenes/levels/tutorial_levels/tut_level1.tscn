@@ -1,0 +1,92 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/models/Floor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/models/main character/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/models/Platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/models/Lava.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/models/TransportVehicle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/menu/HelpTip.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/models/level objects/muro invisible.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/levels/tutorial_levels/tut_level1.gd" type="Script" id=8]
+[ext_resource path="res://scenes/levels/tutorial_levels/tut_level2.tscn" type="PackedScene" id=9]
+
+[node name="TutLevel1" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 64.7007, 524.935 )
+
+[node name="Floor" parent="." instance=ExtResource( 1 )]
+position = Vector2( 43.8585, 572.649 )
+scale = Vector2( 0.701275, 1.82125 )
+
+[node name="Floor2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 122.188, 572.667 )
+scale = Vector2( 0.701275, 1.82125 )
+script = null
+
+[node name="Floor3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 198.314, 572.649 )
+scale = Vector2( 0.701275, 1.82125 )
+script = null
+
+[node name="Floor4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 979.904, 299.594 )
+scale = Vector2( 0.701275, 1.82125 )
+script = null
+
+[node name="Floor5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 902.303, 299.443 )
+scale = Vector2( 0.701275, 1.82125 )
+script = null
+
+[node name="Platform" parent="." instance=ExtResource( 3 )]
+position = Vector2( 402.988, 494.273 )
+canFallPlatform = false
+
+[node name="Platform2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 722.12, 370.77 )
+canFallPlatform = false
+
+[node name="Lava" parent="." instance=ExtResource( 4 )]
+position = Vector2( 312, 584 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 472, 584 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 632, 584 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 792, 584 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 952, 584 )
+scale = Vector2( 9, 13 )
+
+[node name="HelpTip" parent="." instance=ExtResource( 6 )]
+position = Vector2( 111.351, 481.335 )
+tipText = "Press SPACE to JUMP!"
+
+[node name="HelpTip2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 352, 400 )
+tipText = "Press Space twice to Double Jump!"
+
+[node name="HelpTip3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 824, 208 )
+tipText = "Take the ship to exit level!"
+
+[node name="muro invisible" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, 280 )
+
+[node name="muro invisible2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1024, 592 )
+
+[node name="TransporterVehicle" parent="." instance=ExtResource( 5 )]
+position = Vector2( 984, 256 )
+scale = Vector2( 3, 3 )
+next_scene = ExtResource( 9 )

@@ -2,7 +2,7 @@ extends Node2D
 
 func _on_StartGame_pressed():
 	$WelcomeHUD._hide()
-	get_tree().change_scene("res://scenes/levels/Level1.tscn")
+	get_tree().change_scene("res://scenes/levels/tutorial_levels/tut_level1.tscn")
 	if (!$BackgroundSound.playing && $WelcomeHUD/OptionsHUD.backgroundSound):
 		$BackgroundSound.play()
 	

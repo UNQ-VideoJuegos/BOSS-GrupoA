@@ -3,6 +3,7 @@ extends KinematicBody2D
 export var SPEED = 8000
 export var playFallingAnimation = true
 export var isPlatformTrap = false
+export var canFallPlatform = true
 
 var canTriggerFalling = true
 var falling = false
@@ -14,12 +15,12 @@ func _ready():
 	add_to_group("plataform")		
 
 func _physics_process(delta):
-	if (falling and !isPlatformTrap):
+	if (falling and !isPlatformTrap and canFallPlatform):
 		velocity.y = SPEED * delta
 		position += velocity * delta		
 		
 func collide_with(collision : KinematicCollision2D, collider : KinematicBody2D):
-	if (canTriggerFalling):
+	if (canFallPlatform and canTriggerFalling):
 		canTriggerFalling = false
 		_fall()
 		
