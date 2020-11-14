@@ -469,15 +469,15 @@ scale = Vector2( 3, 4 )
 
 [node name="Interruptor" parent="doors" instance=ExtResource( 3 )]
 position = Vector2( 678.15, 18.9177 )
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Interruptor2" parent="doors" instance=ExtResource( 3 )]
 position = Vector2( 1398.28, 557.079 )
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Interruptor3" parent="doors" instance=ExtResource( 3 )]
 position = Vector2( 705.246, 922.892 )
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Door1" parent="doors" instance=ExtResource( 1 )]
 position = Vector2( 1281.36, 420.83 )

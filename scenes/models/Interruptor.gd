@@ -11,6 +11,7 @@ var movingUp = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$On.hide()	
 	if (isMovingInterruptor):
 		hide()
 
@@ -25,15 +26,9 @@ func _physics_process(delta):
 
 func _on_Interruptor_area_entered(area):
 	if (area.get_name() == "Bullet"):
-		$CollisionShape2D.disabled = true
-		emit_signal('triggered') 
-		$Sprite.hide()
-		$AnimatedSprite.show()
-		$AnimatedSprite.play()
-		yield(get_tree().create_timer(.5), "timeout")		
-		$AnimatedSprite.stop()
-		$AnimatedSprite.hide()
-		$AnimatedSprite.frame = 0
+		emit_signal('triggered')
+		$Off.hide()	
+		$On.show()	
 		$RespawnTimer.start()
 
 func _on_Interruptor_triggered():
@@ -41,8 +36,8 @@ func _on_Interruptor_triggered():
 	$MoveDownTimer.start()
 	
 func _on_RespawnTimer_timeout():
-	$Sprite.show()
-	$CollisionShape2D.disabled = false
+	$On.hide()	
+	$Off.show()
 
 
 func _on_MoveDownTimer_timeout():
