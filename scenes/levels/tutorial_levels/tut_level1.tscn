@@ -15,6 +15,7 @@ script = ExtResource( 8 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 64.7007, 524.935 )
+gravity = 500.0
 
 [node name="Floor" parent="." instance=ExtResource( 1 )]
 position = Vector2( 43.8585, 572.649 )

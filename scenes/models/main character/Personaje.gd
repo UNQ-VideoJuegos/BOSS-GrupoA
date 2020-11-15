@@ -3,30 +3,34 @@ extends KinematicBody2D
 signal health_updated(health)
 signal killed()
 
-export  var color = Color.white
-export  var speed = 300.0
-export  var jump_force = 400.0
-export  var gravity = 800.0
-export (PackedScene) var Bullet # recordar inicializar en el inspector
-export (float) var gun_cooldown = 0.1
 
+export (PackedScene) var Bullet
+export (float) var gun_cooldown = 0.1
 export (float) var dash_cooldown = 2
 export (float) var max_health = 100
-
 export(PackedScene) var dash_object
-export (int) var dash_impulse = 40
-export var dash_length = 0.2
-
 
 onready var health = max_health setget _set_health
 onready var invulnerability_timer = $invulnerabilityTimer
 onready var effects_animation = $Body/EffectsAnimation
 
+
 const FLOOR_NORMAL = Vector2.UP
-var velocity = Vector2.ZERO
+var velocity = Vector2()
+var move_direction
+var speed = 350
+
+var gravity = 600
+
 var can_shoot = true
+
+var dash_impulse = 10
+var dash_length = 0.2 # ??
 var can_dash = true
-var dash_direction : Vector2 = Vector2.RIGHT
+
+var jump_force = -400
+var min_jump = -100
+var is_jumping = false
 var jump_intents = 2
 
 func _ready():
@@ -40,15 +44,13 @@ func _physics_process(delta):
 	$GunPosition.look_at(get_global_mouse_position())
 	
 	var is_jump_interrupted = Input.is_action_just_released("jump") and velocity.y < 0.0
-	var direction = control()
-	direction.y = jump()
-	if Input.is_action_pressed("click"):
-		shoot()
-	if Input.is_action_just_pressed("dash"): 
-		direction = dash()
-		velocity = move_and_slide(direction,FLOOR_NORMAL)
-	velocity = calculate_move(velocity,direction,is_jump_interrupted)
-	
+	_apply_gravity(delta)
+	_move_input()
+	_jump()
+	_shoot()
+	_dash()
+
+	# animation
 	if velocity.x != 0 and is_on_floor():
 		$AnimatedSprite.animation = "idle"
 	elif velocity.y < 0 or velocity.x != 0 and !is_on_floor():
@@ -58,34 +60,33 @@ func _physics_process(delta):
 		
 	velocity = move_and_slide(velocity,FLOOR_NORMAL)
 	_handleCollision()
+	#print ("move direction: " + move_direction as String)
 	
-	if Input.is_action_just_pressed("reload"):
-		get_tree().reload_current_scene()
+	
 
-func jump():
-	var dir = 0.0
+
+func _move_input():
+	move_direction = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
+	
+	velocity.x = lerp(velocity.x,speed * move_direction, 0.2) 
+	if move_direction != 0:
+		$AnimatedSprite.flip_h = move_direction < 0
+
+func _apply_gravity(delta):
+	velocity.y += gravity * delta
+
+func _jump(): # salta dos veces pero queda "atascado" a menos que se quede quieto y vuelva a saltar
 	if is_on_floor():
 		jump_intents = 2
 	if Input.is_action_just_pressed("jump") and jump_intents > 0:
-		dir = -1.0
-		$JumpSound.play()
+		velocity.y = jump_force
+		#$JumpSound.play()
 		jump_intents -=1
-	return dir
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+		velocity.y = min_jump
 
-func control():
-	var dir = Vector2.ZERO
-	if Input.is_action_pressed("move_left"):
-		dir.x = -1.0
-		dash_direction = Vector2.LEFT
-		$AnimatedSprite.flip_h = true
-	if Input.is_action_pressed("move_right"):
-		dir.x = 1.0
-		dash_direction = Vector2.RIGHT
-		$AnimatedSprite.flip_h = false
-	return dir
-
-func shoot():
-	if can_shoot:
+func _shoot():
+	if can_shoot and Input.is_action_pressed("click"):
 		can_shoot = false
 		$GunTimer.start()
 		_shoot_bullet()
@@ -95,15 +96,12 @@ func _shoot_bullet():
 	var b = Bullet.instance()
 	owner.add_child(b)
 	b.start($GunPosition.global_position,dir)
-	
 
-func dash():
-	var dir = Vector2.ZERO
-	if can_dash:
+func _dash():
+	if can_dash and Input.is_action_just_pressed("dash"):
 		can_dash = false
 		$DashTimer.start()
-		dir = dash_direction.normalized() * dash_impulse
-		
+		velocity.x *= dash_impulse
 		var dash_effect = dash_object.instance()
 		dash_effect.texture = $AnimatedSprite.frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
 		dash_effect.position = global_position
@@ -111,18 +109,6 @@ func dash():
 		dash_effect.modulate = modulate
 		dash_effect.transform = $AnimatedSprite.global_transform
 		get_parent().add_child(dash_effect)
-		
-	return dir
-
-func calculate_move(linear_velocity, direction,is_jump_interrupted):
-	var move = linear_velocity
-	move.x = direction.x * speed
-	move.y += gravity * get_physics_process_delta_time()
-	if direction.y == -1.0:
-		move.y = jump_force * direction.y
-	if is_jump_interrupted:
-		move.y = 0.0
-	return move
 
 
 func _handleCollision():

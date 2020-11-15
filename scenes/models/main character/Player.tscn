@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/models/main character/Personaje.gd" type="Script" id=1]
 [ext_resource path="res://sounds/error_003.wav" type="AudioStream" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://sounds/Mario_Jumping-Mike_Koenig.wav" type="AudioStream" id=5]
 [ext_resource path="res://scenes/models/HealthDisplay.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/models/main character/DashEffect.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/models/main character/PlayerFSM.gd" type="Script" id=8]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 4 )
@@ -112,6 +113,9 @@ collision_layer = 2
 script = ExtResource( 1 )
 Bullet = ExtResource( 3 )
 dash_object = ExtResource( 7 )
+
+[node name="PlayerFSM" type="Node2D" parent="."]
+script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2.5, 2.5 )
