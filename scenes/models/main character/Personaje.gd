@@ -24,14 +24,17 @@ var gravity = 600
 
 var can_shoot = true
 
-var dash_impulse = 10
-var dash_length = 0.2 # ??
+var dash_impulse = 30
+#var dash_length = 0.2 # ??
 var can_dash = true
 
 var jump_force = -400
 var min_jump = -100
 var is_jumping = false
 var jump_intents = 2
+var gun_position_right = Vector2(26,-28)
+var gun_position_left = Vector2(-26,-28)
+
 
 func _ready():
 	$GunTimer.wait_time = gun_cooldown
@@ -47,10 +50,15 @@ func _apply_movement():
 func _move_input():
 	move_direction = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
 	
-	velocity.x = lerp(velocity.x,speed * move_direction, 0.2) 
+	velocity.x = speed * move_direction
 	if move_direction != 0:
 		$AnimatedSprite.flip_h = move_direction < 0
-
+		if $AnimatedSprite.flip_h:
+			$GunPosition.position = gun_position_left
+		else:
+			$GunPosition.position = gun_position_right
+		
+ 
 func _apply_gravity(delta):
 	velocity.y += gravity * delta
 
@@ -108,17 +116,14 @@ func damage(amount):
 		invulnerability_timer.start()
 		_set_health(health - amount)
 		$HealthDisplay.update_healthbar(health - amount)
-		animation.play("hitw")
 
 func kill():
 	$GamerOverSound.play()
 	$GunTimer.stop()
 	$Camera2D.current = false
-	$CollisionShape2D.set_deferred("disable",true)
-	hide()
 	yield(get_tree().create_timer(1.0), "timeout")
 	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn")
-	queue_free()
+	
 	
 
 func _set_health(value):
@@ -126,11 +131,11 @@ func _set_health(value):
 	health = clamp(value, 0, max_health)
 	if health != prev_health:
 		emit_signal("health_updated", health)
+		
 		if health <= 0:
 			kill()
 
 func _on_invulnerabilityTimer_timeout():
-	#effects_animation.play("rest")
 	pass
 
 func _on_Player_killed():

@@ -11,6 +11,7 @@ func start(pos,dir):
 	rotation = dir.angle()
 	$LifeTime.wait_time = lifetime
 	$LifeTime.start()
+	$AnimatedSprite.play("fire")
 	velocity = speed * dir
 
 func _process(delta):

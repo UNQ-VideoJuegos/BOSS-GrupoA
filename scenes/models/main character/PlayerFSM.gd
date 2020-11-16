@@ -6,6 +6,7 @@ func _ready():
 	add_state("run")
 	add_state("jump")
 	add_state("fall")
+	add_state("death")
 	call_deferred("set_state", states.idle)
 
 
@@ -17,9 +18,11 @@ func _state_logic(delta): # metodo que maneja la logica (handler)
 	parent._dash()
 	parent._apply_movement()
 	#print(state)
+	print(parent.health)
+	#print(parent.move_direction)
 	#print("is on floor: " + parent.is_on_floor() as String )
-	print("velocity: " + parent.velocity.x as String )
-	print("velocity: " + parent.velocity.y as String )
+#	print("velocity: " + parent.velocity.x as String )
+#	print("velocity: " + parent.velocity.y as String )
 
 func _get_transition(delta): # maneja las transiciones
 	match state:
@@ -31,24 +34,32 @@ func _get_transition(delta): # maneja las transiciones
 					return states.fall
 			elif parent.velocity.x != 0:
 				return states.run
+			elif parent.health <= 0:
+				return states.death
 		states.run:
 			if !parent.is_on_floor():
 				if parent.velocity.y < 0:
 					return states.jump
 				elif parent.velocity.y > 0:
 					return states.fall
-			elif parent.velocity.x == 0:
+			elif parent.move_direction == 0:
 				return states.idle
+			elif parent.health <= 0:
+				return states.death
 		states.jump:
 			if parent.is_on_floor():
 				return states.idle
 			elif parent.velocity.y >= 0:
 				return states.fall
+			elif parent.health <= 0:
+				return states.death
 		states.fall:
 			if parent.is_on_floor():
 				return states.idle
 			elif parent.velocity.y < 0:
 				return states.jump
+			elif parent.health <= 0:
+					return states.death
 	return null
 
 func _enter_state(new_state, old_state): # metodo para setear animaciones o timers
@@ -61,6 +72,9 @@ func _enter_state(new_state, old_state): # metodo para setear animaciones o time
 			parent.animation.play("jump")
 		states.fall:
 			parent.animation.play("fall")
+		states.death:
+			parent.animation.play("death")
 
-func _exit_state(old_state,new_state):
-	pass
+
+func _on_Player_health_updated(health):
+	parent.animation.play("hit")
