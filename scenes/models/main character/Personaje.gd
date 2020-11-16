@@ -13,6 +13,7 @@ export(PackedScene) var dash_object
 onready var health = max_health setget _set_health
 onready var invulnerability_timer = $invulnerabilityTimer
 onready var effects_animation = $Body/EffectsAnimation
+onready var animation = $AnimatedSprite
 
 
 const FLOOR_NORMAL = Vector2.UP
@@ -37,32 +38,22 @@ func _ready():
 	$GunTimer.wait_time = gun_cooldown
 	$DashTimer.wait_time = dash_cooldown
 	modulate = Color.orange
-	$AnimatedSprite.play("idle")
+	#$AnimatedSprite.play("idle")
 
 
-func _physics_process(delta):
+func _apply_movement():
 	$GunPosition.look_at(get_global_mouse_position())
 	
-	var is_jump_interrupted = Input.is_action_just_released("jump") and velocity.y < 0.0
-	_apply_gravity(delta)
-	_move_input()
-	_jump()
-	_shoot()
-	_dash()
-
-	# animation
-	if velocity.x != 0 and is_on_floor():
-		$AnimatedSprite.animation = "idle"
-	elif velocity.y < 0 or velocity.x != 0 and !is_on_floor():
-		$AnimatedSprite.animation = "jump"
-	else:
-		$AnimatedSprite.animation = "idle"
+#	# animation
+#	if velocity.x != 0 and is_on_floor():
+#		$AnimatedSprite.animation = "idle"
+#	elif velocity.y < 0 or velocity.x != 0 and !is_on_floor():
+#		$AnimatedSprite.animation = "jump"
+#	else:
+#		$AnimatedSprite.animation = "idle"
 		
 	velocity = move_and_slide(velocity,FLOOR_NORMAL)
 	_handleCollision()
-	#print ("move direction: " + move_direction as String)
-	
-	
 
 
 func _move_input():
