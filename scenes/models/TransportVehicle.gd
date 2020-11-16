@@ -7,12 +7,15 @@ export var color = Color.green
 var moving = false
 
 func _ready():
-	modulate = color
+	#modulate = color
+	pass
+
 
 func _physics_process(delta):
-	if (moving):
-		position.x += SPEED * delta
-		 
+#	if (moving):
+#		position.x += SPEED * delta
+		pass
+
 func _get_configuration_warning() -> String:
 	return "The property Next Level can't be empty" if not next_scene else ""
 	
@@ -21,12 +24,15 @@ func _on_Portal_body_entered(body):
 		body.hide()
 		$TransporterSound.play()
 		yield(get_tree().create_timer(.5), "timeout")
-		moving = true
-		
+		#moving = true
+		teleport()
+
+
 func teleport() -> void:
 	get_tree().change_scene_to(next_scene)
 
 func _on_VisibilityNotifier2D_screen_exited():
-	if (moving):
-		teleport()
-		queue_free()
+#	if (moving):
+#		teleport()
+#		queue_free()
+	pass

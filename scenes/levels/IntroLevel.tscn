@@ -49,7 +49,7 @@ position = Vector2( 1001.99, 568.348 )
 scale = Vector2( 1.05188, 2.61704 )
 
 [node name="TransportVehicle" parent="." instance=ExtResource( 7 )]
-position = Vector2( 991.556, 509.255 )
+position = Vector2( 991.556, 487.898 )
 scale = Vector2( 3, 3 )
 next_scene = ExtResource( 4 )
 

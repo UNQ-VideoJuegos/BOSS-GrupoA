@@ -35,6 +35,7 @@ var jump_intents = 2
 var gun_position_right = Vector2(33,-28)
 var gun_position_left = Vector2(-26,-28)
 
+var is_dead = false
 
 func _ready():
 	$GunTimer.wait_time = gun_cooldown
@@ -118,7 +119,9 @@ func damage(amount):
 		$HealthDisplay.update_healthbar(health - amount)
 
 func kill():
+	is_dead = true
 	$GamerOverSound.play()
+	$health_low.stop()
 	$GunTimer.stop()
 	$Camera2D.current = false
 	yield(get_tree().create_timer(1.0), "timeout")
@@ -131,7 +134,8 @@ func _set_health(value):
 	health = clamp(value, 0, max_health)
 	if health != prev_health:
 		emit_signal("health_updated", health)
-		
+		if health < max_health/2:
+			$health_low.play()
 		if health <= 0:
 			kill()
 

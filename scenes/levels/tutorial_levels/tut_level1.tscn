@@ -15,7 +15,6 @@ script = ExtResource( 8 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 64.7007, 524.935 )
-gravity = 500.0
 
 [node name="Floor" parent="." instance=ExtResource( 1 )]
 position = Vector2( 43.8585, 572.649 )
@@ -88,6 +87,6 @@ position = Vector2( 0, 280 )
 position = Vector2( 1024, 592 )
 
 [node name="TransporterVehicle" parent="." instance=ExtResource( 5 )]
-position = Vector2( 984, 256 )
+position = Vector2( 984, 232.189 )
 scale = Vector2( 3, 3 )
 next_scene = ExtResource( 9 )

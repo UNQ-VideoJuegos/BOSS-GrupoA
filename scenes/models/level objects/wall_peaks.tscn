@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/tiles/industrial.v2.png" type="Texture" id=1]
 [ext_resource path="res://scenes/models/level objects/peak.gd" type="Script" id=2]
 [ext_resource path="res://scenes/models/level objects/wall_peaks.gd" type="Script" id=3]
+[ext_resource path="res://assets/levels/mainlev_build.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.54196, 1.54211 )
@@ -14,9 +15,11 @@ extents = Vector2( 31.9884, 4.75951 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )
+position = Vector2( -2.35438e-06, 0.1875 )
+scale = Vector2( 1.33511, 0.658333 )
+texture = ExtResource( 4 )
 region_enabled = true
-region_rect = Rect2( -0.0363903, 143.707, 64.2561, 10.1724 )
+region_rect = Rect2( 960.024, 191.752, 47.9738, 15.8446 )
 
 [node name="Node2D" type="Node2D" parent="."]
 __meta__ = {

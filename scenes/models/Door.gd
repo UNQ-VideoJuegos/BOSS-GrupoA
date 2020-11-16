@@ -2,8 +2,8 @@ extends KinematicBody2D
 
 
 const SPEED = 20
-const DOOR_OPEN_LIMIT = -6.5
-const DOOR_CLOSE_LIMIT = 1.8
+const DOOR_OPEN_LIMIT = -25
+const DOOR_CLOSE_LIMIT = 1
 
 var opening = false
 var closing = false

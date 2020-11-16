@@ -1,15 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/colored_transparent.png" type="Texture" id=1]
+[ext_resource path="res://assets/levels/mainlev_build.png" type="Texture" id=1]
 [ext_resource path="res://scenes/models/Door.gd" type="Script" id=2]
 [ext_resource path="res://scenes/models/DoorBase.gd" type="Script" id=3]
-[ext_resource path="res://assets/door_roof_part.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 2.04984, 7.76377 )
+extents = Vector2( 2.04984, 20.3409 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 11.1895, 0.787012 )
+extents = Vector2( 11.8168, 0.658706 )
 
 [node name="Door" type="Area2D"]
 pause_mode = 1
@@ -24,10 +23,12 @@ z_index = -100
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Door"]
-position = Vector2( 22.8042, 14.5348 )
+position = Vector2( 23.1356, 13.9194 )
+rotation = 1.5708
+scale = Vector2( 0.262892, 0.262892 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 239.867, 66.7895, 12.0753, 18.0504 )
+region_rect = Rect2( 761.626, 48.0012, 156.602, 15.8489 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
 position = Vector2( 22.9181, 14.0566 )
@@ -46,13 +47,14 @@ position = Vector2( -4.34555, -34.353 )
 scale = Vector2( 0.999611, 5.57304 )
 
 [node name="Sprite" type="Sprite" parent="Roof"]
-position = Vector2( 36.4569, 5.82787 )
-scale = Vector2( -0.0881493, -0.0121552 )
-texture = ExtResource( 4 )
-region_rect = Rect2( -1.058, -2.314, 255, 62 )
+position = Vector2( 36.8412, 5.04171 )
+scale = Vector2( 0.490154, 0.0889672 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 960.259, 224.322, 47.4999, 15.4458 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Roof"]
-position = Vector2( 36.4474, 6.59952 )
+position = Vector2( 36.9988, 5.01089 )
 shape = SubResource( 2 )
 [connection signal="timeout" from="Door/DoorOpenTimer" to="Door" method="_on_DoorTimer_timeout"]
 [connection signal="timeout" from="Door/DoorCloseTimer" to="Door" method="_on_DoorCloseTimer_timeout"]

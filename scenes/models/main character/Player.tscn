@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://scenes/models/main character/Personaje.gd" type="Script" id=1]
 [ext_resource path="res://sounds/error_003.wav" type="AudioStream" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://assets/Wizard Pack/Hit.png" type="Texture" id=12]
 [ext_resource path="res://assets/Wizard Pack/Death.png" type="Texture" id=13]
 [ext_resource path="res://assets/Wizard Pack/Attack1.png" type="Texture" id=14]
+[ext_resource path="res://sounds/Hearbeat_2-Mike_Koenig-143666461.wav" type="AudioStream" id=15]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 9 )
@@ -229,6 +230,9 @@ stream = ExtResource( 5 )
 
 [node name="HealthDisplay" parent="." instance=ExtResource( 6 )]
 position = Vector2( -5.55591, -29.7638 )
+
+[node name="health_low" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 15 )
 [connection signal="health_updated" from="." to="PlayerFSM" method="_on_Player_health_updated"]
 [connection signal="killed" from="." to="." method="_on_Player_killed"]
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]
