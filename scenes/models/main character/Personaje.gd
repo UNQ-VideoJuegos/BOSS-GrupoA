@@ -12,7 +12,6 @@ export(PackedScene) var dash_object
 
 onready var health = max_health setget _set_health
 onready var invulnerability_timer = $invulnerabilityTimer
-onready var effects_animation = $Body/EffectsAnimation
 onready var animation = $AnimatedSprite
 
 
@@ -37,21 +36,10 @@ var jump_intents = 2
 func _ready():
 	$GunTimer.wait_time = gun_cooldown
 	$DashTimer.wait_time = dash_cooldown
-	modulate = Color.orange
-	#$AnimatedSprite.play("idle")
 
 
 func _apply_movement():
 	$GunPosition.look_at(get_global_mouse_position())
-	
-#	# animation
-#	if velocity.x != 0 and is_on_floor():
-#		$AnimatedSprite.animation = "idle"
-#	elif velocity.y < 0 or velocity.x != 0 and !is_on_floor():
-#		$AnimatedSprite.animation = "jump"
-#	else:
-#		$AnimatedSprite.animation = "idle"
-		
 	velocity = move_and_slide(velocity,FLOOR_NORMAL)
 	_handleCollision()
 
@@ -66,12 +54,12 @@ func _move_input():
 func _apply_gravity(delta):
 	velocity.y += gravity * delta
 
-func _jump(): # salta dos veces pero queda "atascado" a menos que se quede quieto y vuelva a saltar
+func _jump():
 	if is_on_floor():
 		jump_intents = 2
 	if Input.is_action_just_pressed("jump") and jump_intents > 0:
 		velocity.y = jump_force
-		#$JumpSound.play()
+		$JumpSound.play()
 		jump_intents -=1
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y = min_jump
@@ -120,10 +108,9 @@ func damage(amount):
 		invulnerability_timer.start()
 		_set_health(health - amount)
 		$HealthDisplay.update_healthbar(health - amount)
-		effects_animation.play("damage")
-		effects_animation.queue("flash")
+		animation.play("hitw")
 
-func kill(): # COMENTAR PARA EVITAR MORIR CONSTANTEMENTE DE SER NECESARIO
+func kill():
 	$GamerOverSound.play()
 	$GunTimer.stop()
 	$Camera2D.current = false
@@ -139,11 +126,12 @@ func _set_health(value):
 	health = clamp(value, 0, max_health)
 	if health != prev_health:
 		emit_signal("health_updated", health)
-		if health == 0:
+		if health <= 0:
 			kill()
 
 func _on_invulnerabilityTimer_timeout():
-	effects_animation.play("rest")
+	#effects_animation.play("rest")
+	pass
 
 func _on_Player_killed():
 	kill()

@@ -12,6 +12,7 @@ extents = Vector2( 528.992, 10 )
 extents = Vector2( 10, 328.32 )
 
 [node name="test" type="Node2D"]
+position = Vector2( -1.49835, 19.478 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 522.019, 584.506 )
@@ -35,7 +36,7 @@ position = Vector2( 1041.05, 267.852 )
 shape = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 437.271, 520.043 )
+position = Vector2( 348.122, 518.545 )
 gun_cooldown = 0.2
 
 [node name="Turret" parent="." instance=ExtResource( 1 )]

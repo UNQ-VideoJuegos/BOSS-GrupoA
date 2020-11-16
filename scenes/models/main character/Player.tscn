@@ -1,112 +1,136 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://scenes/models/main character/Personaje.gd" type="Script" id=1]
 [ext_resource path="res://sounds/error_003.wav" type="AudioStream" id=2]
 [ext_resource path="res://scenes/models/Bullets/Bullet.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/tiles/industrial.v2.png" type="Texture" id=4]
+[ext_resource path="res://assets/Wizard Pack/Jump.png" type="Texture" id=4]
 [ext_resource path="res://sounds/Mario_Jumping-Mike_Koenig.wav" type="AudioStream" id=5]
 [ext_resource path="res://scenes/models/HealthDisplay.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/models/main character/DashEffect.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/models/main character/PlayerFSM.gd" type="Script" id=8]
+[ext_resource path="res://assets/Wizard Pack/Idle.png" type="Texture" id=9]
+[ext_resource path="res://assets/Wizard Pack/Run.png" type="Texture" id=10]
+[ext_resource path="res://assets/Wizard Pack/Fall.png" type="Texture" id=11]
+[ext_resource path="res://assets/Wizard Pack/Hit.png" type="Texture" id=12]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 256, 16, 16 )
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 231, 190 )
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 4 )
-region = Rect2( 16, 256, 16, 16 )
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 9 )
+region = Rect2( 231, 0, 231, 190 )
 
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 4 )
-region = Rect2( 32, 256, 16, 16 )
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 9 )
+region = Rect2( 462, 0, 231, 190 )
 
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 4 )
-region = Rect2( 48, 256, 16, 16 )
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 9 )
+region = Rect2( 693, 0, 231, 190 )
 
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 4 )
-region = Rect2( 64, 272, 16, 16 )
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 9 )
+region = Rect2( 924, 0, 231, 190 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 9 )
+region = Rect2( 1155, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 4 )
-region = Rect2( 80, 272, 16, 16 )
+region = Rect2( 0, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 4 )
+region = Rect2( 231, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 12 )
+region = Rect2( 231, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 12 )
+region = Rect2( 462, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 12 )
+region = Rect2( 693, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 11 )
+region = Rect2( 231, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 10 )
+region = Rect2( 231, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 10 )
+region = Rect2( 462, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 10 )
+region = Rect2( 693, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 10 )
+region = Rect2( 924, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 10 )
+region = Rect2( 1155, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 10 )
+region = Rect2( 1386, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 10 )
+region = Rect2( 1617, 0, 231, 190 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
+"speed": 8.0
 }, {
-"frames": [ SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
 "name": "jump",
 "speed": 2.0
+}, {
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
+"loop": true,
+"name": "hit",
+"speed": 6.0
+}, {
+"frames": [ SubResource( 28 ), SubResource( 29 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "run",
+"speed": 8.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 16.3883, 16.3966 )
-
-[sub_resource type="Animation" id=9]
-length = 0.1
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=10]
-length = 0.2
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
-}
-
-[sub_resource type="Animation" id=11]
-length = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 10, 38.5585 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
@@ -118,16 +142,15 @@ dash_object = ExtResource( 7 )
 script = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 2.5, 2.5 )
+position = Vector2( 9.33432, -7.93799 )
 frames = SubResource( 7 )
 animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.28229, 3.66628 )
-shape = SubResource( 8 )
-one_way_collision = true
+shape = SubResource( 35 )
 
 [node name="GunPosition" type="Position2D" parent="."]
+position = Vector2( 29.1076, -19.9237 )
 
 [node name="GunTimer" type="Timer" parent="."]
 
@@ -137,15 +160,8 @@ visible = false
 [node name="DashTimer" type="Timer" parent="."]
 
 [node name="invulnerabilityTimer" type="Timer" parent="."]
-wait_time = 0.8
+wait_time = 0.1
 one_shot = true
-
-[node name="Body" type="Node2D" parent="."]
-
-[node name="EffectsAnimation" type="AnimationPlayer" parent="Body"]
-anims/damage = SubResource( 9 )
-anims/flash = SubResource( 10 )
-anims/rest = SubResource( 11 )
 
 [node name="GamerOverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
@@ -154,6 +170,7 @@ stream = ExtResource( 2 )
 stream = ExtResource( 5 )
 
 [node name="HealthDisplay" parent="." instance=ExtResource( 6 )]
+position = Vector2( -5.55591, -29.7638 )
 [connection signal="killed" from="." to="." method="_on_Player_killed"]
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]

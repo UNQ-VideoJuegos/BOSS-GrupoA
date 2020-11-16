@@ -55,7 +55,7 @@ next_scene = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 pause_mode = 1
-position = Vector2( 16, 504 )
+position = Vector2( 47.514, 489.426 )
 
 [node name="muro invisible" parent="." instance=ExtResource( 10 )]
 

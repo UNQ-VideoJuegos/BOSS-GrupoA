@@ -16,6 +16,10 @@ func _state_logic(delta): # metodo que maneja la logica (handler)
 	parent._shoot()
 	parent._dash()
 	parent._apply_movement()
+	#print(state)
+	#print("is on floor: " + parent.is_on_floor() as String )
+	print("velocity: " + parent.velocity.x as String )
+	print("velocity: " + parent.velocity.y as String )
 
 func _get_transition(delta): # maneja las transiciones
 	match state:
@@ -55,8 +59,8 @@ func _enter_state(new_state, old_state): # metodo para setear animaciones o time
 			parent.animation.play("run")
 		states.jump:
 			parent.animation.play("jump")
-#		states.fall:
-#			parent.animation.play("fall")
+		states.fall:
+			parent.animation.play("fall")
 
 func _exit_state(old_state,new_state):
 	pass

@@ -16,6 +16,7 @@
 
 [node name="Level1" type="Node2D"]
 pause_mode = 2
+position = Vector2( 173.529, -61.4026 )
 script = ExtResource( 6 )
 
 [node name="PlatformTrap" parent="." instance=ExtResource( 13 )]
@@ -85,7 +86,7 @@ next_scene = ExtResource( 8 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 pause_mode = 1
-position = Vector2( 16, 504 )
+position = Vector2( 44.9782, 467.462 )
 
 [node name="Lava" parent="." instance=ExtResource( 9 )]
 position = Vector2( 408, 576 )
