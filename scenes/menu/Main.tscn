@@ -132,12 +132,12 @@ __meta__ = {
 
 [node name="GameName" type="Label" parent="WelcomeHUD"]
 modulate = Color( 0.67451, 0.27451, 0.137255, 1 )
-margin_left = 329.0
+margin_left = 263.074
 margin_top = 107.615
-margin_right = 736.0
+margin_right = 806.074
 margin_bottom = 192.615
 custom_fonts/font = SubResource( 3 )
-text = "Boss Final"
+text = "Into the dark"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -149,7 +149,7 @@ margin_top = 395.258
 margin_right = 889.0
 margin_bottom = 548.258
 custom_fonts/font = SubResource( 4 )
-text = "w-a-s-d  -> MOVE
+text = "a-d  -> MOVE
 click -> fire!
 shift -> dash!"
 align = 1
