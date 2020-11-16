@@ -80,6 +80,7 @@ dash={
 2d_physics/layer_4="Chaser"
 2d_physics/layer_5="box"
 2d_physics/layer_6="Turret"
+2d_physics/layer_7="playerbullet"
 
 [rendering]
 

@@ -1,9 +1,81 @@
-[gd_scene load_steps=83 format=2]
+[gd_scene load_steps=100 format=2]
 
 [ext_resource path="res://scenes/models/level objects/Chaser.gd" type="Script" id=1]
-[ext_resource path="res://assets/tiles/industrial.v2.png" type="Texture" id=2]
+[ext_resource path="res://assets/enemy/spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://assets/explosion.png" type="Texture" id=3]
 [ext_resource path="res://scenes/models/HealthDisplay.tscn" type="PackedScene" id=4]
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 42, 42 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 2 )
+region = Rect2( 42, 0, 42, 42 )
+
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 2 )
+region = Rect2( 84, 0, 42, 42 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 2 )
+region = Rect2( 126, 0, 42, 42 )
+
+[sub_resource type="AtlasTexture" id=83]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 42, 42, 42 )
+
+[sub_resource type="AtlasTexture" id=84]
+atlas = ExtResource( 2 )
+region = Rect2( 42, 42, 42, 42 )
+
+[sub_resource type="AtlasTexture" id=85]
+atlas = ExtResource( 2 )
+region = Rect2( 84, 42, 42, 42 )
+
+[sub_resource type="AtlasTexture" id=86]
+atlas = ExtResource( 2 )
+region = Rect2( 126, 42, 42, 42 )
+
+[sub_resource type="AtlasTexture" id=87]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 84, 42, 42 )
+
+[sub_resource type="AtlasTexture" id=88]
+atlas = ExtResource( 2 )
+region = Rect2( 42, 84, 42, 42 )
+
+[sub_resource type="AtlasTexture" id=89]
+atlas = ExtResource( 2 )
+region = Rect2( 84, 84, 42, 42 )
+
+[sub_resource type="AtlasTexture" id=90]
+atlas = ExtResource( 2 )
+region = Rect2( 126, 84, 42, 42 )
+
+[sub_resource type="AtlasTexture" id=91]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 126, 42, 42 )
+
+[sub_resource type="AtlasTexture" id=92]
+atlas = ExtResource( 2 )
+region = Rect2( 42, 126, 42, 42 )
+
+[sub_resource type="AtlasTexture" id=93]
+atlas = ExtResource( 2 )
+region = Rect2( 84, 126, 42, 42 )
+
+[sub_resource type="AtlasTexture" id=94]
+atlas = ExtResource( 2 )
+region = Rect2( 126, 126, 42, 42 )
+
+[sub_resource type="SpriteFrames" id=95]
+animations = [ {
+"frames": [ SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ), SubResource( 93 ), SubResource( 94 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 15.4809
@@ -400,11 +472,10 @@ collision_mask = 9
 script = ExtResource( 1 )
 speed = 200
 
-[node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 3, 3 )
-texture = ExtResource( 2 )
-region_enabled = true
-region_rect = Rect2( 18.5362, 434.508, 9.70864, 9.98602 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 95 )
+frame = 12
+playing = true
 
 [node name="Hitbox" type="Area2D" parent="."]
 scale = Vector2( 1.5, 1.5 )
@@ -426,7 +497,9 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 3 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedBoom" type="AnimatedSprite" parent="."]
+visible = false
+scale = Vector2( 0.885133, 0.885134 )
 frames = SubResource( 78 )
 animation = "explosion"
 

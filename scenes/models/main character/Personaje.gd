@@ -32,7 +32,7 @@ var jump_force = -400
 var min_jump = -100
 var is_jumping = false
 var jump_intents = 2
-var gun_position_right = Vector2(26,-28)
+var gun_position_right = Vector2(33,-28)
 var gun_position_left = Vector2(-26,-28)
 
 

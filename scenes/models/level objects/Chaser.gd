@@ -9,7 +9,8 @@ var velocity= Vector2.ZERO
 var dir_to_target = Vector2.ZERO
 
 func _ready():
-	$AnimatedSprite.hide()
+	$AnimatedBoom.hide()
+	$AnimatedSprite.play("default")
 
 func _process(delta):
 	if target != null:
@@ -17,6 +18,7 @@ func _process(delta):
 		velocity = position.direction_to(chase) * speed
 		if position.distance_to(target.global_position) < 10:
 			_boom_damage()
+		$AnimatedSprite.flip_h = position.direction_to(chase).x < 0
 	else:
 		velocity = Vector2.ZERO
 	velocity = move_and_slide(velocity)
@@ -26,8 +28,8 @@ func _process(delta):
 
 func boom():
 	speed = 0
-	$AnimatedSprite.show()
-	$AnimatedSprite.play()
+	$AnimatedBoom.show()
+	$AnimatedBoom.play()
 	yield(get_tree().create_timer(0.5), "timeout")
 	queue_free()
 
@@ -35,8 +37,9 @@ func boom():
 func _boom_damage():
 	if target != null:
 		speed = 0
-		$AnimatedSprite.show()
-		$AnimatedSprite.play()
+		$AnimatedSprite.hide()
+		$AnimatedBoom.show()
+		$AnimatedBoom.play()
 		target.damage(chaser_damage)
 		yield(get_tree().create_timer(0.5), "timeout")
 		queue_free()
@@ -49,8 +52,8 @@ func _on_Detection_area_body_entered(body):
 
 func _on_Hitbox_area_entered(area):
 	if area.name == "Bullet":
-		$Sprite.modulate = Color.red # solo de prueba, no es final
+		$AnimatedSprite.modulate = Color.red # solo de prueba, no es final
 		max_health -= area.damage
 		$HealthDisplay.update_healthbar(max_health)
-		yield(get_tree().create_timer(2.0),"timeout")
-		$Sprite.modulate = Color.white
+		yield(get_tree().create_timer(0.3),"timeout")
+		$AnimatedSprite.modulate = Color.white
