@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/menu/HelpTip.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/models/Door.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://scenes/levels/tutorial_levels/tut_level7.gd" type="Script" id=10]
 [ext_resource path="res://scenes/models/PlatformTrap.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/models/level objects/Chaser.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/levels/background/cave exit.tscn" type="PackedScene" id=13]
 
 [node name="TutLevel7" type="Node2D"]
 script = ExtResource( 10 )
@@ -136,8 +137,15 @@ position = Vector2( 742.513, 268.815 )
 position = Vector2( 937.845, 376.405 )
 
 [node name="Chaser2" parent="." instance=ExtResource( 12 )]
-position = Vector2( 226.827, 159.109 )
+position = Vector2( 263.908, 197.25 )
 chaser_damage = 26
 
 [node name="Chaser3" parent="." instance=ExtResource( 12 )]
 position = Vector2( 799.456, 74.7203 )
+
+[node name="cave exit" parent="." instance=ExtResource( 13 )]
+
+[node name="rocks front" parent="cave exit" index="5"]
+visible = true
+
+[editable path="cave exit"]

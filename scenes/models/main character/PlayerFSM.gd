@@ -72,3 +72,6 @@ func _enter_state(new_state, old_state): # metodo para setear animaciones o time
 
 func _on_Player_health_updated(health):
 	parent.animation.play("hit")
+	yield(get_tree().create_timer(0.8),"timeout")
+	parent.animation.play("idle")
+	

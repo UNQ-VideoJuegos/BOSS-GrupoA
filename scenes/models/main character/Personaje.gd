@@ -8,7 +8,7 @@ export (PackedScene) var Bullet
 export (float) var gun_cooldown = 0.1
 export (float) var dash_cooldown = 2
 export (float) var max_health = 100
-export(PackedScene) var dash_object
+
 
 onready var health = max_health setget _set_health
 onready var invulnerability_timer = $invulnerabilityTimer
@@ -24,9 +24,12 @@ var gravity = 600
 
 var can_shoot = true
 
+onready var dash_effect_timer = $DashEffect
+export(PackedScene) var dash_object
 var dash_impulse = 30
-#var dash_length = 0.2 # ??
+var dash_length = 0.2
 var can_dash = true
+var is_dashing = false
 
 var jump_force = -400
 var min_jump = -100
@@ -88,15 +91,16 @@ func _shoot_bullet():
 func _dash():
 	if can_dash and Input.is_action_just_pressed("dash"):
 		can_dash = false
+		is_dashing = true
 		$DashTimer.start()
+		$DashEffect.start(dash_length)
 		velocity.x *= dash_impulse
-		var dash_effect = dash_object.instance()
-		dash_effect.texture = $AnimatedSprite.frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
-		dash_effect.position = global_position
-		dash_effect.flip_h =$AnimatedSprite.flip_h
-		dash_effect.modulate = modulate
-		dash_effect.transform = $AnimatedSprite.global_transform
-		get_parent().add_child(dash_effect)
+		if is_dashing:
+			var dash_effect = dash_object.instance()
+			dash_effect.texture = $AnimatedSprite.frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
+			dash_effect.global_position = global_position
+			dash_effect.flip_h =$AnimatedSprite.flip_h
+			get_parent().add_child(dash_effect)
 
 
 func _handleCollision():
@@ -107,6 +111,7 @@ func _handleCollision():
 
 func _on_DashTimer_timeout():
 	can_dash = true
+	is_dashing = false
 
 func _on_GunTimer_timeout():
 	can_shoot = true
@@ -144,3 +149,14 @@ func _on_invulnerabilityTimer_timeout():
 
 func _on_Player_killed():
 	kill()
+
+
+func _on_DashEffect_timeout():
+#	if is_dashing:
+#		var this_ghost = preload("res://scenes/models/main character/DashEffect.tscn").instance()
+#		get_parent().add_child(this_ghost)
+#		this_ghost.position = position
+#		this_ghost.texture = $AnimatedSprite.frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
+#		this_ghost.flip_h = $AnimatedSprite.flip_h
+	is_dashing = false
+
