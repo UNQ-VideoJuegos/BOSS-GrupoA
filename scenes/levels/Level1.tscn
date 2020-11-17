@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/models/main character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/models/Platform.tscn" type="PackedScene" id=2]
@@ -13,10 +13,12 @@
 [ext_resource path="res://scenes/models/level objects/roof.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/models/level objects/wall_peaks.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/models/PlatformTrap.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/models/level objects/turret.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/models/level objects/Chaser.tscn" type="PackedScene" id=15]
 
 [node name="Level1" type="Node2D"]
 pause_mode = 2
-position = Vector2( 173.529, -61.4026 )
+position = Vector2( -0.0951996, 19.4635 )
 script = ExtResource( 6 )
 
 [node name="PlatformTrap" parent="." instance=ExtResource( 13 )]
@@ -133,3 +135,10 @@ position = Vector2( 61.0201, 131.127 )
 
 [node name="wall_peaks2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 50.3568, 7.72025 )
+
+[node name="Turret" parent="." instance=ExtResource( 14 )]
+position = Vector2( 520.545, -6.6633 )
+rotation = 2.98527
+
+[node name="Chaser" parent="." instance=ExtResource( 15 )]
+position = Vector2( 267.572, 179.57 )

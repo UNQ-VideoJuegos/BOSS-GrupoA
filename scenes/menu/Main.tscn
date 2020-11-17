@@ -366,9 +366,9 @@ script = ExtResource( 13 )
 [node name="KeyMapLabel" type="Label" parent="WelcomeHUD/OptionsHUD/KeyMaps"]
 visible = false
 modulate = Color( 0.67451, 0.27451, 0.137255, 1 )
-margin_left = 405.0
+margin_left = 383.0
 margin_top = 151.0
-margin_right = 698.0
+margin_right = 676.0
 margin_bottom = 236.0
 custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -388,10 +388,13 @@ margin_bottom = 640.488
 rect_scale = Vector2( 0.4, 0.4 )
 custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "pause: escape
-reload: r
-jump: space
-dash: shift
+text = "Pause: Escape
+Reload: R
+Jump: Space
+Dash: Shift
+Move left: A
+Move rigth: D
+Fire: Click
 "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -399,10 +402,10 @@ __meta__ = {
 
 [node name="BackButtonKeyMap" type="Button" parent="WelcomeHUD/OptionsHUD/KeyMaps"]
 visible = false
-margin_left = 455.395
-margin_top = 419.198
-margin_right = 592.395
-margin_bottom = 463.198
+margin_left = 454.395
+margin_top = 491.198
+margin_right = 591.395
+margin_bottom = 535.198
 custom_fonts/font = SubResource( 18 )
 text = "Back"
 __meta__ = {

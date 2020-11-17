@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/levels/Level4.gd" type="Script" id=1]
 [ext_resource path="res://assets/tiles/1bitpack_kenney_1.1/Tilesheet/colored.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://scenes/models/main character/Player.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/models/Door.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/models/Lava.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/models/level objects/Chaser.tscn" type="PackedScene" id=14]
 
 [sub_resource type="TileSet" id=1]
 0/name = "colored.png 0"
@@ -538,3 +539,9 @@ scale = Vector2( 3, 4 )
 [node name="Door6" parent="doors" instance=ExtResource( 12 )]
 position = Vector2( 1231.42, 712.489 )
 scale = Vector2( 3, 4 )
+
+[node name="Chaser" parent="." instance=ExtResource( 14 )]
+position = Vector2( 551.792, 353.194 )
+
+[node name="Chaser2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1060.77, 363.897 )
