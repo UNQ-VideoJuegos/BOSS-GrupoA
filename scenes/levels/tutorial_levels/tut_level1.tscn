@@ -69,16 +69,16 @@ position = Vector2( 952, 584 )
 scale = Vector2( 9, 13 )
 
 [node name="HelpTip" parent="." instance=ExtResource( 6 )]
-position = Vector2( 111.351, 481.335 )
+position = Vector2( 113.871, 424.639 )
 tipText = "Press SPACE to JUMP!"
 
 [node name="HelpTip2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 352, 400 )
+position = Vector2( 354.52, 368.502 )
 tipText = "Press Space twice to Double Jump!"
 
 [node name="HelpTip3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 824, 208 )
-tipText = "Take the ship to exit level!"
+tipText = "Pass the door to exit level!"
 
 [node name="muro invisible" parent="." instance=ExtResource( 7 )]
 position = Vector2( 0, 280 )

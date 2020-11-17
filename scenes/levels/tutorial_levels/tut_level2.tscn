@@ -75,11 +75,11 @@ scale = Vector2( 3, 3 )
 next_scene = ExtResource( 9 )
 
 [node name="HelpTip" parent="." instance=ExtResource( 6 )]
-position = Vector2( 104, 480 )
+position = Vector2( 106.832, 421.48 )
 tipText = "Be careful! The platforms can fall!"
 
 [node name="HelpTip2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 840, 312 )
+position = Vector2( 840.749, 265.552 )
 tipText = "But also they can respawn!"
 
 [node name="muro invisible" parent="." instance=ExtResource( 7 )]

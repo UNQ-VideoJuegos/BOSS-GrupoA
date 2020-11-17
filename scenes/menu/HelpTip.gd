@@ -23,6 +23,7 @@ func _on_TipTimer_timeout():
 	$Tip.hide()
 	showArrow = false
 	$ArrowTimer.stop()
+	$TipTimer.stop()
 	$Arrow.hide()
 
 

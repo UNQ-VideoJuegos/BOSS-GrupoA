@@ -4,11 +4,11 @@
 [ext_resource path="res://fonts/invasion_2000/INVASION2000.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/arrow_sprites.png" type="Texture" id=3]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 45.6042, 40 )
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 45.6042, 72 )
 
 [node name="HelpTip" type="Area2D"]
 collision_layer = 2
@@ -27,7 +27,7 @@ margin_left = -9.31498
 margin_top = -82.4846
 margin_right = 190.685
 margin_bottom = -32.4846
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "A Tip"
 autowrap = true
 uppercase = true
@@ -37,7 +37,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 24, 24 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="TipTimer" type="Timer" parent="."]
 wait_time = 2.0

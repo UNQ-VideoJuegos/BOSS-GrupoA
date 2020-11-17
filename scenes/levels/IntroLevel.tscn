@@ -71,13 +71,13 @@ position = Vector2( 764.996, -25.0945 )
 rotation = 1.5708
 
 [node name="HelpTip" parent="." instance=ExtResource( 2 )]
-position = Vector2( 111.38, 466.09 )
+position = Vector2( 112.715, 373.986 )
 tipText = "You`re trapped here. Your mission is escape from the evil caves and go to the surface"
 
 [node name="HelpTip2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 370.184, 465.153 )
+position = Vector2( 367.514, 371.714 )
 tipText = "But first... you need to learn the basics..."
 
 [node name="HelpTip3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 652.456, 465.014 )
-tipText = "Please, take the ship to continue..."
+position = Vector2( 644.447, 370.24 )
+tipText = "Please, use the door to continue..."

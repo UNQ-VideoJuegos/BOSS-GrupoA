@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/menu/HelpTip.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/models/Door.tscn" type="PackedScene" id=2]
@@ -9,14 +9,16 @@
 [ext_resource path="res://scenes/models/Interruptor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/models/Lava.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/models/level objects/muro invisible.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/levels/tutorial_levels/tut_level4.gd" type="Script" id=10]
-[ext_resource path="res://scenes/levels/tutorial_levels/tut_level5.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/levels/tutorial_levels/tut_level6.gd" type="Script" id=10]
+[ext_resource path="res://scenes/models/PlatformTrap.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/levels/tutorial_levels/tut_level7.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/models/level objects/turret.tscn" type="PackedScene" id=13]
 
-[node name="TutLevel4" type="Node2D"]
+[node name="TutLevel6" type="Node2D"]
 script = ExtResource( 10 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 64.7007, 524.935 )
+position = Vector2( 40.16, 524.935 )
 
 [node name="Floor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 43.8585, 572.649 )
@@ -32,23 +34,23 @@ position = Vector2( 198.314, 572.649 )
 scale = Vector2( 0.701275, 1.82125 )
 script = null
 
-[node name="Floor8" parent="." instance=ExtResource( 3 )]
-position = Vector2( 518.911, 574.227 )
-scale = Vector2( 0.701275, 1.82125 )
-script = null
-
-[node name="Floor7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 440, 574.216 )
-scale = Vector2( 0.701275, 1.82125 )
-script = null
-
-[node name="Floor6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 599.967, 574.227 )
-scale = Vector2( 0.701275, 1.82125 )
-script = null
-
 [node name="Floor4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 976, 408 )
+scale = Vector2( 0.701275, 1.82125 )
+script = null
+
+[node name="Floor9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 541.183, 223.787 )
+scale = Vector2( 0.701275, 1.82125 )
+script = null
+
+[node name="Floor10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 476.006, 225.068 )
+scale = Vector2( 0.701275, 1.82125 )
+script = null
+
+[node name="Floor11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 48.0552, 181.863 )
 scale = Vector2( 0.701275, 1.82125 )
 script = null
 
@@ -58,10 +60,19 @@ scale = Vector2( 0.701275, 1.82125 )
 script = null
 
 [node name="Platform" parent="." instance=ExtResource( 5 )]
-position = Vector2( 736, 464 )
+position = Vector2( 224.301, 307.34 )
+canFallPlatform = false
 
 [node name="Lava" parent="." instance=ExtResource( 8 )]
 position = Vector2( 312, 584 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 473.888, 584 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 577.338, 584 )
 scale = Vector2( 9, 13 )
 
 [node name="Lava2" parent="." instance=ExtResource( 8 )]
@@ -79,19 +90,11 @@ scale = Vector2( 9, 13 )
 [node name="TransporterVehicle" parent="." instance=ExtResource( 6 )]
 position = Vector2( 992.464, 340.382 )
 scale = Vector2( 3, 3 )
-next_scene = ExtResource( 11 )
+next_scene = ExtResource( 12 )
 
 [node name="HelpTip" parent="." instance=ExtResource( 1 )]
-position = Vector2( 106.673, 425.655 )
-tipText = "Look! A door is blocking the exit!"
-
-[node name="HelpTip2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 417.8, 382.892 )
-tipText = "You can SHOOT an interruptor to open the door with left click!"
-
-[node name="HelpTip3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 785.911, 266.822 )
-tipText = "But .. a door will be closed. You should reopen it"
+position = Vector2( 84.1616, 480 )
+tipText = "Look! A Turret. It could attack you ..."
 
 [node name="muro invisible" parent="." instance=ExtResource( 9 )]
 position = Vector2( 0, 280 )
@@ -99,10 +102,32 @@ position = Vector2( 0, 280 )
 [node name="muro invisible2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1024, 592 )
 
+[node name="muro invisible3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 503.671, 7.50758 )
+rotation = -1.56922
+
+[node name="muro invisible5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 752.645, 7.50758 )
+rotation = -1.56922
+
+[node name="muro invisible4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 263.173, 7.50758 )
+rotation = -1.56922
+
 [node name="Door" parent="." instance=ExtResource( 2 )]
 position = Vector2( 848, 312 )
 scale = Vector2( 4, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 7 )]
-position = Vector2( 568, 480 )
+position = Vector2( 25.6199, 122.933 )
 scale = Vector2( 0.5, 0.5 )
+
+[node name="PlatformTrap" parent="." instance=ExtResource( 11 )]
+position = Vector2( 374.536, 446.121 )
+
+[node name="PlatformTrap2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 742.513, 268.815 )
+
+[node name="Turret" parent="." instance=ExtResource( 13 )]
+position = Vector2( 503.099, 179.196 )
+rotation = -0.00709128
