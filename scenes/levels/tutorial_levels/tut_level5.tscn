@@ -95,7 +95,7 @@ tipText = "Be careful with the traps!"
 position = Vector2( 0, 280 )
 
 [node name="muro invisible2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1024, 592 )
+position = Vector2( 1024.94, 279.577 )
 
 [node name="Door" parent="." instance=ExtResource( 2 )]
 position = Vector2( 848, 312 )

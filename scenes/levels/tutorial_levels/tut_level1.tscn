@@ -84,7 +84,7 @@ tipText = "Pass the door to exit level!"
 position = Vector2( 0, 280 )
 
 [node name="muro invisible2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1024, 592 )
+position = Vector2( 1024, 285.815 )
 
 [node name="TransporterVehicle" parent="." instance=ExtResource( 5 )]
 position = Vector2( 984, 232.189 )

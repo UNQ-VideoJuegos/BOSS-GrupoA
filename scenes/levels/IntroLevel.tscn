@@ -60,7 +60,7 @@ position = Vector2( 47.514, 489.426 )
 [node name="muro invisible" parent="." instance=ExtResource( 10 )]
 
 [node name="muro invisible2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1072.18, 336.427 )
+position = Vector2( 1024.99, 270.356 )
 
 [node name="muro invisible3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 261.79, -25.0945 )

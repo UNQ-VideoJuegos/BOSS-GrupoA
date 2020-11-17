@@ -71,4 +71,4 @@ tipText = "You need to dash. Press Space twice and then Shift to reach the platf
 position = Vector2( 0, 280 )
 
 [node name="muro invisible2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1024, 528 )
+position = Vector2( 1025.89, 281.648 )

@@ -97,7 +97,7 @@ tipText = "But .. a door will be closed. You should reopen it"
 position = Vector2( 0, 280 )
 
 [node name="muro invisible2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1024, 592 )
+position = Vector2( 1024, 280.521 )
 
 [node name="Door" parent="." instance=ExtResource( 2 )]
 position = Vector2( 848, 312 )

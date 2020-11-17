@@ -86,4 +86,4 @@ tipText = "But also they can respawn!"
 position = Vector2( 0, 280 )
 
 [node name="muro invisible2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1024, 592 )
+position = Vector2( 1025.06, 280.518 )
