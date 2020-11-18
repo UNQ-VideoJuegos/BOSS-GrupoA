@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/levels/mainlev_build.png" type="Texture" id=1]
 [ext_resource path="res://scenes/models/TransportVehicle.gd" type="Script" id=2]
-[ext_resource path="res://sounds/Metroid_Door-Brandino.wav" type="AudioStream" id=3]
+[ext_resource path="res://sounds2/Old Door Creaking-SoundBible.com-1197162460.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.70725, 14.4897 )

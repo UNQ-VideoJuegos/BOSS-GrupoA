@@ -23,7 +23,7 @@ func _on_Portal_body_entered(body):
 	if (body.get_name() == "Player"):
 		body.hide()
 		$TransporterSound.play()
-		yield(get_tree().create_timer(.5), "timeout")
+		yield(get_tree().create_timer(0.8), "timeout")
 		#moving = true
 		teleport()
 

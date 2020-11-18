@@ -80,6 +80,7 @@ func _shoot():
 	if can_shoot and Input.is_action_pressed("click"):
 		can_shoot = false
 		$GunTimer.start()
+		$fire.play()
 		_shoot_bullet()
 
 func _shoot_bullet(): 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://scenes/models/main character/Personaje.gd" type="Script" id=1]
 [ext_resource path="res://sounds/error_003.wav" type="AudioStream" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/Wizard Pack/Death.png" type="Texture" id=13]
 [ext_resource path="res://assets/Wizard Pack/Attack1.png" type="Texture" id=14]
 [ext_resource path="res://sounds/Hearbeat_2-Mike_Koenig-143666461.wav" type="AudioStream" id=15]
+[ext_resource path="res://sounds2/Small Fireball-SoundBible.com-1381880822.wav" type="AudioStream" id=16]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 9 )
@@ -49,44 +50,44 @@ atlas = ExtResource( 4 )
 region = Rect2( 231, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 10 )
 region = Rect2( 0, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 10 )
 region = Rect2( 231, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 10 )
-region = Rect2( 0, 0, 231, 190 )
+region = Rect2( 462, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 10 )
-region = Rect2( 231, 0, 231, 190 )
+region = Rect2( 693, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 10 )
-region = Rect2( 462, 0, 231, 190 )
+region = Rect2( 924, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 10 )
-region = Rect2( 693, 0, 231, 190 )
+region = Rect2( 1155, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 10 )
-region = Rect2( 924, 0, 231, 190 )
+region = Rect2( 1386, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 10 )
-region = Rect2( 1155, 0, 231, 190 )
+region = Rect2( 1617, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 10 )
-region = Rect2( 1386, 0, 231, 190 )
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 10 )
-region = Rect2( 1617, 0, 231, 190 )
+atlas = ExtResource( 11 )
+region = Rect2( 231, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 13 )
@@ -160,15 +161,15 @@ animations = [ {
 "name": "jump",
 "speed": 2.0
 }, {
-"frames": [ SubResource( 9 ), SubResource( 10 ) ],
-"loop": true,
-"name": "fall",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "run",
 "speed": 8.0
+}, {
+"frames": [ SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
 }, {
 "frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
 "loop": false,
@@ -237,6 +238,12 @@ stream = ExtResource( 15 )
 
 [node name="DashEffect" type="Timer" parent="."]
 one_shot = true
+
+[node name="fire" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 16 )
+volume_db = -20.0
+max_distance = 1000.0
+attenuation = 2.07053
 [connection signal="health_updated" from="." to="PlayerFSM" method="_on_Player_health_updated"]
 [connection signal="killed" from="." to="." method="_on_Player_killed"]
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]

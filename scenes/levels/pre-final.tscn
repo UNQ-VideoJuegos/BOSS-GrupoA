@@ -12,7 +12,7 @@
 [ext_resource path="res://scenes/models/level objects/muro invisible.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/levels/background2.png" type="Texture" id=11]
 [ext_resource path="res://scenes/models/level objects/wall_peaks.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/menu/Fin.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/levels/Final Scene.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/levels/BackGround cave 2/BlackLight.png" type="Texture" id=14]
 [ext_resource path="res://assets/levels/BackGround cave 2/3.png" type="Texture" id=16]
 
@@ -463,7 +463,7 @@ scale = Vector2( 9.77754, 13.5966 )
 [node name="puerta" type="Node2D" parent="."]
 
 [node name="TransporterVehicle" parent="puerta" instance=ExtResource( 7 )]
-position = Vector2( 6017.46, 474.265 )
+position = Vector2( 5952.83, 468.968 )
 next_scene = ExtResource( 13 )
 
 [node name="pinchos" type="Node2D" parent="."]
