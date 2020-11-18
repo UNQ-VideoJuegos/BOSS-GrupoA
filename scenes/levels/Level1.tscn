@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/models/main character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/models/Platform.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://scenes/models/PlatformTrap.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/models/level objects/turret.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/models/level objects/Chaser.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/levels/background/darkcave.tscn" type="PackedScene" id=16]
 
 [node name="Level1" type="Node2D"]
 pause_mode = 2
@@ -24,9 +25,9 @@ script = ExtResource( 6 )
 [node name="PlatformTrap" parent="." instance=ExtResource( 13 )]
 position = Vector2( 488.558, 311.832 )
 
-[node name="Platform" parent="." instance=ExtResource( 2 )]
+[node name="Platform3" parent="." instance=ExtResource( 2 )]
 pause_mode = 1
-position = Vector2( 718.246, 221.439 )
+position = Vector2( 695.553, 138.321 )
 
 [node name="Platform2" parent="." instance=ExtResource( 2 )]
 pause_mode = 1
@@ -45,7 +46,7 @@ position = Vector2( 304, 568 )
 scale = Vector2( 1.05188, 2.61704 )
 
 [node name="Floor2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 960.561, 204.071 )
+position = Vector2( 967.696, 160.07 )
 scale = Vector2( 1, 2.6 )
 
 [node name="Floor7" parent="." instance=ExtResource( 3 )]
@@ -65,7 +66,7 @@ position = Vector2( 848, 417.5 )
 scale = Vector2( 4, 4 )
 
 [node name="Door2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 848, 104 )
+position = Vector2( 842.054, 25.5123 )
 scale = Vector2( 4, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 5 )]
@@ -78,12 +79,12 @@ scale = Vector2( 0.5, 0.5 )
 isMovingInterruptor = true
 
 [node name="Interruptor2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 973.768, 148.337 )
+position = Vector2( 984.471, 62.7141 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="TransportVehicle" parent="." instance=ExtResource( 7 )]
-position = Vector2( 976, 464 )
-scale = Vector2( 3, 3 )
+position = Vector2( 990.255, 447.964 )
+scale = Vector2( 3, 2.5 )
 next_scene = ExtResource( 8 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
@@ -142,3 +143,8 @@ rotation = 2.98527
 
 [node name="Chaser" parent="." instance=ExtResource( 15 )]
 position = Vector2( 267.572, 179.57 )
+
+[node name="Chaser2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 814.584, 135.025 )
+
+[node name="darkcave" parent="." instance=ExtResource( 16 )]
