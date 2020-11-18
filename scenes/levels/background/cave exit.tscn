@@ -9,7 +9,6 @@
 [ext_resource path="res://assets/levels/background3.png" type="Texture" id=7]
 [ext_resource path="res://assets/levels/BackGround cave 2/3.png" type="Texture" id=8]
 
-
 [node name="cave exit" type="ParallaxBackground"]
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
