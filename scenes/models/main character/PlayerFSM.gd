@@ -36,7 +36,7 @@ func _get_transition(delta): # maneja las transiciones
 					return states.jump
 				elif parent.velocity.y > 0:
 					return states.fall
-			elif parent.move_direction == 0:
+			elif parent.velocity.x == 0:
 				return states.idle
 			elif parent.health <= 0 or parent.is_dead:
 				return states.death

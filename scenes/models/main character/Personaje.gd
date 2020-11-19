@@ -28,6 +28,7 @@ onready var dash_effect_timer = $DashEffect
 export(PackedScene) var dash_object
 var dash_impulse = 30
 var dash_length = 0.2
+var dash_direction = Vector2.RIGHT
 var can_dash = true
 var is_dashing = false
 
@@ -52,16 +53,19 @@ func _apply_movement():
 
 
 func _move_input():
-	move_direction = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
+	var move_direction = 0
+	if Input.is_action_pressed("move_right"):
+		move_direction = 1
+		$AnimatedSprite.flip_h = false
+		$GunPosition.position = gun_position_right
+		dash_direction = Vector2.RIGHT
+	if Input.is_action_pressed("move_left"):
+		move_direction = -1
+		$AnimatedSprite.flip_h = true
+		$GunPosition.position = gun_position_left
+		dash_direction = Vector2.LEFT
 	
 	velocity.x = speed * move_direction
-	if move_direction != 0:
-		$AnimatedSprite.flip_h = move_direction < 0
-		if $AnimatedSprite.flip_h:
-			$GunPosition.position = gun_position_left
-		else:
-			$GunPosition.position = gun_position_right
-		
  
 func _apply_gravity(delta):
 	velocity.y += gravity * delta
@@ -90,10 +94,9 @@ func _shoot_bullet():
 	b.start($GunPosition.global_position,dir)
 
 func _dash():
-	if can_dash and Input.is_action_just_pressed("dash"):
-		can_dash = false
+	if Input.is_action_just_pressed("dash"):
+		#can_dash = false
 		is_dashing = true
-		$DashTimer.start()
 		$DashEffect.start(dash_length)
 		velocity.x *= dash_impulse
 		if is_dashing:
@@ -110,9 +113,6 @@ func _handleCollision():
 		if (col.collider.has_method("collide_with")):
 			col.collider.collide_with(col, self)
 
-func _on_DashTimer_timeout():
-	can_dash = true
-	is_dashing = false
 
 func _on_GunTimer_timeout():
 	can_shoot = true
