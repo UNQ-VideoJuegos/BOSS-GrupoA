@@ -13,12 +13,14 @@ export (float) var max_health = 100
 onready var health = max_health setget _set_health
 onready var invulnerability_timer = $invulnerabilityTimer
 onready var animation = $AnimatedSprite
+onready var anim = $AnimationPlayer
 
 
 const FLOOR_NORMAL = Vector2.UP
 var velocity = Vector2()
 var move_direction
 var speed = 350
+var right_orientation = true
 
 var gravity = 600
 
@@ -36,8 +38,6 @@ var jump_force = -400
 var min_jump = -100
 var is_jumping = false
 var jump_intents = 2
-var gun_position_right = Vector2(33,-28)
-var gun_position_left = Vector2(-26,-28)
 
 var is_dead = false
 
@@ -56,13 +56,11 @@ func _move_input():
 	var move_direction = 0
 	if Input.is_action_pressed("move_right"):
 		move_direction = 1
-		$AnimatedSprite.flip_h = false
-		$GunPosition.position = gun_position_right
+		right_orientation = true
 		dash_direction = Vector2.RIGHT
 	if Input.is_action_pressed("move_left"):
 		move_direction = -1
-		$AnimatedSprite.flip_h = true
-		$GunPosition.position = gun_position_left
+		right_orientation = false
 		dash_direction = Vector2.LEFT
 	
 	velocity.x = speed * move_direction
@@ -97,14 +95,14 @@ func _dash():
 	if Input.is_action_just_pressed("dash"):
 		#can_dash = false
 		is_dashing = true
-		$DashEffect.start(dash_length)
+#		$DashEffect.start(dash_length)
 		velocity.x *= dash_impulse
-		if is_dashing:
-			var dash_effect = dash_object.instance()
-			dash_effect.texture = $AnimatedSprite.frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
-			dash_effect.global_position = global_position
-			dash_effect.flip_h =$AnimatedSprite.flip_h
-			get_parent().add_child(dash_effect)
+#		if is_dashing:
+#			var dash_effect = dash_object.instance()
+#			dash_effect.texture = $AnimatedSprite.frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
+#			dash_effect.global_position = global_position
+#			dash_effect.flip_h =$AnimatedSprite.flip_h
+#			get_parent().add_child(dash_effect)
 
 
 func _handleCollision():

@@ -59,15 +59,40 @@ func _get_transition(delta): # maneja las transiciones
 func _enter_state(new_state, old_state): # metodo para setear animaciones o timers
 	match new_state:
 		states.idle:
-			parent.animation.play("idle")
+			if parent.right_orientation:
+				parent.anim.play("idle-right")
+				parent.anim.advance(0)
+			else:
+				parent.anim.play("idle-left")
+				parent.anim.advance(0)
 		states.run:
-			parent.animation.play("run")
+			if parent.right_orientation:
+				parent.anim.play("run-right")
+				parent.anim.advance(0)
+			else:
+				parent.anim.play("run-left")
+				parent.anim.advance(0)
 		states.jump:
-			parent.animation.play("jump")
+			if parent.right_orientation:
+				parent.anim.play("jump-right")
+				parent.anim.advance(0)
+			else:
+				parent.anim.play("jump-left")
+				parent.anim.advance(0)
 		states.fall:
-			parent.animation.play("fall")
+			if parent.right_orientation:
+				parent.anim.play("fall-right")
+				parent.anim.advance(0)
+			else:
+				parent.anim.play("fall-left")
+				parent.anim.advance(0)
 		states.death:
-			parent.animation.play("death")
+			if parent.right_orientation:
+				parent.anim.play("death-right")
+				parent.anim.advance(0)
+			else:
+				parent.anim.play("death-left")
+				parent.anim.advance(0)
 
 
 func _on_Player_health_updated(health):
