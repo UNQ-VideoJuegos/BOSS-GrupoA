@@ -16,9 +16,6 @@
 [ext_resource path="res://sounds/Hearbeat_2-Mike_Koenig-143666461.wav" type="AudioStream" id=15]
 [ext_resource path="res://sounds2/Small Fireball-SoundBible.com-1381880822.wav" type="AudioStream" id=16]
 
-[sub_resource type="RectangleShape2D" id=35]
-extents = Vector2( 21.4528, 38.5585 )
-
 [sub_resource type="Animation" id=47]
 resource_name = "death-left"
 length = 0.7
@@ -2045,6 +2042,9 @@ tracks/14/keys = {
 "values": [ false ]
 }
 
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 21.4528, 38.5585 )
+
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 1 )
@@ -2056,12 +2056,27 @@ dash_object = ExtResource( 7 )
 [node name="PlayerFSM" type="Node2D" parent="."]
 script = ExtResource( 8 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/death-left = SubResource( 47 )
+anims/death-right = SubResource( 38 )
+anims/fall-left = SubResource( 42 )
+anims/fall-right = SubResource( 41 )
+anims/hit-left = SubResource( 44 )
+anims/hit-right = SubResource( 43 )
+anims/idle-left = SubResource( 37 )
+anims/idle-right = SubResource( 36 )
+anims/jump-left = SubResource( 46 )
+anims/jump-right = SubResource( 45 )
+anims/run-left = SubResource( 40 )
+anims/run-right = SubResource( 39 )
+
 [node name="sprites" type="Node2D" parent="."]
 
 [node name="idle" type="Sprite" parent="sprites"]
 position = Vector2( 9.2589, -7.92558 )
 texture = ExtResource( 9 )
 hframes = 6
+frame = 3
 
 [node name="run" type="Sprite" parent="sprites"]
 visible = false
@@ -2129,20 +2144,6 @@ stream = ExtResource( 16 )
 volume_db = -15.0
 max_distance = 1000.0
 attenuation = 2.07053
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/death-left = SubResource( 47 )
-anims/death-right = SubResource( 38 )
-anims/fall-left = SubResource( 42 )
-anims/fall-right = SubResource( 41 )
-anims/hit-left = SubResource( 44 )
-anims/hit-right = SubResource( 43 )
-anims/idle-left = SubResource( 37 )
-anims/idle-right = SubResource( 36 )
-anims/jump-left = SubResource( 46 )
-anims/jump-right = SubResource( 45 )
-anims/run-left = SubResource( 40 )
-anims/run-right = SubResource( 39 )
 [connection signal="health_updated" from="." to="PlayerFSM" method="_on_Player_health_updated"]
 [connection signal="killed" from="." to="." method="_on_Player_killed"]
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]

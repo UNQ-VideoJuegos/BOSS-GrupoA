@@ -12,7 +12,6 @@ export (float) var max_health = 100
 
 onready var health = max_health setget _set_health
 onready var invulnerability_timer = $invulnerabilityTimer
-onready var animation = $AnimatedSprite
 onready var anim = $AnimationPlayer
 
 
@@ -95,14 +94,14 @@ func _dash():
 	if Input.is_action_just_pressed("dash"):
 		#can_dash = false
 		is_dashing = true
-#		$DashEffect.start(dash_length)
+		$DashEffect.start(dash_length)
 		velocity.x *= dash_impulse
-#		if is_dashing:
-#			var dash_effect = dash_object.instance()
-#			dash_effect.texture = $AnimatedSprite.frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
-#			dash_effect.global_position = global_position
-#			dash_effect.flip_h =$AnimatedSprite.flip_h
-#			get_parent().add_child(dash_effect)
+		if is_dashing:
+			var dash_effect = dash_object.instance()
+			dash_effect.texture = $AnimationPlayer.get_animation($AnimationPlayer.current_animation) #frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
+			dash_effect.global_position = global_position
+			
+			get_parent().add_child(dash_effect)
 
 
 func _handleCollision():
@@ -127,7 +126,6 @@ func kill():
 	$GamerOverSound.play()
 	$health_low.stop()
 	$GunTimer.stop()
-	$Camera2D.current = false
 	yield(get_tree().create_timer(1.0), "timeout")
 	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn")
 	
@@ -151,11 +149,5 @@ func _on_Player_killed():
 
 
 func _on_DashEffect_timeout():
-#	if is_dashing:
-#		var this_ghost = preload("res://scenes/models/main character/DashEffect.tscn").instance()
-#		get_parent().add_child(this_ghost)
-#		this_ghost.position = position
-#		this_ghost.texture = $AnimatedSprite.frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
-#		this_ghost.flip_h = $AnimatedSprite.flip_h
 	is_dashing = false
 

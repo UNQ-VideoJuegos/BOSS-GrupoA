@@ -96,7 +96,16 @@ func _enter_state(new_state, old_state): # metodo para setear animaciones o time
 
 
 func _on_Player_health_updated(health):
-	parent.animation.play("hit")
+	if parent.right_orientation:
+		parent.anim.play("hit-right")
+		parent.anim.advance(0)
+	else:
+		parent.anim.play("hit-left")
+		parent.anim.advance(0)
 	yield(get_tree().create_timer(0.8),"timeout")
-	parent.animation.play("idle")
-	
+	if parent.right_orientation:
+		parent.anim.play("idle-right")
+		parent.anim.advance(0)
+	else:
+		parent.anim.play("idle-left")
+		parent.anim.advance(0)
