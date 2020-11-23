@@ -66,7 +66,7 @@ position = Vector2( -10.8123, 0 )
 rotation = 1.5708
 frames = SubResource( 11 )
 animation = "fire"
-frame = 9
+frame = 3
 playing = true
 
 [node name="LifeTime" type="Timer" parent="."]

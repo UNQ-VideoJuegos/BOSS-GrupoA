@@ -97,7 +97,7 @@ position = Vector2( 896.561, 30.8775 )
 scale = Vector2( 3, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 26.8715, 70.6491 )
+position = Vector2( 45.3712, 82.1477 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="TileMap" type="TileMap" parent="."]

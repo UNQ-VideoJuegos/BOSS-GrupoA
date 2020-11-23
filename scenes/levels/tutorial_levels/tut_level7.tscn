@@ -59,11 +59,10 @@ script = null
 position = Vector2( 349.917, 377.695 )
 canFallPlatform = false
 
-[node name="Platform3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 779.603, 499.18 )
-
-[node name="Platform4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 948.602, 498.883 )
+[node name="Platform2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 525.675, 145.887 )
+playFallingAnimation = false
+canFallPlatform = false
 
 [node name="Lava" parent="." instance=ExtResource( 8 )]
 position = Vector2( 312, 584 )
@@ -129,14 +128,14 @@ position = Vector2( 843.857, 54.0002 )
 scale = Vector2( 4, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 7 )]
-position = Vector2( 977.419, 229.634 )
+position = Vector2( 518.569, 109.065 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="PlatformTrap" parent="." instance=ExtResource( 11 )]
 position = Vector2( 742.513, 268.815 )
 
 [node name="Chaser" parent="." instance=ExtResource( 12 )]
-position = Vector2( 937.845, 376.405 )
+position = Vector2( 530.091, 229.161 )
 
 [node name="Chaser2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 263.908, 197.25 )

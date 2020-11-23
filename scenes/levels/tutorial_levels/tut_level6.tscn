@@ -61,7 +61,7 @@ scale = Vector2( 0.701275, 1.82125 )
 script = null
 
 [node name="Platform" parent="." instance=ExtResource( 5 )]
-position = Vector2( 224.301, 307.34 )
+position = Vector2( 224.301, 236.784 )
 canFallPlatform = false
 
 [node name="Lava" parent="." instance=ExtResource( 8 )]
@@ -120,7 +120,7 @@ position = Vector2( 848, 312 )
 scale = Vector2( 4, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 7 )]
-position = Vector2( 25.6199, 122.933 )
+position = Vector2( 46.6884, 126.709 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="PlatformTrap" parent="." instance=ExtResource( 11 )]

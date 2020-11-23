@@ -70,16 +70,17 @@ position = Vector2( 842.054, 25.5123 )
 scale = Vector2( 4, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 5 )]
-position = Vector2( 42.6375, 282.318 )
+position = Vector2( 54.624, 291.308 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Interruptor3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 37.7284, 57.9853 )
+position = Vector2( 46.9783, 59.6671 )
+rotation = 1.57932
 scale = Vector2( 0.5, 0.5 )
 isMovingInterruptor = true
 
 [node name="Interruptor2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 984.471, 62.7141 )
+position = Vector2( 982.687, 89.4713 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="TransportVehicle" parent="." instance=ExtResource( 7 )]

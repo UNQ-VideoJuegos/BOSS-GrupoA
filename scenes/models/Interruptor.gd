@@ -29,6 +29,7 @@ func _on_Interruptor_area_entered(area):
 		emit_signal('triggered')
 		$Off.hide()	
 		$On.show()	
+		modulate= Color.red
 		$RespawnTimer.start()
 
 func _on_Interruptor_triggered():
@@ -36,6 +37,7 @@ func _on_Interruptor_triggered():
 	$MoveDownTimer.start()
 	
 func _on_RespawnTimer_timeout():
+	modulate= Color.white
 	$On.hide()	
 	$Off.show()
 
