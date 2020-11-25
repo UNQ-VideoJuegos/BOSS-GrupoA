@@ -17,9 +17,11 @@ onready var animation = $AnimatedSprite
 
 
 const FLOOR_NORMAL = Vector2.UP
+const normal_speed = 350
+const dash_speed = normal_speed * 4
+var speed = normal_speed
 var velocity = Vector2()
 var move_direction
-var speed = 350
 var right_orientation = true
 
 var gravity = 600
@@ -100,7 +102,8 @@ func _dash():
 		#can_dash = false
 		is_dashing = true
 		$DashEffect.start(dash_length)
-		velocity.x *= dash_impulse
+#		velocity.x *= dash_impulse
+		speed = dash_speed
 		if is_dashing:
 			var dash_effect = dash_object.instance()
 			dash_effect.texture = $AnimationPlayer.get_animation($AnimationPlayer.current_animation) #frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
@@ -155,4 +158,5 @@ func _on_Player_killed():
 
 func _on_DashEffect_timeout():
 	is_dashing = false
+	speed = normal_speed
 
