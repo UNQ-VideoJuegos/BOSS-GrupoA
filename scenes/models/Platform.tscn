@@ -22,7 +22,8 @@ region_enabled = true
 region_rect = Rect2( 266.44, 900.767, 391.136, 106.371 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 9.65559, -6.0755 )
+position = Vector2( 11.1894, 0.767588 )
+scale = Vector2( 1.01228, 1.91877 )
 z_index = 2
 shape = SubResource( 1 )
 one_way_collision = true
