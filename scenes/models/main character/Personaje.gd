@@ -23,7 +23,6 @@ var speed = 350
 var right_orientation = true
 
 var gravity = 600
-
 var can_shoot = true
 
 onready var dash_effect_timer = $DashEffect
