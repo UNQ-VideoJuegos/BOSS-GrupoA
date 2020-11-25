@@ -79,18 +79,19 @@ position = Vector2( 57.0369, 516.175 )
 [node name="Platform" parent="." instance=ExtResource( 4 )]
 pause_mode = 1
 position = Vector2( 232.474, 415.252 )
-SPEED = -9999
+SPEED = -16000
 playFallingAnimation = false
 
 [node name="Platform2" parent="." instance=ExtResource( 4 )]
 pause_mode = 1
 position = Vector2( 735.576, 229.107 )
-SPEED = -6000
+SPEED = -16000
 playFallingAnimation = false
 
 [node name="Platform3" parent="." instance=ExtResource( 4 )]
 pause_mode = 1
 position = Vector2( 446.667, 293.882 )
+SPEED = 16000
 
 [node name="Door" parent="." instance=ExtResource( 1 )]
 position = Vector2( 896.561, 30.8775 )

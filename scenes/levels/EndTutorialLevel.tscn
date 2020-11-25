@@ -75,35 +75,35 @@ rotation = 1.5708
 
 [node name="HelpTip" parent="." instance=ExtResource( 2 )]
 position = Vector2( 35.9117, 369.04 )
-tipText = "Hope you learned ... now it`s time to escape..."
+tipText = "Hope you learned  now it`s time to escape..."
 
 [node name="Chaser" parent="." instance=ExtResource( 8 )]
-position = Vector2( 247.612, 503.531 )
+position = Vector2( 185.249, 387.714 )
 speed = 250
 max_health = 20
 
 [node name="Chaser2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 394.041, 347.528 )
+position = Vector2( 310.297, 351.092 )
 speed = 250
 max_health = 20
 
 [node name="Chaser3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 520.465, 328.229 )
+position = Vector2( 426.03, 317.538 )
 speed = 250
 max_health = 20
 
 [node name="Chaser4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 665.458, 333.06 )
+position = Vector2( 569.241, 281.388 )
 speed = 250
 max_health = 20
 
 [node name="Chaser5" parent="." instance=ExtResource( 8 )]
-position = Vector2( 859.261, 362.591 )
+position = Vector2( 770.171, 346.555 )
 speed = 250
 max_health = 20
 
 [node name="Chaser6" parent="." instance=ExtResource( 8 )]
-position = Vector2( 711.13, 504.93 )
+position = Vector2( 916.037, 414.058 )
 speed = 250
 max_health = 20
 
@@ -129,6 +129,10 @@ rotation = 1.5708
 
 [node name="wall_peaks5" parent="." instance=ExtResource( 9 )]
 position = Vector2( 125.538, 433.011 )
+rotation = 1.5708
+
+[node name="wall_peaks6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 125.538, 381.011 )
 rotation = 1.5708
 
 [editable path="darkcave"]

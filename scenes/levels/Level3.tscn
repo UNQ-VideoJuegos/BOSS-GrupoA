@@ -95,7 +95,7 @@ limit_left = 0
 limit_top = 0
 limit_right = 1700
 limit_bottom = 650
-smoothing_speed = 3.0
+smoothing_enabled = true
 
 [node name="chasers" type="Node2D" parent="."]
 
@@ -122,50 +122,50 @@ pause_mode = 1
 
 [node name="Platform4" parent="plataformas" instance=ExtResource( 4 )]
 pause_mode = 1
-position = Vector2( 139.271, 365.887 )
-SPEED = -10000
+position = Vector2( 139.271, 359.152 )
+SPEED = -15000
 playFallingAnimation = false
 
 [node name="Platform14" parent="plataformas" instance=ExtResource( 4 )]
 pause_mode = 1
-position = Vector2( 277.862, 365.887 )
-SPEED = -10000
+position = Vector2( 277.862, 359.152 )
+SPEED = -15000
 playFallingAnimation = false
 
 [node name="Platform15" parent="plataformas" instance=ExtResource( 4 )]
 pause_mode = 1
-position = Vector2( 416.454, 365.887 )
-SPEED = -10000
+position = Vector2( 416.454, 359.152 )
+SPEED = -15000
 playFallingAnimation = false
 
 [node name="Platform16" parent="plataformas" instance=ExtResource( 4 )]
 pause_mode = 1
-position = Vector2( 550.005, 365.887 )
-SPEED = -10000
+position = Vector2( 550.005, 359.152 )
+SPEED = -15000
 playFallingAnimation = false
 
 [node name="Platform17" parent="plataformas" instance=ExtResource( 4 )]
 pause_mode = 1
-position = Vector2( 786.87, 365.887 )
-SPEED = -10000
+position = Vector2( 786.87, 359.152 )
+SPEED = -15000
 playFallingAnimation = false
 
 [node name="Platform18" parent="plataformas" instance=ExtResource( 4 )]
 pause_mode = 1
-position = Vector2( 925.462, 365.887 )
-SPEED = -10000
+position = Vector2( 925.462, 359.152 )
+SPEED = -15000
 playFallingAnimation = false
 
 [node name="Platform19" parent="plataformas" instance=ExtResource( 4 )]
 pause_mode = 1
-position = Vector2( 1064.05, 365.887 )
-SPEED = -10000
+position = Vector2( 1064.05, 359.152 )
+SPEED = -15000
 playFallingAnimation = false
 
 [node name="Platform20" parent="plataformas" instance=ExtResource( 4 )]
 pause_mode = 1
-position = Vector2( 1197.6, 365.887 )
-SPEED = -10000
+position = Vector2( 1197.6, 359.152 )
+SPEED = -15000
 playFallingAnimation = false
 
 [node name="TileMap" type="TileMap" parent="."]

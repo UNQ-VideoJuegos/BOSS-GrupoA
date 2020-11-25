@@ -28,10 +28,12 @@ position = Vector2( 488.558, 311.832 )
 [node name="Platform3" parent="." instance=ExtResource( 2 )]
 pause_mode = 1
 position = Vector2( 695.553, 138.321 )
+SPEED = 16000
 
 [node name="Platform2" parent="." instance=ExtResource( 2 )]
 pause_mode = 1
 position = Vector2( 295.966, 399.632 )
+SPEED = -16000
 
 [node name="Floor" parent="." instance=ExtResource( 3 )]
 position = Vector2( 64, 568 )
@@ -46,7 +48,7 @@ position = Vector2( 304, 568 )
 scale = Vector2( 1.05188, 2.61704 )
 
 [node name="Floor2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 967.696, 160.07 )
+position = Vector2( 990.323, 160.07 )
 scale = Vector2( 1, 2.6 )
 
 [node name="Floor7" parent="." instance=ExtResource( 3 )]
@@ -144,8 +146,18 @@ rotation = 2.98527
 
 [node name="Chaser" parent="." instance=ExtResource( 15 )]
 position = Vector2( 267.572, 179.57 )
+max_health = 25
 
 [node name="Chaser2" parent="." instance=ExtResource( 15 )]
 position = Vector2( 814.584, 135.025 )
+max_health = 25
+
+[node name="Chaser3" parent="." instance=ExtResource( 15 )]
+position = Vector2( 867.441, 331.351 )
+max_health = 25
+
+[node name="Chaser4" parent="." instance=ExtResource( 15 )]
+position = Vector2( 555.962, 201.096 )
+max_health = 25
 
 [node name="darkcave" parent="." instance=ExtResource( 16 )]

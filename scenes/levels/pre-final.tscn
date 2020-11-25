@@ -560,5 +560,6 @@ limit_left = -50
 limit_top = 0
 limit_right = 6050
 limit_bottom = 590
+smoothing_enabled = true
 offset_h = 1.0
 offset_v = -1.0

@@ -20,10 +20,6 @@ script = ExtResource( 6 )
 position = Vector2( 64, 568 )
 scale = Vector2( 1.05188, 2.61704 )
 
-[node name="Floor5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 184, 568 )
-scale = Vector2( 1.05188, 2.61704 )
-
 [node name="Floor6" parent="." instance=ExtResource( 3 )]
 position = Vector2( 304, 568 )
 scale = Vector2( 1.05188, 2.61704 )
@@ -32,16 +28,8 @@ scale = Vector2( 1.05188, 2.61704 )
 position = Vector2( 428.14, 568 )
 scale = Vector2( 1.05188, 2.61704 )
 
-[node name="Floor8" parent="." instance=ExtResource( 3 )]
-position = Vector2( 544.814, 568 )
-scale = Vector2( 1.05188, 2.61704 )
-
 [node name="Floor9" parent="." instance=ExtResource( 3 )]
 position = Vector2( 662.282, 568 )
-scale = Vector2( 1.05188, 2.61704 )
-
-[node name="Floor11" parent="." instance=ExtResource( 3 )]
-position = Vector2( 895.63, 568 )
 scale = Vector2( 1.05188, 2.61704 )
 
 [node name="Floor12" parent="." instance=ExtResource( 3 )]
@@ -72,6 +60,9 @@ rotation = 1.5708
 
 [node name="darkcave" parent="." instance=ExtResource( 5 )]
 
+[node name="Sprite" parent="darkcave/ParallaxLayer3" index="0"]
+position = Vector2( 1.5874, 0 )
+
 [node name="ParallaxLayer5" parent="darkcave" index="3"]
 visible = false
 
@@ -87,16 +78,12 @@ rotation = -1.56157
 position = Vector2( 460.745, 492.957 )
 rotation = -1.56157
 
-[node name="wall_peaks4" parent="." instance=ExtResource( 11 )]
-position = Vector2( 547.557, 494.146 )
-rotation = -1.56157
-
 [node name="wall_peaks5" parent="." instance=ExtResource( 11 )]
-position = Vector2( 922.557, 493.146 )
+position = Vector2( 949.543, 493.146 )
 rotation = -1.56157
 
 [node name="wall_peaks6" parent="." instance=ExtResource( 11 )]
-position = Vector2( 922.557, 433.146 )
+position = Vector2( 949.543, 433.146 )
 rotation = -1.56157
 
 [node name="wall_peaks7" parent="." instance=ExtResource( 11 )]
@@ -111,20 +98,33 @@ rotation = -1.56157
 position = Vector2( 415.106, 412.553 )
 
 [node name="Chaser3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 179.909, 286.046 )
+position = Vector2( 556.972, 322.416 )
 
 [node name="Chaser2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 832.592, 325.246 )
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 position = Vector2( 778.257, 452.304 )
+SPEED = 16000
 
 [node name="Platform2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 552.731, 428.365 )
-canFallPlatform = false
+SPEED = 16000
 
 [node name="Lava" parent="." instance=ExtResource( 9 )]
-position = Vector2( 774.977, 557.663 )
+position = Vector2( 774.977, 573.537 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 901.969, 573.537 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 555.915, 573.537 )
+scale = Vector2( 9, 13 )
+
+[node name="Lava4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 179.701, 573.537 )
 scale = Vector2( 9, 13 )
 
 [editable path="darkcave"]

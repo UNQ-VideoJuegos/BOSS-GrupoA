@@ -48,6 +48,7 @@ func _boom_damage():
 func _on_Detection_area_body_entered(body):
 	if body.name == "Player":
 		target = body
+		$Timer.start()
 
 
 func _on_Hitbox_area_entered(area):
@@ -57,3 +58,7 @@ func _on_Hitbox_area_entered(area):
 		$HealthDisplay.update_healthbar(max_health)
 		yield(get_tree().create_timer(0.3),"timeout")
 		$AnimatedSprite.modulate = Color.white
+
+
+func _on_Timer_timeout():
+	boom()
