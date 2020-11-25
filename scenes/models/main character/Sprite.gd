@@ -1,16 +1,9 @@
 extends Sprite
 
 func _ready():
-#	$AlphaTween.interpolate_property(self,"modulate",Color(1,1,1,1),Color(1,1,1,0),0.8,Tween.TRANS_BACK,Tween.EASE_OUT)
-#	$AlphaTween.start()
-	pass
-
-func _physics_process(delta):
-	modulate.a = lerp(modulate.a,0,0.1)
-	if modulate.a < 0.01:
-		queue_free()
-	
+	$AlphaTween.interpolate_property(self,"modulate",Color(1,1,1,1),Color(1,1,1,0),0.5,Tween.TRANS_SINE,Tween.EASE_OUT)
+	$AlphaTween.start()
 
 func _on_AlphaTween_tween_completed(object, key):
-	#queue_free()
-	pass
+	queue_free()
+	

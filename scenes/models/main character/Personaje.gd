@@ -59,7 +59,7 @@ func _apply_movement():
 
 func _move_input():
 	move_direction = 0
-	if !is_dead:	
+	if !is_dead:
 		if Input.is_action_pressed("move_right"):
 			move_direction = 1
 			$AnimatedSprite.flip_h = false
@@ -100,15 +100,16 @@ func _shoot_bullet():
 
 func _dash():
 	if Input.is_action_just_pressed("dash") and !is_dead:
-		#can_dash = false
 		is_dashing = true
+		$Particles2D.emitting = true
 		$DashEffect.start(dash_length)
 #		velocity.x *= dash_impulse
 		speed = dash_speed
 		if is_dashing:
 			var dash_effect = dash_object.instance()
-			dash_effect.texture = animation.frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
-			dash_effect.global_position = global_position
+			dash_effect.texture = animation.frames.get_frame($AnimatedSprite.animation,animation.frame)
+			dash_effect.global_position = animation.global_position
+			dash_effect.flip_h = animation.flip_h
 			get_parent().add_child(dash_effect)
 
 
@@ -159,6 +160,7 @@ func _on_Player_killed():
 
 
 func _on_DashEffect_timeout():
+	$Particles2D.emitting = false
 	is_dashing = false
 	speed = normal_speed
 
