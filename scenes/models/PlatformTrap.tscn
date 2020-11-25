@@ -27,4 +27,12 @@ z_index = -2
 [node name="trap2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 21.5425, -15.5361 )
 z_index = -2
+
+[node name="trap3" parent="." instance=ExtResource( 4 )]
+position = Vector2( -26.3497, -6.34742 )
+z_index = -2
+
+[node name="trap4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 21.5425, -6.19222 )
+z_index = -2
 [connection signal="timeout" from="PlatformTrapTimer" to="." method="_on_PlatformTrapTimer_timeout"]

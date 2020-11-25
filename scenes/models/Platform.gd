@@ -28,7 +28,7 @@ func _fall():
 	velocity = Vector2.ZERO
 	if (playFallingAnimation):
 		$ShakeAnimation.play("PlatformAnimation")
-		yield(get_tree().create_timer(.2), "timeout")
+		yield(get_tree().create_timer(.1), "timeout")
 		$ShakeAnimation.stop()
 	falling = true
 	

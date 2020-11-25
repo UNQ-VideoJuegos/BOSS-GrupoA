@@ -60,21 +60,22 @@ script = null
 
 [node name="Platform" parent="." instance=ExtResource( 5 )]
 position = Vector2( 736, 464 )
+SPEED = 15000
 
 [node name="Lava" parent="." instance=ExtResource( 8 )]
-position = Vector2( 312, 584 )
+position = Vector2( 312, 596 )
 scale = Vector2( 9, 13 )
 
 [node name="Lava2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 776, 584 )
+position = Vector2( 776, 596 )
 scale = Vector2( 9, 13 )
 
 [node name="Lava4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 688, 584 )
+position = Vector2( 688, 596 )
 scale = Vector2( 9, 13 )
 
 [node name="Lava3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 936, 584 )
+position = Vector2( 936, 596 )
 scale = Vector2( 9, 13 )
 
 [node name="TransporterVehicle" parent="." instance=ExtResource( 6 )]

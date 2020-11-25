@@ -32,25 +32,23 @@ scale = Vector2( 0.701275, 1.82125 )
 script = null
 
 [node name="Floor4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 976, 408 )
+position = Vector2( 976, 246.085 )
 scale = Vector2( 0.701275, 1.82125 )
 script = null
 
 [node name="Floor5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 898.475, 408 )
+position = Vector2( 898.475, 246.085 )
 scale = Vector2( 0.701275, 1.82125 )
 script = null
 
-[node name="Platform" parent="." instance=ExtResource( 3 )]
-position = Vector2( 400, 488 )
-
 [node name="Platform2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 568, 488 )
-SPEED = -9999
+position = Vector2( 712.087, 296.844 )
+SPEED = -12000
 playFallingAnimation = false
 
 [node name="Platform3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 728, 488 )
+position = Vector2( 478.407, 443.021 )
+SPEED = 15000
 
 [node name="Lava" parent="." instance=ExtResource( 4 )]
 position = Vector2( 312, 584 )
@@ -73,7 +71,7 @@ position = Vector2( 952, 584 )
 scale = Vector2( 9, 13 )
 
 [node name="TransporterVehicle" parent="." instance=ExtResource( 5 )]
-position = Vector2( 992, 338.57 )
+position = Vector2( 992, 176.655 )
 scale = Vector2( 3, 3 )
 next_scene = ExtResource( 9 )
 
@@ -82,7 +80,7 @@ position = Vector2( 106.832, 421.48 )
 tipText = "Be careful! The platforms can fall or levitate!"
 
 [node name="HelpTip2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 840.749, 265.552 )
+position = Vector2( 840.749, 103.637 )
 tipText = "But also they can respawn!"
 
 [node name="muro invisible" parent="." instance=ExtResource( 7 )]
@@ -90,5 +88,13 @@ position = Vector2( 0, 280 )
 
 [node name="muro invisible2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1025.06, 280.518 )
+
+[node name="muro invisible3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 258.009, -5.53698 )
+rotation = 1.57014
+
+[node name="muro invisible4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 755.957, -5.53698 )
+rotation = 1.57014
 
 [node name="darkcave" parent="." instance=ExtResource( 10 )]

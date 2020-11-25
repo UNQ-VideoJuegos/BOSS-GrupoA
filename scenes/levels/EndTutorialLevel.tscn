@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/models/main character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/menu/HelpTip.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/levels/IntroLevel.gd" type="Script" id=6]
 [ext_resource path="res://scenes/models/TransportVehicle.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/models/level objects/Chaser.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/models/level objects/wall_peaks.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/models/level objects/muro invisible.tscn" type="PackedScene" id=10]
 
 [node name="EndTutorialLevel" type="Node2D"]
@@ -73,30 +74,61 @@ position = Vector2( 764.996, -25.0945 )
 rotation = 1.5708
 
 [node name="HelpTip" parent="." instance=ExtResource( 2 )]
-position = Vector2( 112.715, 373.986 )
+position = Vector2( 35.9117, 369.04 )
 tipText = "Hope you learned ... now it`s time to escape..."
 
 [node name="Chaser" parent="." instance=ExtResource( 8 )]
-position = Vector2( 692.227, 392.984 )
+position = Vector2( 247.612, 503.531 )
+speed = 250
+max_health = 20
 
 [node name="Chaser2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 501.739, 389.809 )
-
-[node name="Chaser4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 510.215, 497.874 )
+position = Vector2( 394.041, 347.528 )
+speed = 250
+max_health = 20
 
 [node name="Chaser3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 885.89, 392.984 )
+position = Vector2( 520.465, 328.229 )
+speed = 250
+max_health = 20
+
+[node name="Chaser4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 665.458, 333.06 )
+speed = 250
+max_health = 20
 
 [node name="Chaser5" parent="." instance=ExtResource( 8 )]
-position = Vector2( 886.811, 504.93 )
+position = Vector2( 859.261, 362.591 )
+speed = 250
+max_health = 20
 
 [node name="Chaser6" parent="." instance=ExtResource( 8 )]
-position = Vector2( 698.226, 504.93 )
+position = Vector2( 711.13, 504.93 )
+speed = 250
+max_health = 20
 
 [node name="darkcave" parent="." instance=ExtResource( 5 )]
 
+[node name="Sprite" parent="darkcave/ParallaxLayer" index="0"]
+position = Vector2( -1.41422, 0 )
+
 [node name="ParallaxLayer5" parent="darkcave" index="3"]
 visible = false
+
+[node name="wall_peaks" parent="." instance=ExtResource( 9 )]
+position = Vector2( 873.513, 495.94 )
+rotation = 1.5708
+
+[node name="wall_peaks2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 873.513, 433.011 )
+rotation = 1.5708
+
+[node name="wall_peaks4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 125.538, 495.94 )
+rotation = 1.5708
+
+[node name="wall_peaks5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 125.538, 433.011 )
+rotation = 1.5708
 
 [editable path="darkcave"]

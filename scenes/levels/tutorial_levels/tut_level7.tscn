@@ -22,88 +22,87 @@ script = ExtResource( 10 )
 position = Vector2( 40.16, 524.935 )
 
 [node name="Floor" parent="." instance=ExtResource( 3 )]
-position = Vector2( 43.8585, 572.649 )
+position = Vector2( 43.8585, 593.414 )
 scale = Vector2( 0.701275, 1.82125 )
 
 [node name="Floor2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 121.947, 572.649 )
+position = Vector2( 121.947, 593.414 )
 scale = Vector2( 0.701275, 1.82125 )
 script = null
 
 [node name="Floor4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 983.878, 178.652 )
+position = Vector2( 983.878, 229.564 )
 scale = Vector2( 0.701275, 1.82125 )
 script = null
 
 [node name="Floor5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 899.759, 175.992 )
+position = Vector2( 899.759, 226.904 )
 scale = Vector2( 0.701275, 1.82125 )
 script = null
 
 [node name="Floor6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 44.4894, 229.987 )
+position = Vector2( 44.4894, 280.899 )
 scale = Vector2( 0.701275, 1.82125 )
 script = null
 
 [node name="Floor7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 121.107, 229.987 )
-scale = Vector2( 0.701275, 1.82125 )
-script = null
-
-[node name="Floor8" parent="." instance=ExtResource( 3 )]
-position = Vector2( 192.379, 229.987 )
+position = Vector2( 121.107, 280.899 )
 scale = Vector2( 0.701275, 1.82125 )
 script = null
 
 [node name="Platform" parent="." instance=ExtResource( 5 )]
-position = Vector2( 349.917, 377.695 )
-canFallPlatform = false
+position = Vector2( 304.624, 391.418 )
+SPEED = 16000
+
+[node name="Platform3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 637.734, 522.783 )
+SPEED = -16000
 
 [node name="Platform2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 525.675, 145.887 )
+position = Vector2( 529.592, 190.723 )
 playFallingAnimation = false
 canFallPlatform = false
 
 [node name="Lava" parent="." instance=ExtResource( 8 )]
-position = Vector2( 312, 584 )
+position = Vector2( 312, 604.765 )
 scale = Vector2( 9, 13 )
 
 [node name="Lava7" parent="." instance=ExtResource( 8 )]
-position = Vector2( 242.948, 583.206 )
+position = Vector2( 242.948, 603.971 )
 scale = Vector2( 9, 13 )
 
 [node name="Lava5" parent="." instance=ExtResource( 8 )]
-position = Vector2( 473.888, 584 )
+position = Vector2( 473.888, 604.765 )
 scale = Vector2( 9, 13 )
 
 [node name="Lava6" parent="." instance=ExtResource( 8 )]
-position = Vector2( 577.338, 584 )
+position = Vector2( 577.338, 604.765 )
 scale = Vector2( 9, 13 )
 
 [node name="Lava2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 776, 584 )
+position = Vector2( 776, 604.765 )
 scale = Vector2( 9, 13 )
 
 [node name="Lava4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 688, 584 )
+position = Vector2( 688, 604.765 )
 scale = Vector2( 9, 13 )
 
 [node name="Lava3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 936, 584 )
+position = Vector2( 936, 604.765 )
 scale = Vector2( 9, 13 )
 
 [node name="TransporterVehicle" parent="." instance=ExtResource( 6 )]
-position = Vector2( 980.691, 107.454 )
+position = Vector2( 980.691, 158.366 )
 scale = Vector2( 3, 3 )
 next_scene = ExtResource( 14 )
 
 [node name="HelpTip" parent="." instance=ExtResource( 1 )]
-position = Vector2( 95.4594, 399.12 )
-tipText = "An enemy called Chaser is the guardian of the cave. If you are close of them... you will see... "
+position = Vector2( 95.4594, 450.032 )
+tipText = "that are the guardian of the cave. If you are close of them... you will see... "
 
 [node name="HelpTip2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 309.612, 260.353 )
-tipText = "You can shoot them to defend yourself..."
+position = Vector2( 52.4531, 155.699 )
+tipText = "You can shoot them or dash"
 
 [node name="muro invisible" parent="." instance=ExtResource( 9 )]
 position = Vector2( 0, 280 )
@@ -112,37 +111,41 @@ position = Vector2( 0, 280 )
 position = Vector2( 1024, 282.408 )
 
 [node name="muro invisible3" parent="." instance=ExtResource( 9 )]
-position = Vector2( 503.671, 7.50758 )
+position = Vector2( 503.671, -13.1286 )
 rotation = -1.56922
 
 [node name="muro invisible5" parent="." instance=ExtResource( 9 )]
-position = Vector2( 752.645, 7.50758 )
+position = Vector2( 752.645, -13.1286 )
 rotation = -1.56922
 
 [node name="muro invisible4" parent="." instance=ExtResource( 9 )]
-position = Vector2( 263.173, 7.50758 )
+position = Vector2( 263.173, -13.1286 )
 rotation = -1.56922
 
 [node name="Door" parent="." instance=ExtResource( 2 )]
-position = Vector2( 843.857, 54.0002 )
+position = Vector2( 843.857, 104.912 )
 scale = Vector2( 4, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 7 )]
-position = Vector2( 518.569, 109.065 )
+position = Vector2( 518.569, 159.977 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="PlatformTrap" parent="." instance=ExtResource( 11 )]
-position = Vector2( 742.513, 268.815 )
+position = Vector2( 742.513, 319.727 )
 
 [node name="Chaser" parent="." instance=ExtResource( 12 )]
-position = Vector2( 530.091, 229.161 )
+position = Vector2( 530.091, 235.625 )
+speed = 250
+max_health = 25
 
 [node name="Chaser2" parent="." instance=ExtResource( 12 )]
-position = Vector2( 263.908, 197.25 )
-chaser_damage = 26
+position = Vector2( 263.908, 204.112 )
+max_health = 25
 
 [node name="Chaser3" parent="." instance=ExtResource( 12 )]
-position = Vector2( 799.456, 74.7203 )
+position = Vector2( 751.834, 125.632 )
+speed = 230
+max_health = 25
 
 [node name="cave exit" parent="." instance=ExtResource( 13 )]
 

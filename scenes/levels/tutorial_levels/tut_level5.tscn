@@ -57,30 +57,30 @@ script = null
 
 [node name="Platform" parent="." instance=ExtResource( 5 )]
 position = Vector2( 522.732, 370.836 )
-canFallPlatform = false
+SPEED = 15000
 
 [node name="Lava" parent="." instance=ExtResource( 8 )]
-position = Vector2( 312, 584 )
+position = Vector2( 312, 601.959 )
 scale = Vector2( 9, 13 )
 
 [node name="Lava5" parent="." instance=ExtResource( 8 )]
-position = Vector2( 473.888, 584 )
+position = Vector2( 473.888, 601.959 )
 scale = Vector2( 9, 13 )
 
 [node name="Lava6" parent="." instance=ExtResource( 8 )]
-position = Vector2( 577.338, 584 )
+position = Vector2( 577.338, 601.959 )
 scale = Vector2( 9, 13 )
 
 [node name="Lava2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 776, 584 )
+position = Vector2( 776, 601.959 )
 scale = Vector2( 9, 13 )
 
 [node name="Lava4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 688, 584 )
+position = Vector2( 688, 601.959 )
 scale = Vector2( 9, 13 )
 
 [node name="Lava3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 936, 584 )
+position = Vector2( 936, 601.959 )
 scale = Vector2( 9, 13 )
 
 [node name="TransporterVehicle" parent="." instance=ExtResource( 6 )]
@@ -103,7 +103,7 @@ position = Vector2( 848, 312 )
 scale = Vector2( 4, 4 )
 
 [node name="Interruptor" parent="." instance=ExtResource( 7 )]
-position = Vector2( 968.203, 168.993 )
+position = Vector2( 980.095, 168.993 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="PlatformTrap" parent="." instance=ExtResource( 11 )]
@@ -113,7 +113,7 @@ position = Vector2( 317.84, 447.381 )
 position = Vector2( 732.025, 289.791 )
 
 [node name="wall_peaks" parent="." instance=ExtResource( 12 )]
-position = Vector2( 903.248, 165.549 )
+position = Vector2( 924.654, 165.549 )
 rotation = -1.58993
 
 [node name="darkcave" parent="." instance=ExtResource( 14 )]

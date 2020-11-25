@@ -12,14 +12,22 @@ func destroy():
 func hideTrap():
 	$trap.hide()
 	$trap2.hide()
+	$trap3.hide()
+	$trap4.hide()		
 	$trap.disableDamage()
 	$trap2.disableDamage()
+	$trap3.disableDamage()
+	$trap4.disableDamage()		
 	
 func showTrap():
 	$trap.show()
-	$trap2.show()	
+	$trap2.show()
+	$trap3.show()
+	$trap4.show()		
 	$trap.enableDamage()
 	$trap2.enableDamage()
+	$trap3.enableDamage()
+	$trap4.enableDamage()		
 
 
 func _on_PlatformTrapTimer_timeout():
