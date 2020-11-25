@@ -304,7 +304,7 @@ position = Vector2( 2109.08, 570.378 )
 scale = Vector2( 1.05188, 2.61704 )
 
 [node name="Floor3" parent="pisos" instance=ExtResource( 3 )]
-position = Vector2( 2219.76, 569.992 )
+position = Vector2( 2219.66, 570.19 )
 scale = Vector2( 1, 2.6 )
 
 [node name="Floor26" parent="pisos" instance=ExtResource( 3 )]
