@@ -51,25 +51,26 @@ func _ready():
 
 
 func _apply_movement():
-	$GunPosition.look_at(get_global_mouse_position())
-	velocity = move_and_slide(velocity,FLOOR_NORMAL)
-	_handleCollision()
+	if !is_dead:
+		$GunPosition.look_at(get_global_mouse_position())
+		velocity = move_and_slide(velocity,FLOOR_NORMAL)
+		_handleCollision()
 
 
 func _move_input():
 	move_direction = 0
-	if Input.is_action_pressed("move_right"):
-		move_direction = 1
-		$AnimatedSprite.flip_h = false
-		$GunPosition.position = gun_position_right
-		dash_direction = Vector2.RIGHT
-	if Input.is_action_pressed("move_left"):
-		move_direction = -1
-		$AnimatedSprite.flip_h = true
-		$GunPosition.position = gun_position_left
-		dash_direction = Vector2.LEFT
-
-	velocity.x = speed * move_direction
+	if !is_dead:	
+		if Input.is_action_pressed("move_right"):
+			move_direction = 1
+			$AnimatedSprite.flip_h = false
+			$GunPosition.position = gun_position_right
+			dash_direction = Vector2.RIGHT
+		if Input.is_action_pressed("move_left"):
+			move_direction = -1
+			$AnimatedSprite.flip_h = true
+			$GunPosition.position = gun_position_left
+			dash_direction = Vector2.LEFT
+		velocity.x = speed * move_direction
  
 func _apply_gravity(delta):
 	velocity.y += gravity * delta
@@ -85,7 +86,7 @@ func _jump():
 		velocity.y = min_jump
 
 func _shoot():
-	if can_shoot and Input.is_action_pressed("click"):
+	if can_shoot and Input.is_action_pressed("click") and !is_dead:
 		can_shoot = false
 		$GunTimer.start()
 		$fire.play()
@@ -98,7 +99,7 @@ func _shoot_bullet():
 	b.start($GunPosition.global_position,dir)
 
 func _dash():
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("dash") and !is_dead:
 		#can_dash = false
 		is_dashing = true
 		$DashEffect.start(dash_length)
