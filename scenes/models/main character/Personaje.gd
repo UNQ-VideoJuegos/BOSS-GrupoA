@@ -12,7 +12,8 @@ export (float) var max_health = 100
 
 onready var health = max_health setget _set_health
 onready var invulnerability_timer = $invulnerabilityTimer
-onready var anim = $AnimationPlayer
+onready var animation = $AnimatedSprite
+#onready var anim = $AnimationPlayer #NO USAR POR AHORA
 
 
 const FLOOR_NORMAL = Vector2.UP
@@ -38,6 +39,9 @@ var min_jump = -100
 var is_jumping = false
 var jump_intents = 2
 
+var gun_position_right = Vector2(33,-28)
+var gun_position_left = Vector2(-26,-28)
+
 var is_dead = false
 
 func _ready():
@@ -55,13 +59,15 @@ func _move_input():
 	var move_direction = 0
 	if Input.is_action_pressed("move_right"):
 		move_direction = 1
-		right_orientation = true
+		$AnimatedSprite.flip_h = false
+		$GunPosition.position = gun_position_right
 		dash_direction = Vector2.RIGHT
 	if Input.is_action_pressed("move_left"):
 		move_direction = -1
-		right_orientation = false
+		$AnimatedSprite.flip_h = true
+		$GunPosition.position = gun_position_left
 		dash_direction = Vector2.LEFT
-	
+
 	velocity.x = speed * move_direction
  
 func _apply_gravity(delta):
