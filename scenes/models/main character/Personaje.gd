@@ -57,7 +57,7 @@ func _apply_movement():
 
 
 func _move_input():
-	var move_direction = 0
+	move_direction = 0
 	if Input.is_action_pressed("move_right"):
 		move_direction = 1
 		$AnimatedSprite.flip_h = false
@@ -106,9 +106,8 @@ func _dash():
 		speed = dash_speed
 		if is_dashing:
 			var dash_effect = dash_object.instance()
-			dash_effect.texture = $AnimationPlayer.get_animation($AnimationPlayer.current_animation) #frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
+			dash_effect.texture = animation.frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
 			dash_effect.global_position = global_position
-			
 			get_parent().add_child(dash_effect)
 
 
@@ -148,6 +147,8 @@ func _set_health(value):
 			$health_low.play()
 		if health <= 0:
 			kill()
+	print(health)
+	print(prev_health)
 
 func _on_invulnerabilityTimer_timeout():
 	pass

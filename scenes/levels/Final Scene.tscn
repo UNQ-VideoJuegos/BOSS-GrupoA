@@ -135,6 +135,7 @@ limit_left = 0
 limit_top = 0
 limit_right = 1975
 limit_bottom = 600
+smoothing_enabled = true
 
 [node name="muro invisible" parent="." instance=ExtResource( 7 )]
 position = Vector2( -5.03265, 342.014 )
@@ -151,11 +152,11 @@ position = Vector2( 773.687, 477.84 )
 tipText = " Now i can find her..."
 
 [node name="HelpTip3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 960.512, 476.102 )
-tipText = "Develop By Team A."
+position = Vector2( 1335.28, 476.102 )
+tipText = "Developed by         Team A."
 
 [node name="HelpTip4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1372.29, 476.102 )
+position = Vector2( 1684.83, 476.102 )
 tipText = "Gonzalo Torrez, Oscar Lescano and Guillermo Salvatore."
 
 [node name="TransporterVehicle" parent="." instance=ExtResource( 9 )]
