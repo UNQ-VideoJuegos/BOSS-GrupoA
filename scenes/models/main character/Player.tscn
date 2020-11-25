@@ -16,7 +16,7 @@
 [ext_resource path="res://sounds/Hearbeat_2-Mike_Koenig-143666461.wav" type="AudioStream" id=15]
 [ext_resource path="res://sounds2/Small Fireball-SoundBible.com-1381880822.wav" type="AudioStream" id=16]
 
-[sub_resource type="Animation" id=47]
+[sub_resource type="Animation" id=1]
 resource_name = "death-left"
 length = 0.7
 tracks/0/type = "value"
@@ -176,7 +176,7 @@ tracks/12/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=2]
 resource_name = "death-right"
 length = 0.7
 tracks/0/type = "value"
@@ -336,7 +336,7 @@ tracks/12/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=42]
+[sub_resource type="Animation" id=3]
 resource_name = "fall-left"
 length = 0.2
 loop = true
@@ -497,7 +497,7 @@ tracks/12/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=41]
+[sub_resource type="Animation" id=4]
 resource_name = "fall-right"
 length = 0.2
 loop = true
@@ -658,7 +658,7 @@ tracks/12/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=44]
+[sub_resource type="Animation" id=5]
 resource_name = "hit-left"
 length = 0.4
 loop = true
@@ -819,7 +819,7 @@ tracks/12/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=43]
+[sub_resource type="Animation" id=6]
 resource_name = "hit-right"
 length = 0.4
 loop = true
@@ -980,7 +980,7 @@ tracks/12/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=37]
+[sub_resource type="Animation" id=7]
 resource_name = "idle-left"
 length = 0.6
 loop = true
@@ -1165,7 +1165,7 @@ tracks/14/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=36]
+[sub_resource type="Animation" id=8]
 resource_name = "idle-right"
 length = 0.6
 loop = true
@@ -1350,7 +1350,7 @@ tracks/14/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=46]
+[sub_resource type="Animation" id=9]
 resource_name = "jump-left"
 length = 0.2
 loop = true
@@ -1511,7 +1511,7 @@ tracks/12/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="Animation" id=45]
+[sub_resource type="Animation" id=10]
 resource_name = "jump-right"
 length = 0.2
 loop = true
@@ -1672,7 +1672,7 @@ tracks/12/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="Animation" id=40]
+[sub_resource type="Animation" id=11]
 resource_name = "run-left"
 length = 0.8
 loop = true
@@ -1857,7 +1857,7 @@ tracks/14/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=39]
+[sub_resource type="Animation" id=12]
 resource_name = "run-right"
 length = 0.8
 loop = true
@@ -2042,7 +2042,7 @@ tracks/14/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="RectangleShape2D" id=35]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 21.4528, 38.5585 )
 
 [node name="Player" type="KinematicBody2D"]
@@ -2057,26 +2057,31 @@ dash_object = ExtResource( 7 )
 script = ExtResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/death-left = SubResource( 47 )
-anims/death-right = SubResource( 38 )
-anims/fall-left = SubResource( 42 )
-anims/fall-right = SubResource( 41 )
-anims/hit-left = SubResource( 44 )
-anims/hit-right = SubResource( 43 )
-anims/idle-left = SubResource( 37 )
-anims/idle-right = SubResource( 36 )
-anims/jump-left = SubResource( 46 )
-anims/jump-right = SubResource( 45 )
-anims/run-left = SubResource( 40 )
-anims/run-right = SubResource( 39 )
+anims/death-left = SubResource( 1 )
+anims/death-right = SubResource( 2 )
+anims/fall-left = SubResource( 3 )
+anims/fall-right = SubResource( 4 )
+anims/hit-left = SubResource( 5 )
+anims/hit-right = SubResource( 6 )
+anims/idle-left = SubResource( 7 )
+anims/idle-right = SubResource( 8 )
+anims/jump-left = SubResource( 9 )
+anims/jump-right = SubResource( 10 )
+anims/run-left = SubResource( 11 )
+anims/run-right = SubResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -5.33937 )
+shape = SubResource( 13 )
 
 [node name="sprites" type="Node2D" parent="."]
 
 [node name="idle" type="Sprite" parent="sprites"]
-position = Vector2( 9.2589, -7.92558 )
+visible = false
+position = Vector2( -8.76146, -7.92558 )
 texture = ExtResource( 9 )
+flip_h = true
 hframes = 6
-frame = 3
 
 [node name="run" type="Sprite" parent="sprites"]
 visible = false
@@ -2086,13 +2091,12 @@ hframes = 8
 
 [node name="death" type="Sprite" parent="sprites"]
 visible = false
-position = Vector2( 10.7094, -8.00497 )
+position = Vector2( -8.76865, -8.00497 )
 texture = ExtResource( 13 )
+flip_h = true
 hframes = 7
-frame = 6
 
 [node name="fall" type="Sprite" parent="sprites"]
-visible = false
 position = Vector2( -9.34387, 0 )
 texture = ExtResource( 11 )
 flip_h = true
@@ -2106,15 +2110,13 @@ hframes = 4
 
 [node name="jump" type="Sprite" parent="sprites"]
 visible = false
-position = Vector2( 10.6787, -6.00678 )
+position = Vector2( -10.2975, -6.00678 )
 texture = ExtResource( 4 )
+flip_h = true
 hframes = 2
 
 [node name="GunPosition" type="Position2D" parent="."]
-position = Vector2( 29.7458, -20.5085 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 35 )
+position = Vector2( -30.9894, -20.5085 )
 
 [node name="HealthDisplay" parent="." instance=ExtResource( 6 )]
 position = Vector2( -0.734041, -40.8035 )

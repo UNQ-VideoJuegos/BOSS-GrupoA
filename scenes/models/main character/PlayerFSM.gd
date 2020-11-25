@@ -21,38 +21,20 @@ func _state_logic(delta): # metodo que maneja la logica (handler)
 func _get_transition(delta): # maneja las transiciones
 	match state:
 		states.idle:
-			if !parent.is_on_floor():
-				if parent.velocity.y < 0:
-					return states.jump
-				elif parent.velocity.y > 0:
-					return states.fall
-			elif parent.velocity.x != 0:
+			if parent.velocity.x != 0:
 				return states.run
 			elif parent.health <= 0 or parent.is_dead:
 				return states.death
 		states.run:
-			if !parent.is_on_floor():
-				if parent.velocity.y < 0:
-					return states.jump
-				elif parent.velocity.y > 0:
-					return states.fall
-			elif parent.velocity.x == 0:
+			if parent.velocity.x == 0:
 				return states.idle
 			elif parent.health <= 0 or parent.is_dead:
 				return states.death
 		states.jump:
-			if parent.is_on_floor():
-				return states.idle
-			elif parent.velocity.y >= 0:
-				return states.fall
-			elif parent.health <= 0 or parent.is_dead:
+			if parent.health <= 0 or parent.is_dead:
 				return states.death
 		states.fall:
-			if parent.is_on_floor():
-				return states.idle
-			elif parent.velocity.y < 0:
-				return states.jump
-			elif parent.health <= 0 or parent.is_dead:
+			if parent.health <= 0 or parent.is_dead:
 					return states.death
 	return null
 
