@@ -45,16 +45,26 @@ var gun_position_left = Vector2(-26,-28)
 
 var is_dead = false
 
+var arrow = preload("res://assets/miras/BlueCrosshair_19.png")
+
 func _ready():
 	$GunTimer.wait_time = gun_cooldown
 	$DashTimer.wait_time = dash_cooldown
+	Input.set_custom_mouse_cursor(arrow,0,Vector2(50,50))
 
+
+func _gun_direction():
+	if !is_dead:
+		$GunPosition.look_at(get_global_mouse_position())
+		animation.flip_h = position.direction_to(get_global_mouse_position()).x < 0
+		if !animation.flip_h:
+			$GunPosition.position = gun_position_right
+		else:
+			$GunPosition.position = gun_position_left
 
 func _apply_movement():
 	if !is_dead:
-		$GunPosition.look_at(get_global_mouse_position())
 		velocity = move_and_slide(velocity,FLOOR_NORMAL)
-		$AnimatedSprite.flip_h = position.direction_to(get_global_mouse_position()).x < 0
 		_handleCollision()
 
 
@@ -64,12 +74,10 @@ func _move_input():
 		if Input.is_action_pressed("move_right"):
 			move_direction = 1
 			$AnimatedSprite.flip_h = false
-			$GunPosition.position = gun_position_right
 			dash_direction = Vector2.RIGHT
 		if Input.is_action_pressed("move_left"):
 			move_direction = -1
 			$AnimatedSprite.flip_h = true
-			$GunPosition.position = gun_position_left
 			dash_direction = Vector2.LEFT
 		velocity.x = speed * move_direction
  
