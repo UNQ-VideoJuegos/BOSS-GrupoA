@@ -2070,96 +2070,96 @@ atlas = ExtResource( 9 )
 region = Rect2( 1155, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 12 )
+atlas = ExtResource( 13 )
 region = Rect2( 0, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 12 )
+atlas = ExtResource( 13 )
 region = Rect2( 231, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 12 )
+atlas = ExtResource( 13 )
 region = Rect2( 462, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 12 )
+atlas = ExtResource( 13 )
 region = Rect2( 693, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 231, 190 )
+atlas = ExtResource( 13 )
+region = Rect2( 924, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 13 )
+region = Rect2( 1155, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 13 )
+region = Rect2( 1386, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 4 )
 region = Rect2( 231, 0, 231, 190 )
 
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 11 )
-region = Rect2( 0, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 11 )
-region = Rect2( 231, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 10 )
-region = Rect2( 0, 0, 231, 190 )
-
 [sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 10 )
-region = Rect2( 231, 0, 231, 190 )
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 10 )
-region = Rect2( 462, 0, 231, 190 )
+atlas = ExtResource( 11 )
+region = Rect2( 231, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 10 )
-region = Rect2( 693, 0, 231, 190 )
+region = Rect2( 0, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 10 )
-region = Rect2( 924, 0, 231, 190 )
+region = Rect2( 231, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 10 )
-region = Rect2( 1155, 0, 231, 190 )
+region = Rect2( 462, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 10 )
-region = Rect2( 1386, 0, 231, 190 )
+region = Rect2( 693, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 10 )
-region = Rect2( 1617, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=36]
-atlas = ExtResource( 13 )
-region = Rect2( 0, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 13 )
-region = Rect2( 231, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 13 )
-region = Rect2( 462, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 13 )
-region = Rect2( 693, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=40]
-atlas = ExtResource( 13 )
 region = Rect2( 924, 0, 231, 190 )
 
-[sub_resource type="AtlasTexture" id=41]
-atlas = ExtResource( 13 )
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 10 )
 region = Rect2( 1155, 0, 231, 190 )
 
-[sub_resource type="AtlasTexture" id=42]
-atlas = ExtResource( 13 )
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 10 )
 region = Rect2( 1386, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 10 )
+region = Rect2( 1617, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 12 )
+region = Rect2( 231, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 12 )
+region = Rect2( 462, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 12 )
+region = Rect2( 693, 0, 231, 190 )
 
 [sub_resource type="SpriteFrames" id=43]
 animations = [ {
@@ -2168,39 +2168,39 @@ animations = [ {
 "name": "idle",
 "speed": 8.0
 }, {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
-"loop": true,
-"name": "hit",
-"speed": 7.0
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
+"loop": false,
+"name": "death",
+"speed": 8.0
 }, {
-"frames": [ SubResource( 24 ), SubResource( 25 ) ],
+"frames": [ SubResource( 27 ), SubResource( 28 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 26 ), SubResource( 27 ) ],
+"frames": [ SubResource( 29 ), SubResource( 30 ) ],
 "loop": true,
 "name": "fall",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
 "name": "run",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
-"loop": false,
-"name": "death",
-"speed": 8.0
+"frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
+"loop": true,
+"name": "hit",
+"speed": 7.0
 } ]
 
-[sub_resource type="Gradient" id=45]
+[sub_resource type="Gradient" id=44]
 colors = PoolColorArray( 0.239216, 0.027451, 0.564706, 1, 0.733333, 0.552941, 0.945098, 1 )
 
-[sub_resource type="GradientTexture" id=46]
-gradient = SubResource( 45 )
+[sub_resource type="GradientTexture" id=45]
+gradient = SubResource( 44 )
 
-[sub_resource type="ParticlesMaterial" id=44]
+[sub_resource type="ParticlesMaterial" id=46]
 emission_shape = 1
 emission_sphere_radius = 31.17
 flag_disable_z = true
@@ -2217,7 +2217,7 @@ angle = 66.0
 angle_random = 0.51
 scale = 2.5
 scale_random = 0.41
-color_ramp = SubResource( 46 )
+color_ramp = SubResource( 45 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
@@ -2327,12 +2327,13 @@ animation = "idle"
 [node name="Particles2D" type="Particles2D" parent="."]
 show_behind_parent = true
 position = Vector2( 0, -4.62493 )
+emitting = false
 amount = 100
 lifetime = 3.0
 preprocess = 50.0
 speed_scale = 10.0
 local_coords = false
-process_material = SubResource( 44 )
+process_material = SubResource( 46 )
 [connection signal="health_updated" from="." to="PlayerFSM" method="_on_Player_health_updated"]
 [connection signal="killed" from="." to="." method="_on_Player_killed"]
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]

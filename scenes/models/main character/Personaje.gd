@@ -54,6 +54,7 @@ func _apply_movement():
 	if !is_dead:
 		$GunPosition.look_at(get_global_mouse_position())
 		velocity = move_and_slide(velocity,FLOOR_NORMAL)
+		$AnimatedSprite.flip_h = position.direction_to(get_global_mouse_position()).x < 0
 		_handleCollision()
 
 
