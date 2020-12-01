@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/levels/mainlev_build.png" type="Texture" id=1]
 [ext_resource path="res://scenes/models/Door.gd" type="Script" id=2]
 [ext_resource path="res://scenes/models/DoorBase.gd" type="Script" id=3]
+[ext_resource path="res://sounds2/richerlandtv__magic.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2.04984, 20.3409 )
@@ -56,5 +57,8 @@ region_rect = Rect2( 960.259, 224.322, 47.4999, 15.4458 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Roof"]
 position = Vector2( 36.9988, 5.01089 )
 shape = SubResource( 2 )
+
+[node name="DoorSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 [connection signal="timeout" from="Door/DoorOpenTimer" to="Door" method="_on_DoorTimer_timeout"]
 [connection signal="timeout" from="Door/DoorCloseTimer" to="Door" method="_on_DoorCloseTimer_timeout"]

@@ -12,4 +12,5 @@ func _ready():
 
 func _on_Interruptor_triggered():
 	$Door.open()
+	$DoorSound.play()
 
