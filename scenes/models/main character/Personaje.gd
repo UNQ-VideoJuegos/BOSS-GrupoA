@@ -48,6 +48,7 @@ var is_dead = false
 var arrow = preload("res://assets/miras/BlueCrosshair_19.png")
 
 func _ready():
+	$BackgroundSound.play()
 	$GunTimer.wait_time = gun_cooldown
 	$DashTimer.wait_time = dash_cooldown
 	Input.set_custom_mouse_cursor(arrow,0,Vector2(50,50))
@@ -141,6 +142,7 @@ func damage(amount):
 
 func kill():
 	is_dead = true
+	$BackgroundSound.stop()
 	$GamerOverSound.play()
 	$health_low.stop()
 	$GunTimer.stop()
