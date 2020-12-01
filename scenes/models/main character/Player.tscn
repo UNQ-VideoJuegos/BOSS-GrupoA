@@ -16,7 +16,7 @@
 [ext_resource path="res://sounds2/qubodup__scattered-ghost.wav" type="AudioStream" id=14]
 [ext_resource path="res://sounds/Hearbeat_2-Mike_Koenig-143666461.wav" type="AudioStream" id=15]
 [ext_resource path="res://sounds2/Small Fireball-SoundBible.com-1381880822.wav" type="AudioStream" id=16]
-[ext_resource path="res://sounds2/09__whoosh.wav" type="AudioStream" id=17]
+[ext_resource path="res://sounds2/whoosh-short-3.wav" type="AudioStream" id=17]
 
 [sub_resource type="Animation" id=1]
 resource_name = "death-left"
@@ -2072,96 +2072,96 @@ atlas = ExtResource( 9 )
 region = Rect2( 1155, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 10 )
+atlas = ExtResource( 12 )
 region = Rect2( 0, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 10 )
+atlas = ExtResource( 12 )
 region = Rect2( 231, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 10 )
+atlas = ExtResource( 12 )
 region = Rect2( 462, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 10 )
+atlas = ExtResource( 12 )
 region = Rect2( 693, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 10 )
-region = Rect2( 924, 0, 231, 190 )
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 10 )
-region = Rect2( 1155, 0, 231, 190 )
+atlas = ExtResource( 13 )
+region = Rect2( 231, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 10 )
-region = Rect2( 1386, 0, 231, 190 )
+atlas = ExtResource( 13 )
+region = Rect2( 462, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 10 )
-region = Rect2( 1617, 0, 231, 190 )
+atlas = ExtResource( 13 )
+region = Rect2( 693, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 13 )
-region = Rect2( 0, 0, 231, 190 )
+region = Rect2( 924, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 13 )
-region = Rect2( 231, 0, 231, 190 )
+region = Rect2( 1155, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 13 )
-region = Rect2( 462, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 13 )
-region = Rect2( 693, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 13 )
-region = Rect2( 924, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 13 )
-region = Rect2( 1155, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 13 )
 region = Rect2( 1386, 0, 231, 190 )
 
-[sub_resource type="AtlasTexture" id=35]
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 4 )
+region = Rect2( 231, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 11 )
+region = Rect2( 231, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 10 )
 region = Rect2( 0, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=36]
-atlas = ExtResource( 11 )
+atlas = ExtResource( 10 )
 region = Rect2( 231, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 4 )
-region = Rect2( 231, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=39]
-atlas = ExtResource( 12 )
-region = Rect2( 0, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=40]
-atlas = ExtResource( 12 )
-region = Rect2( 231, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=41]
-atlas = ExtResource( 12 )
+atlas = ExtResource( 10 )
 region = Rect2( 462, 0, 231, 190 )
 
-[sub_resource type="AtlasTexture" id=42]
-atlas = ExtResource( 12 )
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 10 )
 region = Rect2( 693, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 10 )
+region = Rect2( 924, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 10 )
+region = Rect2( 1155, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 10 )
+region = Rect2( 1386, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 10 )
+region = Rect2( 1617, 0, 231, 190 )
 
 [sub_resource type="SpriteFrames" id=43]
 animations = [ {
@@ -2170,30 +2170,30 @@ animations = [ {
 "name": "idle",
 "speed": 8.0
 }, {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
 "loop": true,
-"name": "run",
-"speed": 10.0
+"name": "hit",
+"speed": 7.0
 }, {
-"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
+"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
 "loop": false,
 "name": "death",
 "speed": 8.0
 }, {
-"frames": [ SubResource( 35 ), SubResource( 36 ) ],
-"loop": true,
-"name": "fall",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 37 ), SubResource( 38 ) ],
+"frames": [ SubResource( 31 ), SubResource( 32 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
+"frames": [ SubResource( 33 ), SubResource( 34 ) ],
 "loop": true,
-"name": "hit",
-"speed": 7.0
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
 } ]
 
 [sub_resource type="Gradient" id=44]
@@ -2340,6 +2340,8 @@ process_material = SubResource( 46 )
 [node name="BackgroundSound" type="AudioStreamPlayer2D" parent="."]
 visible = false
 stream = ExtResource( 14 )
+volume_db = -10.0
+attenuation = 4.43828
 
 [node name="DashSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
