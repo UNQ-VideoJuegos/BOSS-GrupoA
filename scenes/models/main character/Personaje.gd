@@ -113,6 +113,7 @@ func _dash():
 		is_dashing = true
 		$Particles2D.emitting = true
 		$DashEffect.start(dash_length)
+		$DashSound.play()
 #		velocity.x *= dash_impulse
 		speed = dash_speed
 		if is_dashing:
