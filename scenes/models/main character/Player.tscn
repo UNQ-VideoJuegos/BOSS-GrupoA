@@ -2264,13 +2264,13 @@ texture = ExtResource( 10 )
 hframes = 8
 
 [node name="death" type="Sprite" parent="sprites"]
-visible = false
 position = Vector2( -8.76865, -8.00497 )
 texture = ExtResource( 13 )
 flip_h = true
 hframes = 7
 
 [node name="fall" type="Sprite" parent="sprites"]
+visible = false
 position = Vector2( 9.34387, 0 )
 texture = ExtResource( 11 )
 hframes = 2
@@ -2288,10 +2288,9 @@ texture = ExtResource( 4 )
 hframes = 2
 
 [node name="GunPosition" type="Position2D" parent="."]
-position = Vector2( 29.7458, -20.5085 )
+position = Vector2( -33.0968, -22.0068 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -5.33937 )
 shape = SubResource( 13 )
 
 [node name="HealthDisplay" parent="." instance=ExtResource( 6 )]

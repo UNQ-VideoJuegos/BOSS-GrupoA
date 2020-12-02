@@ -71,6 +71,9 @@ func _apply_movement():
 	if !is_dead:
 		velocity = move_and_slide(velocity,FLOOR_NORMAL)
 		_handleCollision()
+		
+		if Input.is_action_just_pressed("reload"):
+			get_tree().reload_current_scene()
 
 
 func _move_input():
