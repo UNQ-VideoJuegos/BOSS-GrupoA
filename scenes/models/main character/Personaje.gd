@@ -52,6 +52,10 @@ func _ready():
 	$GunTimer.wait_time = gun_cooldown
 	$DashTimer.wait_time = dash_cooldown
 	Input.set_custom_mouse_cursor(arrow,0,Vector2(50,50))
+	var current_scene = get_tree().get_current_scene().get_name()
+	if (current_scene == "Final Scene"):
+		$BackgroundSound.stop()
+		$FinalSound.play()
 
 
 func _gun_direction():

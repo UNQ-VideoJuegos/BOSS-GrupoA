@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://scenes/models/main character/Personaje.gd" type="Script" id=1]
 [ext_resource path="res://sounds2/game-over.wav" type="AudioStream" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://sounds/Hearbeat_2-Mike_Koenig-143666461.wav" type="AudioStream" id=15]
 [ext_resource path="res://sounds2/Small Fireball-SoundBible.com-1381880822.wav" type="AudioStream" id=16]
 [ext_resource path="res://sounds2/whoosh-short-3.wav" type="AudioStream" id=17]
+[ext_resource path="res://sounds2/joshuaempyre__epic-orchestra-loop.wav" type="AudioStream" id=18]
 
 [sub_resource type="Animation" id=1]
 resource_name = "death-left"
@@ -2345,6 +2346,9 @@ attenuation = 4.43828
 
 [node name="DashSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
+
+[node name="FinalSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
 [connection signal="health_updated" from="." to="PlayerFSM" method="_on_Player_health_updated"]
 [connection signal="killed" from="." to="." method="_on_Player_killed"]
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]
