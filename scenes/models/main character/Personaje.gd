@@ -150,13 +150,15 @@ func kill():
 	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn")
 
 func _set_health(value):
+	var prev_health = health
 	health = clamp(value, 0, max_health)
-	emit_signal("health_updated", health)
-	$HealthDisplay.update_healthbar(health)
-	if health < max_health/2:
-		$health_low.play()
-	if health <= 0:
-		kill()
+	if health != prev_health:
+		emit_signal("health_updated", health)
+		$HealthDisplay.update_healthbar(health)
+		if health < max_health/2:
+			$health_low.play()
+		if health <= 0:
+			kill()
 
 func _on_invulnerabilityTimer_timeout():
 	pass
