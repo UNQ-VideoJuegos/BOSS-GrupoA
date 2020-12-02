@@ -139,7 +139,6 @@ func damage(amount):
 	if invulnerability_timer.is_stopped():
 		invulnerability_timer.start()
 		_set_health(health - amount)
-		$HealthDisplay.update_healthbar(health - amount)
 
 func kill():
 	is_dead = true
@@ -147,22 +146,17 @@ func kill():
 	$GamerOverSound.play()
 	$health_low.stop()
 	$GunTimer.stop()
-	yield(get_tree().create_timer(1.0), "timeout")
+	yield(get_tree().create_timer(0.8), "timeout")
 	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn")
-	
-	
 
 func _set_health(value):
-	var prev_health = health
 	health = clamp(value, 0, max_health)
-	if health != prev_health:
-		emit_signal("health_updated", health)
-		if health < max_health/2:
-			$health_low.play()
-		if health <= 0:
-			kill()
-	print(health)
-	print(prev_health)
+	emit_signal("health_updated", health)
+	$HealthDisplay.update_healthbar(health)
+	if health < max_health/2:
+		$health_low.play()
+	if health <= 0:
+		kill()
 
 func _on_invulnerabilityTimer_timeout():
 	pass
