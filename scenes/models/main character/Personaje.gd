@@ -45,31 +45,49 @@ var gun_position_left = Vector2(-26,-28)
 
 var is_dead = false
 
+var arrow = preload("res://assets/miras/BlueCrosshair_19.png")
+
 func _ready():
+	$BackgroundSound.play()
 	$GunTimer.wait_time = gun_cooldown
 	$DashTimer.wait_time = dash_cooldown
+	Input.set_custom_mouse_cursor(arrow,0,Vector2(50,50))
+	var current_scene = get_tree().get_current_scene().get_name()
+	if (current_scene == "Final Scene"):
+		$BackgroundSound.stop()
+		$FinalSound.play()
 
+
+func _gun_direction():
+	if !is_dead:
+		$GunPosition.look_at(get_global_mouse_position())
+		animation.flip_h = position.direction_to(get_global_mouse_position()).x < 0
+		if !animation.flip_h:
+			$GunPosition.position = gun_position_right
+		else:
+			$GunPosition.position = gun_position_left
 
 func _apply_movement():
-	$GunPosition.look_at(get_global_mouse_position())
-	velocity = move_and_slide(velocity,FLOOR_NORMAL)
-	_handleCollision()
+	if !is_dead:
+		velocity = move_and_slide(velocity,FLOOR_NORMAL)
+		_handleCollision()
+		
+		if Input.is_action_just_pressed("reload"):
+			get_tree().reload_current_scene()
 
 
 func _move_input():
-	var move_direction = 0
-	if Input.is_action_pressed("move_right"):
-		move_direction = 1
-		$AnimatedSprite.flip_h = false
-		$GunPosition.position = gun_position_right
-		dash_direction = Vector2.RIGHT
-	if Input.is_action_pressed("move_left"):
-		move_direction = -1
-		$AnimatedSprite.flip_h = true
-		$GunPosition.position = gun_position_left
-		dash_direction = Vector2.LEFT
-
-	velocity.x = speed * move_direction
+	move_direction = 0
+	if !is_dead:
+		if Input.is_action_pressed("move_right"):
+			move_direction = 1
+			$AnimatedSprite.flip_h = false
+			dash_direction = Vector2.RIGHT
+		if Input.is_action_pressed("move_left"):
+			move_direction = -1
+			$AnimatedSprite.flip_h = true
+			dash_direction = Vector2.LEFT
+		velocity.x = speed * move_direction
  
 func _apply_gravity(delta):
 	velocity.y += gravity * delta
@@ -85,7 +103,7 @@ func _jump():
 		velocity.y = min_jump
 
 func _shoot():
-	if can_shoot and Input.is_action_pressed("click"):
+	if can_shoot and Input.is_action_pressed("click") and !is_dead:
 		can_shoot = false
 		$GunTimer.start()
 		$fire.play()
@@ -98,17 +116,18 @@ func _shoot_bullet():
 	b.start($GunPosition.global_position,dir)
 
 func _dash():
-	if Input.is_action_just_pressed("dash"):
-		#can_dash = false
+	if Input.is_action_just_pressed("dash") and !is_dead:
 		is_dashing = true
+		$Particles2D.emitting = true
 		$DashEffect.start(dash_length)
+		$DashSound.play()
 #		velocity.x *= dash_impulse
 		speed = dash_speed
 		if is_dashing:
 			var dash_effect = dash_object.instance()
-			dash_effect.texture = $AnimationPlayer.get_animation($AnimationPlayer.current_animation) #frames.get_frame($AnimatedSprite.animation,$AnimatedSprite.frame)
-			dash_effect.global_position = global_position
-			
+			dash_effect.texture = animation.frames.get_frame($AnimatedSprite.animation,animation.frame)
+			dash_effect.global_position = animation.global_position
+			dash_effect.flip_h = animation.flip_h
 			get_parent().add_child(dash_effect)
 
 
@@ -127,23 +146,22 @@ func damage(amount):
 	if invulnerability_timer.is_stopped():
 		invulnerability_timer.start()
 		_set_health(health - amount)
-		$HealthDisplay.update_healthbar(health - amount)
 
 func kill():
 	is_dead = true
+	$BackgroundSound.stop()
 	$GamerOverSound.play()
 	$health_low.stop()
 	$GunTimer.stop()
-	yield(get_tree().create_timer(1.0), "timeout")
+	yield(get_tree().create_timer(0.8), "timeout")
 	get_tree().change_scene("res://scenes/menu/GameOverHUD.tscn")
-	
-	
 
 func _set_health(value):
 	var prev_health = health
 	health = clamp(value, 0, max_health)
 	if health != prev_health:
 		emit_signal("health_updated", health)
+		$HealthDisplay.update_healthbar(health)
 		if health < max_health/2:
 			$health_low.play()
 		if health <= 0:
@@ -157,6 +175,7 @@ func _on_Player_killed():
 
 
 func _on_DashEffect_timeout():
+	$Particles2D.emitting = false
 	is_dashing = false
 	speed = normal_speed
 

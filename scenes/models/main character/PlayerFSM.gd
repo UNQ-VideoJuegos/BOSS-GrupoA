@@ -16,6 +16,7 @@ func _state_logic(delta): # metodo que maneja la logica (handler)
 	parent._jump()
 	parent._shoot()
 	parent._dash()
+	parent._gun_direction()
 	parent._apply_movement()
 
 func _get_transition(delta): # maneja las transiciones

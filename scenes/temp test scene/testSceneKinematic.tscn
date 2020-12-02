@@ -68,13 +68,9 @@ position = Vector2( 463.811, 301.238 )
 
 [node name="Floor" parent="." instance=ExtResource( 5 )]
 position = Vector2( 331.332, 531.147 )
-collision_layer = 1
-collision_mask = 7
 
 [node name="Floor2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 441.796, 531.147 )
-collision_layer = 1
-collision_mask = 7
 
 [node name="Platform" parent="." instance=ExtResource( 6 )]
 position = Vector2( 268.218, 413.118 )

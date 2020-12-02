@@ -7,7 +7,7 @@
 [ext_resource path="res://fonts/minecraft-evenings/Minecraft Evenings.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://scenes/models/DifficultyHUD.gd" type="Script" id=6]
 [ext_resource path="res://scenes/models/OptionsHUD.gd" type="Script" id=7]
-[ext_resource path="res://sounds/Hearbeat_2-Mike_Koenig-143666461.wav" type="AudioStream" id=8]
+[ext_resource path="res://sounds2/qubodup__scattered-ghost.wav" type="AudioStream" id=8]
 [ext_resource path="res://scenes/models/GameOverHUD.gd" type="Script" id=10]
 [ext_resource path="res://scenes/menu/Main.gd" type="Script" id=11]
 [ext_resource path="res://fonts/no-continue/gomarice_no_continue.ttf" type="DynamicFontData" id=12]

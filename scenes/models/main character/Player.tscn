@@ -1,10 +1,10 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://scenes/models/main character/Personaje.gd" type="Script" id=1]
-[ext_resource path="res://sounds/error_003.wav" type="AudioStream" id=2]
+[ext_resource path="res://sounds2/game-over.wav" type="AudioStream" id=2]
 [ext_resource path="res://scenes/models/Bullets/Bullet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/Wizard Pack/Jump.png" type="Texture" id=4]
-[ext_resource path="res://sounds/Mario_Jumping-Mike_Koenig.wav" type="AudioStream" id=5]
+[ext_resource path="res://sounds2/jump.wav" type="AudioStream" id=5]
 [ext_resource path="res://scenes/models/HealthDisplay.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/models/main character/DashEffect.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/models/main character/PlayerFSM.gd" type="Script" id=8]
@@ -13,8 +13,11 @@
 [ext_resource path="res://assets/Wizard Pack/Fall.png" type="Texture" id=11]
 [ext_resource path="res://assets/Wizard Pack/Hit.png" type="Texture" id=12]
 [ext_resource path="res://assets/Wizard Pack/Death.png" type="Texture" id=13]
+[ext_resource path="res://sounds2/qubodup__scattered-ghost.wav" type="AudioStream" id=14]
 [ext_resource path="res://sounds/Hearbeat_2-Mike_Koenig-143666461.wav" type="AudioStream" id=15]
 [ext_resource path="res://sounds2/Small Fireball-SoundBible.com-1381880822.wav" type="AudioStream" id=16]
+[ext_resource path="res://sounds2/whoosh-short-3.wav" type="AudioStream" id=17]
+[ext_resource path="res://sounds2/joshuaempyre__epic-orchestra-loop.wav" type="AudioStream" id=18]
 
 [sub_resource type="Animation" id=1]
 resource_name = "death-left"
@@ -2070,80 +2073,80 @@ atlas = ExtResource( 9 )
 region = Rect2( 1155, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 13 )
 region = Rect2( 0, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 13 )
 region = Rect2( 231, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 13 )
-region = Rect2( 0, 0, 231, 190 )
+region = Rect2( 462, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 13 )
-region = Rect2( 231, 0, 231, 190 )
+region = Rect2( 693, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 13 )
-region = Rect2( 462, 0, 231, 190 )
+region = Rect2( 924, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 13 )
-region = Rect2( 693, 0, 231, 190 )
+region = Rect2( 1155, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 13 )
-region = Rect2( 924, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 13 )
-region = Rect2( 1155, 0, 231, 190 )
-
-[sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 13 )
 region = Rect2( 1386, 0, 231, 190 )
 
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 231, 190 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 4 )
+region = Rect2( 231, 0, 231, 190 )
+
 [sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 10 )
+atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 10 )
+atlas = ExtResource( 11 )
 region = Rect2( 231, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 10 )
-region = Rect2( 462, 0, 231, 190 )
+region = Rect2( 0, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 10 )
-region = Rect2( 693, 0, 231, 190 )
+region = Rect2( 231, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 10 )
-region = Rect2( 924, 0, 231, 190 )
+region = Rect2( 462, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 10 )
-region = Rect2( 1155, 0, 231, 190 )
+region = Rect2( 693, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 10 )
-region = Rect2( 1386, 0, 231, 190 )
+region = Rect2( 924, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 10 )
-region = Rect2( 1617, 0, 231, 190 )
+region = Rect2( 1155, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 11 )
-region = Rect2( 0, 0, 231, 190 )
+atlas = ExtResource( 10 )
+region = Rect2( 1386, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 11 )
-region = Rect2( 231, 0, 231, 190 )
+atlas = ExtResource( 10 )
+region = Rect2( 1617, 0, 231, 190 )
 
 [sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 12 )
@@ -2168,31 +2171,56 @@ animations = [ {
 "name": "idle",
 "speed": 8.0
 }, {
-"frames": [ SubResource( 20 ), SubResource( 21 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
 "loop": false,
 "name": "death",
 "speed": 8.0
 }, {
-"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ) ],
+"frames": [ SubResource( 27 ), SubResource( 28 ) ],
 "loop": true,
-"name": "run",
-"speed": 10.0
+"name": "jump",
+"speed": 5.0
 }, {
-"frames": [ SubResource( 37 ), SubResource( 38 ) ],
+"frames": [ SubResource( 29 ), SubResource( 30 ) ],
 "loop": true,
 "name": "fall",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
 }, {
 "frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
 "loop": true,
 "name": "hit",
 "speed": 7.0
 } ]
+
+[sub_resource type="Gradient" id=44]
+colors = PoolColorArray( 0.239216, 0.027451, 0.564706, 1, 0.733333, 0.552941, 0.945098, 1 )
+
+[sub_resource type="GradientTexture" id=45]
+gradient = SubResource( 44 )
+
+[sub_resource type="ParticlesMaterial" id=46]
+emission_shape = 1
+emission_sphere_radius = 31.17
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 40.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 35.0
+initial_velocity_random = 0.78
+angular_velocity = 49.65
+angular_velocity_random = 0.17
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 66.0
+angle_random = 0.51
+scale = 2.5
+scale_random = 0.41
+color_ramp = SubResource( 45 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
@@ -2236,13 +2264,13 @@ texture = ExtResource( 10 )
 hframes = 8
 
 [node name="death" type="Sprite" parent="sprites"]
-visible = false
 position = Vector2( -8.76865, -8.00497 )
 texture = ExtResource( 13 )
 flip_h = true
 hframes = 7
 
 [node name="fall" type="Sprite" parent="sprites"]
+visible = false
 position = Vector2( 9.34387, 0 )
 texture = ExtResource( 11 )
 hframes = 2
@@ -2260,10 +2288,9 @@ texture = ExtResource( 4 )
 hframes = 2
 
 [node name="GunPosition" type="Position2D" parent="."]
-position = Vector2( 29.7458, -20.5085 )
+position = Vector2( -33.0968, -22.0068 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -5.33937 )
 shape = SubResource( 13 )
 
 [node name="HealthDisplay" parent="." instance=ExtResource( 6 )]
@@ -2287,7 +2314,6 @@ stream = ExtResource( 5 )
 stream = ExtResource( 15 )
 
 [node name="DashEffect" type="Timer" parent="."]
-one_shot = true
 
 [node name="fire" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 16 )
@@ -2298,7 +2324,30 @@ attenuation = 2.07053
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 2.3811, -12.6992 )
 frames = SubResource( 43 )
-animation = "fall"
+animation = "idle"
+
+[node name="Particles2D" type="Particles2D" parent="."]
+show_behind_parent = true
+position = Vector2( 0, -4.62493 )
+emitting = false
+amount = 100
+lifetime = 3.0
+preprocess = 50.0
+speed_scale = 10.0
+local_coords = false
+process_material = SubResource( 46 )
+
+[node name="BackgroundSound" type="AudioStreamPlayer2D" parent="."]
+visible = false
+stream = ExtResource( 14 )
+volume_db = -10.0
+attenuation = 4.43828
+
+[node name="DashSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+
+[node name="FinalSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
 [connection signal="health_updated" from="." to="PlayerFSM" method="_on_Player_health_updated"]
 [connection signal="killed" from="." to="." method="_on_Player_killed"]
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]

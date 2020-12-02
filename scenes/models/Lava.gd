@@ -6,7 +6,7 @@ func _ready():
 
 func _on_Lava_body_entered(body):
 	if body.get_name() == "Player":
-		body.kill()
+		body.damage(150)
 	elif body.is_in_group("plataform"):
 		body.destroy()
 	elif body.is_in_group("Chaser"):

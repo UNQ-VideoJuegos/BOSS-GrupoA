@@ -474,6 +474,7 @@ speed = 200
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 17 )
+frame = 13
 playing = true
 
 [node name="Hitbox" type="Area2D" parent="."]
